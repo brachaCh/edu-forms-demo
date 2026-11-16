@@ -1,0 +1,359 @@
+{
+  "id": "moe-exhaust-options",
+  "title": "מיצוי אפשרויות התערבות בבית הספר",
+  "folder": "מיצוי אפשרויות",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "בחינת מיצוי אפשרויות טרם הפניית תלמיד לדיון בוועדת זכאות ואפיון",
+          "type": "static"
+        },
+        {
+          "key": "purpose_note",
+          "label": "מסמך זה משקף את תהליך ההתערבות שבוצע, איכותו ומידת השפעתו על התקדמות התלמיד. ימולא רק עבור תלמידים עם מוגבלות בשכיחות גבוהה (לקות למידה, הפרעת קשב וריכוז, הפרעות התנהגותיות רגשיות, עיכוב התפתחותי/שפתי) המופנים לראשונה לוועדת זכאות ואפיון.",
+          "type": "static"
+        }
+      ],
+      "title": "כותרת"
+    },
+    {
+      "fields": [
+        {
+          "key": "school_name",
+          "label": "שם בי\"ס"
+        },
+        {
+          "key": "school_code",
+          "label": "סמל מוסד"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "שם המחנך/ת"
+        }
+      ],
+      "title": "פרטי המסגרת"
+    },
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם מלא",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "first_name",
+          "label": "שם פרטי"
+        },
+        {
+          "key": "last_name",
+          "label": "שם משפחה"
+        },
+        {
+          "key": "id_number",
+          "label": "ת.ז"
+        },
+        {
+          "key": "current_class_level",
+          "label": "דרגת כיתה בשנה הנוכחית"
+        }
+      ],
+      "title": "פרטים אישיים של התלמיד"
+    },
+    {
+      "fields": [
+        {
+          "key": "has_personal_plan",
+          "label": "האם נכתבה תכנית אישית מותאמת לצרכי התלמיד?",
+          "type": "select",
+          "options": [
+            {
+              "value": "yes",
+              "label": "כן"
+            },
+            {
+              "value": "no",
+              "label": "לא"
+            }
+          ]
+        },
+        {
+          "key": "accommodations",
+          "label": "התאמות שניתנו לתלמיד במהלך הלמידה עם הכיתה (התאמות בתוכן, בסביבות הלמידה, בחומרי הלמידה, תיווך, הטרמה, הערכה והיבחנות)",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "intervention_current_year_months",
+          "label": "חודשי הפעלה בשנה הנוכחית"
+        },
+        {
+          "key": "intervention_previous_year_months",
+          "label": "חודשי הפעלה בשנה קודמת"
+        }
+      ],
+      "title": "תוכנית אישית והתאמות"
+    },
+    {
+      "fields": [
+        {
+          "key": "support_intro",
+          "label": "פרטו את מקורות התמיכה שקיבל התלמיד ומאפייני ההתערבות (סוג, פרטני/קבוצתי, משך):",
+          "type": "static"
+        },
+        {
+          "key": "support_integration_hours",
+          "label": "שעות מסל שילוב והכלה: טיפול / הוראה",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_integration_hours_kind",
+          "label": "סוג — שעות מסל שילוב והכלה"
+        },
+        {
+          "key": "support_integration_hours_setting",
+          "label": "פרטני/קבוצתי — שעות מסל שילוב והכלה",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_integration_hours_duration",
+          "label": "משך — שעות מסל שילוב והכלה"
+        },
+        {
+          "key": "support_individual_hours",
+          "label": "שעות פרטניות בתחום רגשי / הוראה / חברתי",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_individual_hours_kind",
+          "label": "סוג — שעות פרטניות"
+        },
+        {
+          "key": "support_individual_hours_setting",
+          "label": "פרטני/קבוצתי — שעות פרטניות",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_individual_hours_duration",
+          "label": "משך — שעות פרטניות"
+        },
+        {
+          "key": "support_ale_hours",
+          "label": "שעות אל\"ה (על יסודי)",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_ale_hours_setting",
+          "label": "פרטני/קבוצתי — שעות אל\"ה",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_ale_hours_duration",
+          "label": "משך — שעות אל\"ה"
+        },
+        {
+          "key": "support_counselor",
+          "label": "שיחות יועץ/ת",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_counselor_setting",
+          "label": "פרטני/קבוצתי — שיחות יועץ/ת",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_counselor_duration",
+          "label": "משך — שיחות יועץ/ת"
+        },
+        {
+          "key": "support_psychological",
+          "label": "התערבות פסיכולוגית",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_psychological_setting",
+          "label": "פרטני/קבוצתי — התערבות פסיכולוגית",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_psychological_duration",
+          "label": "משך — התערבות פסיכולוגית"
+        },
+        {
+          "key": "support_shekel_budget",
+          "label": "מענה מהתקציב השקלי (רגשי / לימודי / חברתי)",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_shekel_budget_kind",
+          "label": "סוג — תקציב שקלי"
+        },
+        {
+          "key": "support_shekel_budget_setting",
+          "label": "פרטני/קבוצתי — תקציב שקלי",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_shekel_budget_duration",
+          "label": "משך — תקציב שקלי"
+        },
+        {
+          "key": "support_other",
+          "label": "אחר (תומכי הוראה, מרחבי הכלה, תכניות וכדומה)",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_other_kind",
+          "label": "סוג — אחר"
+        },
+        {
+          "key": "support_other_setting",
+          "label": "פרטני/קבוצתי — אחר",
+          "type": "select",
+          "options": [
+            { "value": "individual", "label": "פרטני" },
+            { "value": "group", "label": "קבוצתי" }
+          ]
+        },
+        {
+          "key": "support_other_duration",
+          "label": "משך — אחר"
+        }
+      ],
+      "title": "מקורות תמיכה שהופעלו"
+    },
+    {
+      "fields": [
+        {
+          "key": "parents_position",
+          "label": "עמדת ההורים",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "principal_position",
+          "label": "עמדת המנהל/ת",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "inspector_recommendation",
+          "label": "המלצת / החלטת המפקח/ת",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "עמדות והמלצות"
+    },
+    {
+      "fields": [
+        {
+          "key": "principal_name",
+          "label": "שם המנהל/ת"
+        },
+        {
+          "key": "principal_sign",
+          "label": "חתימת המנהל/ת",
+          "type": "signature"
+        },
+        {
+          "key": "inspector_name",
+          "label": "שם המפקח/ת הכולל/ת"
+        },
+        {
+          "key": "inspector_sign",
+          "label": "חתימת המפקח/ת",
+          "type": "signature"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        }
+      ],
+      "title": "חתימות"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "school_name",
+      "school_code",
+      "homeroom_teacher",
+      "first_name",
+      "last_name",
+      "id_number",
+      "current_class_level",
+      "accommodations",
+      "intervention_current_year_months",
+      "intervention_previous_year_months",
+      "support_integration_hours",
+      "support_integration_hours_kind",
+      "support_integration_hours_setting",
+      "support_integration_hours_duration",
+      "support_individual_hours",
+      "support_individual_hours_kind",
+      "support_individual_hours_setting",
+      "support_individual_hours_duration",
+      "support_ale_hours",
+      "support_ale_hours_setting",
+      "support_ale_hours_duration",
+      "support_counselor",
+      "support_counselor_setting",
+      "support_counselor_duration",
+      "support_psychological",
+      "support_psychological_setting",
+      "support_psychological_duration",
+      "support_shekel_budget",
+      "support_shekel_budget_kind",
+      "support_shekel_budget_setting",
+      "support_shekel_budget_duration",
+      "support_other",
+      "support_other_kind",
+      "support_other_setting",
+      "support_other_duration",
+      "parents_position",
+      "principal_position",
+      "inspector_recommendation",
+      "principal_name",
+      "principal_sign",
+      "inspector_name",
+      "inspector_sign",
+      "filled_at"
+    ]
+  }
+}

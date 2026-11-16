@@ -1,0 +1,29 @@
+# Supabase local config — https://supabase.com/docs/guides/cli/config
+project_id = "matoah"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public", "dev"]
+extra_search_path = ["public", "extensions", "dev"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+# תזכורות חידוש מנוי — Edge Function (ללא JWT; אימות ידני: service_role / CRON_SECRET בלבד)
+[functions.subscription-reminders]
+verify_jwt = false
+
+# Cron (08:00 שעון ישראל = 05:00 UTC): Supabase CLI v1 לא תומך ב-[functions.*.schedule].
+# הגדירו ב-Dashboard → Edge Functions → subscription-reminders → Schedules
+#   cron: 0 5 * * *
+# Header ב-Scheduler: Authorization Bearer <service_role> (לא anon key)
+# או עדכנו CLI: npx supabase@latest functions deploy subscription-reminders ...
+

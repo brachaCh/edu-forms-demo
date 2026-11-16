@@ -1,0 +1,144 @@
+{
+  "id": "moe-psychologist-recommendation",
+  "title": "המלצת פסיכולוג המסגרת החינוכית",
+  "folder": "נספח 8",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "המלצת פסיכולוג המסגרת החינוכית מטעם השפ\"ח בדיון הצוות הרב-מקצועי",
+          "type": "static"
+        },
+        {
+          "key": "meeting_date",
+          "label": "תאריך קיום הדיון",
+          "type": "date"
+        }
+      ],
+      "title": "כותרת ופרטי דיון"
+    },
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "id_number",
+          "label": "מס' ת\"ז"
+        },
+        {
+          "key": "school_or_kindergarten",
+          "label": "בי\"ס / הגן"
+        },
+        {
+          "key": "class_or_gan_level",
+          "label": "כיתה / דרגת גן"
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_meeting-attendees",
+          "label": "הנוכחים בדיון",
+          "type": "row-table"
+        }
+      ],
+      "title": "משתתפי הדיון"
+    },
+    {
+      "fields": [
+        {
+          "key": "recommendation_intro",
+          "label": "בעקבות הדיון בצוות הרב-מקצועי ובעקבות דיווחי צוות בית הספר/הגן וההורים, מסתמן ש-",
+          "type": "static"
+        },
+        {
+          "key": "student_needs",
+          "label": "התלמיד/ה זקוק/ה למענים המותאמים לתלמיד עם:",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "characterization_type",
+          "label": "אפיון המוגבלות המומלץ",
+          "type": "select",
+          "options": [
+            {
+              "value": "learning_disability_58",
+              "label": "לקות למידה (58) — ניתן לציין מגיל 5"
+            },
+            {
+              "value": "behavioral_emotional_55",
+              "label": "הפרעות התנהגותיות ורגשיות (55)"
+            },
+            {
+              "value": "developmental_delay_62",
+              "label": "עיכוב התפתחותי (62) — ניתן לציין עד גיל 9"
+            }
+          ]
+        }
+      ],
+      "title": "המלצה"
+    },
+    {
+      "fields": [
+        {
+          "key": "psychologist_name",
+          "label": "שם הפסיכולוג/ית"
+        },
+        {
+          "key": "psychologist_status",
+          "label": "סטטוס הפסיכולוג/ית"
+        },
+        {
+          "key": "psychologist_sign",
+          "label": "חתימת הפסיכולוג/ית",
+          "type": "signature"
+        },
+        {
+          "key": "supervisor_name",
+          "label": "שם המדריך/ה או מנהל/ת השפ\"ח"
+        },
+        {
+          "key": "supervisor_sign",
+          "label": "חתימת המדריך/ה",
+          "type": "signature"
+        }
+      ],
+      "title": "חתימות"
+    },
+    {
+      "fields": [
+        {
+          "key": "legal_note",
+          "label": "מסמך זה קביל אך ורק כאשר הוא חתום על ידי פסיכולוג המסגרת החינוכית מטעם השירות הפסיכולוגי-החינוכי (רמה א' — ראה סעיף 3.7-61 בחוזר הוראות הקבע תשע/8(א), \"מתווה השירות הפסיכולוגי-החינוכי\"). זוהי המלצה, הנוגעת למענים הנדרשים לתלמיד, ואינה אבחנה באשר לסוג המוגבלות.",
+          "type": "static"
+        }
+      ],
+      "title": "הערה חוקית"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "meeting_date",
+      "full_name",
+      "id_number",
+      "school_or_kindergarten",
+      "class_or_gan_level",
+      "student_needs",
+      "psychologist_name",
+      "psychologist_status",
+      "supervisor_name",
+      "psychologist_sign",
+      "supervisor_sign"
+    ]
+  }
+}

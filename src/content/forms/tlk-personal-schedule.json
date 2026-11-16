@@ -1,0 +1,36 @@
+{
+  "id": "tlk-personal-schedule",
+  "title": "מערכת שעות אישית",
+  "folder": "מערכת שעות אישית",
+  "categoryFolder": "מערכות שעות",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "hint": "נא לרשום שעה מדויקת ומקצוע",
+          "scheduleVariant": "tlk-personal"
+        }
+      ]
+    }
+  ]
+}

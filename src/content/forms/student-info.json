@@ -1,0 +1,184 @@
+{
+  "id": "student-info",
+  "title": "מידע על התלמיד/ה",
+  "folder": "פרטי זיהוי (שם, ת.ז., לידה, רחוב)",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "id_number",
+          "label": "ת.ז",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "birth_date",
+          "label": "ת. לידה",
+          "type": "date",
+          "shared": true,
+          "studentKey": "birth_date"
+        },
+        {
+          "key": "home_address",
+          "label": "רחוב",
+          "shared": true,
+          "studentKey": "home_address"
+        },
+        {
+          "key": "city",
+          "label": "ישוב",
+          "shared": true,
+          "studentKey": "city"
+        },
+        {
+          "key": "phone",
+          "label": "טלפון",
+          "shared": true,
+          "studentKey": "phone"
+        },
+        {
+          "key": "email",
+          "label": "כתובת מייל",
+          "shared": true,
+          "studentKey": "email"
+        },
+        {
+          "key": "father_mobile",
+          "label": "נייד אבא",
+          "shared": true,
+          "studentKey": "father_mobile"
+        },
+        {
+          "key": "mother_mobile",
+          "label": "נייד אמא",
+          "shared": true,
+          "studentKey": "mother_mobile"
+        },
+        {
+          "key": "integration_start_date",
+          "label": "תאריך כניסה למערך השילוב",
+          "type": "date"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "class_name",
+          "label": "תלמיד/ת כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת"
+        }
+      ],
+      "title": "מידע כללי"
+    },
+    {
+      "fields": [
+        {
+          "key": "appearance_description",
+          "label": "תיאור חיצוני (סדר, ניקיון, הופעה חריגה)",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "personality",
+          "label": "אופי התלמיד/ה",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "hobbies",
+          "label": "תחביבים ועיסוקים בשעות הפנאי",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "special_issues",
+          "label": "בעיות מיוחדות (רפואיות, רגשיות, התנהגותיות)",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "additional_treatments",
+          "label": "טיפולים נוספים (מחוץ למסגרת ביה\"ס)",
+          "type": "textarea",
+          "rows": 2
+        }
+      ],
+      "title": "תיאור התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "father_name",
+          "label": "שם האב",
+          "shared": true,
+          "studentKey": "father_name"
+        },
+        {
+          "key": "father_occupation",
+          "label": "עיסוק האב"
+        },
+        {
+          "key": "mother_name",
+          "label": "שם האם",
+          "shared": true,
+          "studentKey": "mother_name"
+        },
+        {
+          "key": "mother_occupation",
+          "label": "עיסוק האם"
+        },
+        {
+          "key": "siblings_count",
+          "label": "מס' הילדים במשפחה"
+        },
+        {
+          "key": "birth_order",
+          "label": "מקום התלמיד/ה בין האחים"
+        },
+        {
+          "key": "family_context",
+          "label": "מצב כלכלי, תרבותי ומשפחתי",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "parents_awareness",
+          "label": "רמת המודעות של ההורים לקשיים",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "parent_teacher_cooperation",
+          "label": "קשר ושיתוף פעולה בין ההורים למורה",
+          "type": "textarea",
+          "rows": 2
+        }
+      ],
+      "title": "משפחת התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "homeroom_report_grid",
+          "label": "דוח מחנכת הכיתה",
+          "type": "rating-grid"
+        }
+      ],
+      "title": "דוח מחנכת הכיתה"
+    }
+  ]
+}

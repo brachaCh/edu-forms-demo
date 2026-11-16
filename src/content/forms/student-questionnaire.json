@@ -1,0 +1,96 @@
+{
+  "id": "student-questionnaire",
+  "title": "שאלון תלמיד",
+  "folder": "שאלון תלמיד",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "teacher_name",
+          "label": "שם המורה",
+          "shared": true,
+          "studentKey": "teacher_name"
+        }
+      ]
+    },
+    {
+      "title": "שאלות לתלמיד",
+      "fields": [
+        {
+          "key": "liked_subjects",
+          "label": "אילו מקצועות ושיעורים אתה אוהב?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "can_succeed",
+          "label": "במה אתה יכול להצליח במיוחד בבית הספר?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "hard_in_studies",
+          "label": "מה קשה בלימודים?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "what_helps",
+          "label": "מה לדעתך יכול לעזור לך להתקדם בכיתה?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "want_to_learn_integration",
+          "label": "מה היית רוצה ללמוד בשיעורי השילוב?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "non_school_interests",
+          "label": "האם יש נושאים שאינם קשורים לבית הספר ואתה מתעניין בהם?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "feel_with_teachers",
+          "label": "איך אתה מרגיש בכיתה עם המורים?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "feel_with_friends",
+          "label": "איך אתה מרגיש בכיתה עם החברים?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "happy_sad",
+          "label": "מתי אתה מרגיש בכיתה שמח? ומתי עצוב?",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "about_myself",
+          "label": "האם תרצה לספר משהו על עצמך?",
+          "type": "textarea",
+          "rows": 3
+        }
+      ]
+    }
+  ]
+}

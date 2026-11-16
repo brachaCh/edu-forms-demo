@@ -1,0 +1,114 @@
+{
+  "id": "parent-questionnaire",
+  "title": "שאלון הורים בניית תח\"י",
+  "folder": "שאלון הורים בניית תח\"י",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "intro",
+          "label": "להורי התלמיד/ה {full_name}: בימים אלו אנו מכינים את תוכנית הלימודים האישית, נשמח אם תמלאו את הדף הרצו\"ב כדי לסייע לנו בהתאמת תוכנית ההתערבות.",
+          "type": "static"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "academic_success",
+          "label": "מצליח/ה ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "academic_help",
+          "label": "זקוק/ה לעזרה ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "academic_notes",
+          "label": "הערות ובקשות נוספות",
+          "type": "textarea",
+          "rows": 2
+        }
+      ],
+      "title": "בתחום הלימודי"
+    },
+    {
+      "fields": [
+        {
+          "key": "social_success",
+          "label": "מצליח/ה ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "social_guidance",
+          "label": "זקוק/ה להכוונה ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "social_notes",
+          "label": "הערות ובקשות נוספות",
+          "type": "textarea",
+          "rows": 2
+        }
+      ],
+      "title": "בתחום ההתנהגותי - חברתי"
+    },
+    {
+      "fields": [
+        {
+          "key": "other_interest",
+          "label": "מגלה עניין ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "other_difficulty",
+          "label": "מראה קושי ב",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "other_notes",
+          "label": "הערות ובקשות נוספות",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "closing_blessing",
+          "label": "בברכת שנת לימודים פוריה",
+          "type": "static"
+        },
+        {
+          "key": "homeroom_signature",
+          "label": "המחנכת",
+          "type": "signature"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        }
+      ],
+      "title": "בתחומים נוספים"
+    }
+  ]
+}

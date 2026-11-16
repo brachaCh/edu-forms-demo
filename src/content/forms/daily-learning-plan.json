@@ -1,0 +1,30 @@
+{
+  "id": "daily-learning-plan",
+  "title": "תכנון למידה",
+  "folder": "תכנון למידה יומי",
+  "categoryFolder": "תיעוד תהליך למידה",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם מלא",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "row_table_daily-learning",
+          "label": "תכנון למידה",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

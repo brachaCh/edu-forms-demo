@@ -1,0 +1,24 @@
+{
+  "id": "external-correspondence",
+  "title": "תכתובות עם גורמים מחוץ לבית הספר",
+  "folder": "תכתובות עם גורמים מטפלים מחוץ לביה\"ס",
+  "categoryFolder": "אינטגרציה טיפולית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם מלא",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "row_table_external-correspondence",
+          "label": "תכתובות עם גורמים מחוץ לבית הספר",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

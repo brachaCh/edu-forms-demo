@@ -1,0 +1,604 @@
+{
+  "id": "referral-questionnaire-multidisciplinary",
+  "title": "שאלון הפניה לדיון בצוות רב מקצועי",
+  "folder": "לדיון בצוות רב מקצועי",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "שאלון הפניה של תלמיד הלומד בכיתה רגילה לדיון בצוות רב־מקצועי, לקביעת זכאות לשירותי חינוך מיוחדים. יש למלא את כל הפרטים כדי שבידי הצוות יהיו כל הנתונים לקבלת החלטה מיטבית.",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "school_name",
+          "label": "שם בית הספר",
+          "required": true
+        },
+        {
+          "key": "institution_code",
+          "label": "סמל המוסד"
+        },
+        {
+          "key": "class_name",
+          "label": "דרגת הכיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "שם המחנך/ת (ממלא/ת השאלון)",
+          "required": true
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך מילוי השאלון",
+          "type": "date"
+        }
+      ],
+      "title": "פרטי בית הספר"
+    },
+    {
+      "fields": [
+        {
+          "key": "first_name",
+          "label": "השם הפרטי",
+          "required": true
+        },
+        {
+          "key": "last_name",
+          "label": "שם המשפחה",
+          "required": true
+        },
+        {
+          "key": "id_number",
+          "label": "מס' תעודת הזהות",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך הלידה",
+          "type": "date",
+          "shared": true,
+          "studentKey": "birth_date"
+        },
+        {
+          "key": "gender",
+          "label": "המין",
+          "type": "select",
+          "shared": true,
+          "studentKey": "gender",
+          "options": [
+            {
+              "value": "male",
+              "label": "זכר"
+            },
+            {
+              "value": "female",
+              "label": "נקבה"
+            }
+          ]
+        },
+        {
+          "key": "birth_country",
+          "label": "ארץ הלידה"
+        },
+        {
+          "key": "aliyah_date",
+          "label": "תאריך העלייה",
+          "type": "date"
+        }
+      ],
+      "title": "פרטים אישיים"
+    },
+    {
+      "fields": [
+        {
+          "key": "family_status",
+          "label": "המצב המשפחתי"
+        },
+        {
+          "key": "home_address",
+          "label": "הכתובת הפרטית",
+          "shared": true,
+          "studentKey": "home_address"
+        },
+        {
+          "key": "phone",
+          "label": "מס' הטלפון",
+          "shared": true,
+          "studentKey": "phone"
+        },
+        {
+          "key": "father_name",
+          "label": "שם הורה 1",
+          "shared": true,
+          "studentKey": "father_name"
+        },
+        {
+          "key": "mother_name",
+          "label": "שם הורה 2",
+          "shared": true,
+          "studentKey": "mother_name"
+        },
+        {
+          "key": "guardian_name",
+          "label": "שם האפוטרופוס"
+        }
+      ],
+      "title": "פרטי ההורים"
+    },
+    {
+      "fields": [
+        {
+          "key": "had_prior_discussion",
+          "label": "האם התקיים בעבר דיון מתוקף חוק בעניין התלמיד/ה?",
+          "type": "select",
+          "options": [
+            {
+              "value": "yes",
+              "label": "כן"
+            },
+            {
+              "value": "no",
+              "label": "לא"
+            }
+          ]
+        },
+        {
+          "key": "prior_integration_committee",
+          "label": "ועדת שילוב",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_multidisciplinary",
+          "label": "צוות רב־מקצועי",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_placement_committee",
+          "label": "ועדת השמה",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_eligibility_committee",
+          "label": "ועדת זכאות ואפיון",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_discussion_date_1",
+          "label": "תאריך דיון 1",
+          "type": "date"
+        },
+        {
+          "key": "prior_discussion_date_2",
+          "label": "תאריך דיון 2",
+          "type": "date"
+        },
+        {
+          "key": "prior_discussion_date_3",
+          "label": "תאריך דיון 3",
+          "type": "date"
+        },
+        {
+          "key": "prior_discussion_date_4",
+          "label": "תאריך דיון 4",
+          "type": "date"
+        }
+      ],
+      "title": "דיונים קודמים"
+    },
+    {
+      "fields": [
+        {
+          "key": "referrer_education_worker",
+          "label": "עובד חינוך",
+          "type": "checkbox"
+        },
+        {
+          "key": "referrer_education_worker_detail",
+          "label": "עובד חינוך — פירוט"
+        },
+        {
+          "key": "referrer_eligibility_committee",
+          "label": "ועדת זכאות ואפיון או ועדת זכאות ואפיון ביושבה כהשגה",
+          "type": "checkbox"
+        },
+        {
+          "key": "referrer_parent",
+          "label": "הורה",
+          "type": "checkbox"
+        }
+      ],
+      "title": "הגורמים המפנים"
+    },
+    {
+      "fields": [
+        {
+          "key": "referral_reason",
+          "label": "הסיבה להפניית התלמיד/ה לדיון",
+          "type": "textarea",
+          "required": true,
+          "rows": 4
+        },
+        {
+          "key": "support_processes",
+          "label": "תהליכים חינוכיים וטיפוליים לקידום התלמיד ותמיכות שקיבל (פירוט התחום, התדירות ותיאור התהליך)",
+          "type": "textarea",
+          "rows": 4
+        }
+      ],
+      "title": "סיבת ההפניה ותמיכות"
+    },
+    {
+      "fields": [
+        {
+          "key": "func_scale_hint",
+          "label": "הערכת תפקוד על־פי סולם 1–9, בהשוואה לתלמידים בני אותו גיל: 1 חלש, 5 ממוצע, 9 טוב.",
+          "type": "static"
+        },
+        {
+          "key": "func_reading_accuracy",
+          "label": "דיוק בקריאה (קורא בשטף וללא שיבושים)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_recall_text",
+          "label": "יכולת לשחזר מידע מתוך טקסט ברמה אינפורמטיבית (פרטים, רצף אירועים וכד')",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_interpret_text",
+          "label": "פירוש טקסט כתוב והסקת מסקנות ממנו",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_written_instructions",
+          "label": "הבנת הוראות כתובות",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_written_expression",
+          "label": "הבעה בכתב (ניסוח בהיר של רעיונות ומחשבות)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_spelling",
+          "label": "כתיב (ללא שגיאות איות)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_writing_layout",
+          "label": "ארגון תקין של כתיבה בדף (בתוך השורה, שוליים, רווח בין המילים וכד')",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_handwriting",
+          "label": "כתב יד ברור וקריא",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_writing_manner",
+          "label": "אופן הכתיבה (אחיזת העיפרון, גודל הכתב, קצב סביר, התעייפות)",
+          "type": "func-scale"
+        }
+      ],
+      "title": "שאלון לתיאור התפקוד — קריאה וכתיבה"
+    },
+    {
+      "fields": [
+        {
+          "key": "func_vocabulary",
+          "label": "אוצר המילים בהתאם לגיל",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_pronunciation",
+          "label": "הגיית מילים ברורה",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_spoken_daily",
+          "label": "שימוש בשפה דבורה במצבים יום־יומיים לביטוי צרכים ולהעברת מידע",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_verbal_thinking",
+          "label": "ביטוי מילולי של תהליכי חשיבה (יכולת להסביר, לטעון טיעון, לנמק וכד')",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_spoken_sentences",
+          "label": "בניית משפטים תקינים בשפה דבורה (ניסוח, מבנה משפט, תחביר)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_grammar_speech",
+          "label": "שימוש נכון בכללי הלשון בדיבור (הטיות גופים, יחיד/רבים, זכר/נקבה, מספרים וכד')",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_creative_speech",
+          "label": "הבעה מילולית יצירתית (סיפור, דימוי, תיאור וכד')",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_verbal_instructions",
+          "label": "הבנת הוראות מילוליות ופעולה נכונה לפיהן",
+          "type": "func-scale"
+        }
+      ],
+      "title": "שאלון לתיאור התפקוד — שפה דבורה"
+    },
+    {
+      "fields": [
+        {
+          "key": "func_arithmetic_basics",
+          "label": "שליטה בפעולות היסוד בחשבון, כגון חיבור, חיסור, כפל, חילוק",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_math_understanding",
+          "label": "הבנה מתמטית (הבנת המשמעות של המושגים והפעולות)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_geometry",
+          "label": "ידע בתחום ההנדסה (הכרת מושגים, צורות, גופים)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_word_problems",
+          "label": "פתרון בעיות מילוליות בחשבון (ניתוח והבנה של בעיות המוצגות בסיפור)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_math_symbols",
+          "label": "שימוש נכון באוצר מילים ובסימנים בתחום (כגון >, <, מנה, מכפלה) והבנה של בעיות חשבון",
+          "type": "func-scale"
+        }
+      ],
+      "title": "שאלון לתיאור התפקוד — חשבון"
+    },
+    {
+      "fields": [
+        {
+          "key": "func_stamina",
+          "label": "סיבולת גופנית (אינו מתעייף בקלות במשחק או בפעילות כיתתית)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_posture",
+          "label": "יציבה (שומר על תנוחה זקופה ולא רפויה)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_movement",
+          "label": "תנועה (הולך ורץ בקלות ובהתאמה)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_organization",
+          "label": "התארגנות ללמידה (התארגנות במרחב הפיזי, הוצאת חפצים מהתיק וארגונם וכד')",
+          "type": "func-scale"
+        }
+      ],
+      "title": "שאלון לתיאור התפקוד — מוטוריקה והתארגנות"
+    },
+    {
+      "fields": [
+        {
+          "key": "func_social_situations",
+          "label": "פירוש נכון של מצבים חברתיים (תגובה סבירה למצבי יום־יום)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_order_habits",
+          "label": "הרגלי סדר מקובלים",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_behavior_rules",
+          "label": "שמירה על כללי ההתנהגות המקובלים (אי הפרעה בכיתה)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_self_image",
+          "label": "דימוי עצמי, ביטחון עצמי",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_judgment",
+          "label": "שיקול דעת (חשיבה לפני פעולה, הימנעות מפעולה אימפולסיבית)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_adult_relations",
+          "label": "יחסים תקינים עם מבוגרים (מצוות בית הספר ומבוגרים אחרים)",
+          "type": "func-scale"
+        },
+        {
+          "key": "func_frustration",
+          "label": "יכולת התמודדות עם אכזבות / עם תסכולים",
+          "type": "func-scale"
+        }
+      ],
+      "title": "שאלון לתיאור התפקוד — חברתי ורגשי"
+    },
+    {
+      "fields": [
+        {
+          "key": "homeroom_signature",
+          "label": "שם מחנך/ת הכיתה וחתימה",
+          "type": "signature",
+          "required": true
+        },
+        {
+          "key": "homeroom_sign_date",
+          "label": "תאריך חתימת המחנך/ת",
+          "type": "date"
+        },
+        {
+          "key": "principal_name",
+          "label": "שם מנהל/ת ביה״ס"
+        },
+        {
+          "key": "principal_signature",
+          "label": "חתימת מנהל/ת ביה״ס",
+          "type": "signature"
+        },
+        {
+          "key": "principal_date",
+          "label": "תאריך חתימת המנהל/ת",
+          "type": "date"
+        },
+        {
+          "key": "supervisor_name",
+          "label": "שם מפקח/ת ביה״ס"
+        },
+        {
+          "key": "supervisor_signature",
+          "label": "חתימת מפקח/ת ביה״ס",
+          "type": "signature"
+        },
+        {
+          "key": "supervisor_date",
+          "label": "תאריך חתימת המפקח/ת",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_date",
+          "label": "העתק להורים נמסר בתאריך",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_by",
+          "label": "נמסר על ידי"
+        }
+      ],
+      "title": "חתימות"
+    },
+    {
+      "fields": [
+        {
+          "key": "parent_page_intro",
+          "label": "כידוע לכם ידון הצוות הרב־מקצועי בזכאות בנכם/בתכם לקבל תמיכה משירותי חינוך מיוחדים. כהשלמה למידע מהמורה, נשמח אם תתארו את ילדכם — התנהגות, יכולות, קשיים, דרכי התמודדות וכל מידע שיסייע לצוות.",
+          "type": "static"
+        },
+        {
+          "key": "parent_notes_on_teacher_report",
+          "label": "הערות ביחס לדיווח המורה בשאלון",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "parent_child_wishes",
+          "label": "מה הילד/ה מספר/ת על רצונות, יכולות וקשיים במסגרת הנוכחית, ודרכי הוראה או תמיכות שהועילו",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "parent_signature",
+          "label": "חתימת ההורים",
+          "type": "signature"
+        },
+        {
+          "key": "parent_sign_date",
+          "label": "תאריך חתימת ההורים",
+          "type": "date"
+        }
+      ],
+      "title": "דף להורים"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "school_name",
+      "institution_code",
+      "class_name",
+      "homeroom_teacher",
+      "filled_at",
+      "first_name",
+      "last_name",
+      "id_number",
+      "birth_date",
+      "gender_male",
+      "gender_female",
+      "birth_country",
+      "aliyah_date",
+      "family_status",
+      "home_address",
+      "phone",
+      "father_name",
+      "mother_name",
+      "guardian_name",
+      "had_prior_discussion",
+      "prior_integration_committee",
+      "prior_multidisciplinary",
+      "prior_placement_committee",
+      "prior_eligibility_committee",
+      "prior_discussion_date_1",
+      "prior_discussion_date_2",
+      "prior_discussion_date_3",
+      "prior_discussion_date_4",
+      "referrer_education_worker",
+      "referrer_education_worker_detail",
+      "referrer_eligibility_committee",
+      "referrer_parent",
+      "referral_reason",
+      "support_processes",
+      "func_reading_accuracy",
+      "func_recall_text",
+      "func_interpret_text",
+      "func_written_instructions",
+      "func_written_expression",
+      "func_spelling",
+      "func_writing_layout",
+      "func_handwriting",
+      "func_writing_manner",
+      "func_vocabulary",
+      "func_pronunciation",
+      "func_spoken_daily",
+      "func_verbal_thinking",
+      "func_spoken_sentences",
+      "func_grammar_speech",
+      "func_creative_speech",
+      "func_verbal_instructions",
+      "func_arithmetic_basics",
+      "func_math_understanding",
+      "func_geometry",
+      "func_word_problems",
+      "func_math_symbols",
+      "func_stamina",
+      "func_posture",
+      "func_movement",
+      "func_organization",
+      "func_social_situations",
+      "func_order_habits",
+      "func_behavior_rules",
+      "func_self_image",
+      "func_judgment",
+      "func_adult_relations",
+      "func_frustration",
+      "homeroom_signature",
+      "homeroom_sign_date",
+      "principal_name",
+      "principal_signature",
+      "principal_date",
+      "supervisor_name",
+      "supervisor_signature",
+      "supervisor_date",
+      "parents_copy_date",
+      "parents_copy_by",
+      "parent_notes_on_teacher_report",
+      "parent_child_wishes",
+      "parent_signature"
+    ]
+  }
+}

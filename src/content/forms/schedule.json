@@ -1,0 +1,25 @@
+{
+  "id": "schedule",
+  "title": "מערכת שעות",
+  "folder": "מערכת שעות",
+  "categoryFolder": "תיעוד תהליך למידה",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "hint": "נא לרשום שעה מדויקת ומקצוע",
+          "scheduleVariant": "simple"
+        }
+      ]
+    }
+  ]
+}

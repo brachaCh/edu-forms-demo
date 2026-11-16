@@ -1,0 +1,30 @@
+{
+  "id": "student-team-details",
+  "title": "פרטי צוות תלמיד",
+  "folder": "פרטי צוות תלמיד",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "row_table_student-team",
+          "label": "צוות התלמיד",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

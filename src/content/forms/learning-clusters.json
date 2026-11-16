@@ -1,0 +1,71 @@
+{
+  "id": "learning-clusters",
+  "title": "אשכולות לימוד",
+  "folder": "אשכולות לימוד",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "clusters_intro",
+          "label": "תחומי ההוראה נחלקים לאשכולות עיקריים. לפניך רשימת האשכולות, ודוגמה למקצועות ולמיומנויות הכלולים בהם.",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "sacred_studies",
+          "label": "אשכול מקצועות הקודש",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "language",
+          "label": "אשכול החינוך הלשוני",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "life_skills",
+          "label": "אשכול כישורי החיים",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "emotional_behavioral",
+          "label": "אשכול רגשי התנהגותי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "math",
+          "label": "אשכול החינוך המתמטי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "motor_sensory",
+          "label": "אשכול מוטורי תחושתי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "sciences",
+          "label": "אשכול המדעים",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "אשכולות הלימוד",
+      "layout": "learning-clusters"
+    }
+  ]
+}

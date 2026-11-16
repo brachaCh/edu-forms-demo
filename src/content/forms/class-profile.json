@@ -1,0 +1,91 @@
+{
+  "id": "class-profile",
+  "title": "פרופיל כיתה",
+  "folder": "פרופיל כיתה",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת"
+        },
+        {
+          "key": "characterization",
+          "label": "אפיון"
+        },
+        {
+          "key": "student_count",
+          "label": "מס' תלמידים/ות"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "class_definition",
+          "label": "הגדרת הכיתה ומאפייניה",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "מאפייני הכיתה, הרכב התלמידים והקשר הלימודי"
+        },
+        {
+          "key": "resources",
+          "label": "משאבים",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "כוח אדם, שעות, ציוד ותמיכות זמינות לכיתה"
+        },
+        {
+          "key": "class_goal",
+          "label": "מטרה כיתתית",
+          "type": "textarea",
+          "rows": 5,
+          "hint": "מטרת העל של הכיתה לשנת הלימודים"
+        },
+        {
+          "key": "strengths",
+          "label": "מוקדי כוח",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "לפי רוב התלמידים בכיתה"
+        },
+        {
+          "key": "areas_to_strengthen",
+          "label": "מוקדים לחיזוק",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "לפי רוב התלמידים בכיתה"
+        },
+        {
+          "key": "profile_hint",
+          "label": "מוקדי כוח ומוקדים לחיזוק ייקבעו לפי רוב התלמידים בכיתה",
+          "type": "static"
+        }
+      ],
+      "title": "פרופיל כיתה בראייה הוליסטית",
+      "layout": "class-profile"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_class-multi-year-goals",
+          "label": "מטרות במשך השנים",
+          "type": "row-table"
+        }
+      ],
+      "title": "מטרות במשך השנים"
+    }
+  ]
+}

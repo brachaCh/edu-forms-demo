@@ -1,0 +1,24 @@
+{
+  "id": "parent-conversations",
+  "title": "שיחות עם הורים",
+  "folder": "שיחות עם הורים",
+  "categoryFolder": "אינטגרציה טיפולית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם מלא",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "row_table_parent-conversations",
+          "label": "שיחות עם הורים",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

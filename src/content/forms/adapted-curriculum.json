@@ -1,0 +1,37 @@
+{
+  "id": "adapted-curriculum",
+  "title": "תוכנית הלימודים בכיתה בהלימה לתוכנית הלימודים",
+  "folder": "תוכנית הלימודים בכיתה בהלימה לתוכנית הלימודים",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_adapted-curriculum",
+          "label": "תוכנית הלימודים בכיתה בהלימה לתוכנית הלימודים",
+          "type": "row-table"
+        }
+      ],
+      "title": "פירוט נושאי הלימוד"
+    }
+  ]
+}

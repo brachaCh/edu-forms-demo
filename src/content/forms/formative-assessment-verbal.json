@@ -1,0 +1,74 @@
+{
+  "id": "formative-assessment-verbal",
+  "title": "הערכה מעצבת סיכום מילולי",
+  "folder": "הערכה מעצבת סיכום מילולי",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "domain",
+          "label": "תחום",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "initial_status",
+          "label": "מצב התחלתי",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "current_status",
+          "label": "מצב נוכחי",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "goals_rest_of_year",
+          "label": "מטרות להמשך השנה",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "summary",
+          "label": "לסיכום",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "report_author",
+          "label": "כותבת הדו\"ח",
+          "type": "signature"
+        },
+        {
+          "key": "parents_signature",
+          "label": "חתימת הורים",
+          "type": "signature"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה"
+        }
+      ]
+    }
+  ]
+}

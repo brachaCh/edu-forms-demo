@@ -1,0 +1,166 @@
+{
+  "id": "moe-eligibility-renewal",
+  "title": "חידוש הזכאות לשירותי חינוך מיוחדים לתלמיד בשנת הלימודים האחרונה/ביסודי",
+  "folder": "חידוש הזכאות לשירותי חינוך מיוחדים",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "פנייה לוועדת זכאות ואפיון לחידוש הזכאות לשירותי חינוך מיוחדים",
+          "type": "static"
+        },
+        {
+          "key": "purpose_note",
+          "label": "לתלמיד שזו שנתו האחרונה במערכת החינוך / לתלמיד בבית הספר היסודי שתוקף זכאותו הסתיים",
+          "type": "static"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "school_year",
+          "label": "שנת הלימודים"
+        },
+        {
+          "key": "local_authority",
+          "label": "רשות מקומית"
+        },
+        {
+          "key": "district",
+          "label": "מחוז"
+        }
+      ],
+      "title": "כותרת"
+    },
+    {
+      "fields": [
+        {
+          "key": "first_name",
+          "label": "שם פרטי"
+        },
+        {
+          "key": "last_name",
+          "label": "שם משפחה"
+        },
+        {
+          "key": "id_number",
+          "label": "מס' תעודת זהות"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך הלידה",
+          "type": "date"
+        },
+        {
+          "key": "gender",
+          "label": "מין",
+          "type": "select",
+          "options": [
+            {
+              "value": "male",
+              "label": "זכר"
+            },
+            {
+              "value": "female",
+              "label": "נקבה"
+            }
+          ]
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "school_name",
+          "label": "שם המוסד החינוכי"
+        },
+        {
+          "key": "school_code",
+          "label": "סמל המוסד"
+        },
+        {
+          "key": "school_type",
+          "label": "סוג המוסד החינוכי",
+          "type": "select",
+          "options": [
+            {
+              "value": "regular",
+              "label": "חינוך רגיל"
+            },
+            {
+              "value": "special",
+              "label": "חינוך מיוחד"
+            }
+          ]
+        },
+        {
+          "key": "class_level",
+          "label": "דרגת הכיתה"
+        }
+      ],
+      "title": "המוסד החינוכי"
+    },
+    {
+      "fields": [
+        {
+          "key": "renewal_case",
+          "label": "סמן/י בהתאם לנדרש",
+          "type": "select",
+          "options": [
+            {
+              "value": "final_year",
+              "label": "נמצא בשנה האחרונה ללימודיו במערכת החינוך, ויסיים את לימודיו בשנת הלימודים"
+            },
+            {
+              "value": "primary_expired",
+              "label": "לומד בבית הספר היסודי שתוקף זכאותו הסתיים וממשיך את לימודיו בבית ספר היסודי"
+            }
+          ]
+        },
+        {
+          "key": "finishing_year",
+          "label": "שנת סיום הלימודים"
+        },
+        {
+          "key": "principal_sign",
+          "label": "חתימת מנהל בית הספר",
+          "type": "signature"
+        }
+      ],
+      "title": "סעיף הפנייה"
+    },
+    {
+      "fields": [
+        {
+          "key": "consent_intro",
+          "label": "אנו, הורי התלמיד/ה, מבקשים את המשך הזכאות לשירותי חינוך מיוחדים עבור בננו/בתנו בבית הספר. אנו מאשרים את קיום הדיון בוועדת זכאות ואפיון ללא נוכחותנו.",
+          "type": "static"
+        },
+        {
+          "key": "parent1_name",
+          "label": "שם ההורה"
+        },
+        {
+          "key": "parent1_sign",
+          "label": "חתימת הורה 1",
+          "type": "signature"
+        },
+        {
+          "key": "parent2_name",
+          "label": "שם ההורה"
+        },
+        {
+          "key": "parent2_sign",
+          "label": "חתימת הורה 2",
+          "type": "signature"
+        }
+      ],
+      "title": "הסכמת ההורים"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "summative-assessment-table",
+  "title": "הערכה מסכמת טבלה",
+  "folder": "הערכה מסכמת טבלה",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "characterization",
+          "label": "אפיון"
+        },
+        {
+          "key": "domain_expertise",
+          "label": "מומחיות תחום"
+        },
+        {
+          "key": "additional_staff",
+          "label": "אנשי צוות נוספים",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "basket_scope_heading",
+          "label": "היקף סל אישי",
+          "type": "static"
+        },
+        {
+          "key": "basket_hours_teaching",
+          "label": "הוראה"
+        },
+        {
+          "key": "basket_hours_aide",
+          "label": "סיוע"
+        },
+        {
+          "key": "basket_hours_therapy",
+          "label": "טיפול"
+        },
+        {
+          "key": "accompanying_teacher",
+          "label": "מורה מלווה"
+        },
+        {
+          "key": "aide_name",
+          "label": "סייעת"
+        },
+        {
+          "key": "background",
+          "label": "רקע",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "significant_changes",
+          "label": "שינויים משמעותיים במהלך השנה",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "row_table_summative-domains",
+          "label": "נושאים",
+          "type": "row-table"
+        },
+        {
+          "key": "summary",
+          "label": "סיכום",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "recommendations",
+          "label": "המלצות",
+          "type": "textarea",
+          "rows": 3
+        }
+      ]
+    }
+  ]
+}

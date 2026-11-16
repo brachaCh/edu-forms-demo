@@ -1,0 +1,33 @@
+{
+  "id": "class-teaching-plan",
+  "title": "תוכנית הוראה כיתתית",
+  "folder": "תוכנית הוראה כיתתית",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_class-teaching-plan",
+          "label": "תוכנית הוראה כיתתית",
+          "type": "row-table"
+        }
+      ],
+      "title": "תוכנית הוראה כיתתית — המשך"
+    }
+  ]
+}

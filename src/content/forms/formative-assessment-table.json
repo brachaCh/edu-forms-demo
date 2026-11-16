@@ -1,0 +1,52 @@
+{
+  "id": "formative-assessment-table",
+  "title": "הערכה מעצבת טבלה",
+  "folder": "הערכה מעצבת טבלה",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "row_table_formative-domains",
+          "label": "תחומים",
+          "type": "row-table"
+        },
+        {
+          "key": "summary",
+          "label": "לסיכום",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "report_author",
+          "label": "כותבת הדו\"ח",
+          "type": "signature"
+        },
+        {
+          "key": "parents_signature",
+          "label": "חתימת הורים",
+          "type": "signature"
+        }
+      ],
+      "title": "דו\"ח סיכום ביניים (מצורף לתעודה)"
+    }
+  ]
+}

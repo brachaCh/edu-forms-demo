@@ -1,0 +1,82 @@
+{
+  "id": "waiver-confidentiality",
+  "title": "טופס ויתור סודיות",
+  "folder": "טופס ויתור סודיות",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "form_heading",
+          "label": "טופס ויתור סודיות",
+          "type": "static"
+        },
+        {
+          "key": "student_name",
+          "label": "אנו הורי התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "student_id_number",
+          "label": "ת.ז",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "consent_body",
+          "label": "מאשרים בזאת לצוות המטפל בבית הספר למסור ולקבל מידע מקצועי שעשוי לסייע לגורמים השותפים בטיפולו לפי שיקול דעתם.",
+          "type": "static"
+        },
+        {
+          "key": "closing",
+          "label": "בברכה,",
+          "type": "static"
+        },
+        {
+          "key": "father_name",
+          "label": "שם האב",
+          "shared": true,
+          "studentKey": "father_name"
+        },
+        {
+          "key": "father_id",
+          "label": "ת.ז האב"
+        },
+        {
+          "key": "father_signature",
+          "label": "חתימת האב",
+          "type": "signature"
+        },
+        {
+          "key": "mother_name",
+          "label": "שם האם",
+          "shared": true,
+          "studentKey": "mother_name"
+        },
+        {
+          "key": "mother_id",
+          "label": "ת.ז האם"
+        },
+        {
+          "key": "mother_signature",
+          "label": "חתימת האם",
+          "type": "signature"
+        }
+      ]
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "student_name",
+      "student_id_number",
+      "father_name",
+      "father_id",
+      "father_signature",
+      "mother_name",
+      "mother_id",
+      "mother_signature"
+    ]
+  }
+}

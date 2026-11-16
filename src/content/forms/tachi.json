@@ -1,0 +1,75 @@
+{
+  "id": "tachi",
+  "title": "תח\"י — תוכנית חינוכית יחידנית",
+  "folder": "תח\"י",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "domain",
+          "label": "התחום"
+        },
+        {
+          "key": "weekly_hours",
+          "label": "מס' ש\"ש"
+        },
+        {
+          "key": "ai_workplan_hint",
+          "label": "כתבו מצב נוכחי ומטרת על, ואז בקשו מה-AI להציע תוכנית עבודה — ותקנו לפי הצורך",
+          "type": "static"
+        },
+        {
+          "key": "current_status",
+          "label": "מצב נוכחי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "main_goal",
+          "label": "מטרת על",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "row_table_tachi-goals",
+          "label": "יעדים",
+          "type": "row-table"
+        },
+        {
+          "key": "homeroom_signature",
+          "label": "חתימת המחנכת",
+          "type": "signature"
+        },
+        {
+          "key": "integration_teacher_signature",
+          "label": "חתימת מורת השילוב",
+          "type": "signature"
+        },
+        {
+          "key": "parents_signature",
+          "label": "חתימת הורים",
+          "type": "signature"
+        }
+      ]
+    }
+  ]
+}

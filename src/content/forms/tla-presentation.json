@@ -1,0 +1,49 @@
+{
+  "id": "tla-presentation",
+  "title": "דף הצגת תל\"א (מוקדי כוח וחוזק)",
+  "folder": "דף הצגת תל\"א (מוקדי כוח וחוזק)",
+  "categoryFolder": "תל\"א",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "meeting_date",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "strengths",
+          "label": "מוקדי כוח וחוזק",
+          "type": "textarea",
+          "rows": 8,
+          "hint": "נמשך אוטומטית מדף ההכנה לתל״א — ניתן לערוך לפני ההצגה"
+        },
+        {
+          "key": "areas_to_strengthen",
+          "label": "מוקדים לחיזוק ולשיפור",
+          "type": "textarea",
+          "rows": 8,
+          "hint": "נמשך אוטומטית מדף ההכנה לתל״א — ניתן לערוך לפני ההצגה"
+        }
+      ],
+      "title": "מוקדי כוח וחוזק להצגה"
+    }
+  ]
+}

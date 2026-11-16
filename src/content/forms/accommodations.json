@@ -1,0 +1,65 @@
+{
+  "id": "accommodations",
+  "title": "התאמות",
+  "folder": "התאמות",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "accommodations_picker",
+          "label": "התאמות לפי סוג קושי",
+          "type": "accommodations-picker"
+        },
+        {
+          "key": "row_table_accommodations",
+          "label": "מקצועות ואחריות",
+          "type": "row-table"
+        },
+        {
+          "key": "homeroom_signature",
+          "label": "חתימת מחנכת",
+          "type": "signature"
+        },
+        {
+          "key": "integration_teacher_signature",
+          "label": "חתימת מורת שילוב",
+          "type": "signature"
+        },
+        {
+          "key": "parents_signature",
+          "label": "חתימת הורים",
+          "type": "signature"
+        },
+        {
+          "key": "student_signature",
+          "label": "חתימת מנהלת",
+          "type": "signature"
+        },
+        {
+          "key": "update_note",
+          "label": "על המחנכת לעדכן את המורות המקצועיות הרלוונטיות ולחתום לאחר העדכון",
+          "type": "static"
+        }
+      ]
+    }
+  ]
+}

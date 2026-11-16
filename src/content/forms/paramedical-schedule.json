@@ -1,0 +1,30 @@
+{
+  "id": "paramedical-schedule",
+  "title": "מערכת שעות פרא-רפואית",
+  "folder": "מערכת שעות פרא-רפואית",
+  "categoryFolder": "מערכות שעות",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "hint": "יש לציין שם התלמיד/ה ושם המרפאה",
+          "scheduleVariant": "tlk-paramedical"
+        }
+      ]
+    }
+  ]
+}

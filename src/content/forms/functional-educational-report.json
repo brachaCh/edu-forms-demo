@@ -1,0 +1,137 @@
+{
+  "id": "functional-educational-report",
+  "title": "דוח חינוכי תפקודי - למילוי והשלמה מהיעוץ",
+  "folder": "דוח חינוכי תפקודי - למילוי והשלמה מהיעוץ",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "form_intro",
+          "label": "דו\"ח חינוכי תפקודי",
+          "type": "static"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד (מלא)",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "id_number",
+          "label": "ת.ז.",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "שם המחנך"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך לידה",
+          "type": "date",
+          "shared": true,
+          "studentKey": "birth_date"
+        },
+        {
+          "key": "acquaintance_duration",
+          "label": "זמן ההיכרות עם התלמיד"
+        },
+        {
+          "key": "parents_names",
+          "label": "שמות ההורים"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך מילוי הדו\"ח",
+          "type": "date"
+        }
+      ],
+      "title": "פרטי התלמיד"
+    },
+    {
+      "fields": [
+        {
+          "key": "strengths",
+          "label": "חוזקות — (הצדדים החזקים של התלמיד, יכולותיו הטובות, תכונות אופי חיוביות, הצטיינויות והצלחות)",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "external_appearance",
+          "label": "הופעה חיצונית — (מראה כללי, גודל גוף, נכות פיזית ונתונים משמעותיים אחרים, סרבול וקשיי קואורדינציה אם יש, האם לבוש כיאות ותואם לעונה, האם נקי ומסודר באופן כללי)",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "arrival_to_school",
+          "label": "אופן ההגעה לבית-הספר — (ביקור סדיר, היעדרויות ואיחורים, האם מגיע עם אוכל ואיזה, האם מגיע עם ציוד לימודי)",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "learning_status",
+          "label": "מצב לימודי — (קריאה, חשבון, יכולת קוגניטיבית וכו'. יש להשוות את יכולות התלמיד ליכולות הנורמטיביות של בני גילו)",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "communication_language",
+          "label": "תקשורת ושפה — (בתקשורת מילולית: מה יכול לומר, כמה מילים במשפט, באיזה הקשר, האם יוזם תקשורת או מגיב, מה יכולת ההבנה; בתקשורת לא מילולית: האם מסמן, מה יכול לסמן, האם נעזר בציוד עזר ואיזה, באיזה הקשר, האם יוזם תקשורת או מגיב, מה יכולת ההבנה)",
+          "type": "textarea",
+          "rows": 6
+        },
+        {
+          "key": "social_status",
+          "label": "מצב חברתי — (עם הילדים, עם המורה ומבוגרים אחרים וכו')",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "emotional_status",
+          "label": "מצב רגשי — (שמח, צוחק לעיתים קרובות, מרוצה בד\"כ, בעל בטחון עצמי, מסתגל לשינויים, קונפורמי ומקבל את כללי הכיתה וביה\"ס, עצוב, מדוכא, בוכה לעיתים קרובות, חרד, מסתגר, תלותי, תוקפן (כלפי מי), מגלה התפרצויות זעם וכו')",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "key": "behavioral_status",
+          "label": "מצב התנהגותי — (התנהגויות הראויות להתייחסות, בכיתה, בזמני העבודות ובהפסקות וכד')",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "parents_relationship",
+          "label": "קשר עם ההורים — (אופן הקשר עם ההורים, תדירות הקשר, מי מההורים נמצא בקשר, מידת ואופן ההתעניינות של ההורים, יחס התלמיד/ה ונתונים משמעותיים אם יש)",
+          "type": "textarea",
+          "rows": 4
+        }
+      ],
+      "title": "תיאור תפקוד"
+    },
+    {
+      "fields": [
+        {
+          "key": "notes",
+          "label": "הערות והארות",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "recommendations",
+          "label": "המלצות והמשך טיפול",
+          "type": "textarea",
+          "rows": 4
+        }
+      ],
+      "title": "סיכום והמלצות"
+    }
+  ]
+}

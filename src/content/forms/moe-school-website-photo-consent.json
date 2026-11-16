@@ -1,0 +1,112 @@
+{
+  "id": "moe-school-website-photo-consent",
+  "title": "טופס לקבלת הסכמת הורה / אפוטרופוס לפעילות באתר בית הספר/ פרסום תמונות",
+  "folder": "טופס לקבלת הסכמת הורה / אפוטרופוס לפעילות באתר בית הספר/ פרסום תמונות",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "title": "מכתב להורים",
+      "fields": [
+        {
+          "key": "letter_salutation",
+          "label": "הורים יקרים",
+          "type": "static"
+        },
+        {
+          "key": "letter_subject_1",
+          "label": "הנדון: קבלת הסכמתכם להכללת בנך/בתך בפעילויות  אתר האינטרנט בית ספרי ",
+          "type": "static"
+        },
+        {
+          "key": "letter_subject_2",
+          "label": "וכן פרסום תמונות בהם מופיע בנכם/ בתכם .",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_purpose_heading",
+          "label": "האתר נבנה לצורך המטרות הבאות:",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_purpose_1",
+          "label": "קבלת מידע ועדכון על הנעשה בבית הספר",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_purpose_2",
+          "label": "למידה בטכנולוגיה מתקדמת ונגישות למאגרי מידע ",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_contents_heading",
+          "label": "באתר כלולים התכנים הבאים:",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_contents_1",
+          "label": "אתרי מקצועות הלימוד ופעילויות מתוקשבות",
+          "type": "static"
+        },
+        {
+          "key": "letter_site_contents_2",
+          "label": "גלריית תמונות וסרטונים מפעילויות בית הספר",
+          "type": "static"
+        },
+        {
+          "key": "letter_activities",
+          "label": "ברצוננו לשלב את הנושאים הבאים בפעילויות האתר:א. רישום שמות תלמידים.ב. הצגת תמונות קבוצתיות של התלמידים ללא ציון שמותיהם.ג. שימוש בקולות תלמידים.ד. שיתוף תלמידים בפורומים.ה. פרסום חיבורים או הבעת דעות של תלמידים.",
+          "type": "static"
+        },
+        {
+          "key": "letter_consent_request",
+          "label": "כדי לכלול את בנכם/בתכם בפעילויות הנ\"ל עלינו לקבל את הסכמתכם המפורשת לכך. ",
+          "type": "static"
+        },
+        {
+          "key": "letter_fill_form",
+          "label": "נא מלאו את הטופס הרצ\"ב.",
+          "type": "static"
+        },
+        {
+          "key": "letter_withdrawal",
+          "label": "אם תשנו בעתיד את דעתכם ותרצו לחזור בכם לגבי הפעילויות המופיעות בטופס, תוכלו לפנות אלינו בכתב, ונמלא אחר בקשתכם. ",
+          "type": "static"
+        },
+        {
+          "key": "letter_circular",
+          "label": "(חוזר מנכ\"ל תשסג/7 (א), כ\"ח אדר תשס\"ג, 2 במרס 2003)",
+          "type": "static"
+        }
+      ]
+    },
+    {
+      "title": "הסכמה וחתימה",
+      "fields": [
+        {
+          "key": "consent_line_1",
+          "label": "הריני להביע את הסכמתי לכלול את בני/בתי בפעילויות אתר האינטרנט של בית הספר",
+          "type": "static"
+        },
+        {
+          "key": "consent_line_2",
+          "label": "הכוללות את הנושאים שפורטו במסמך.",
+          "type": "static"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_level",
+          "label": "כתה"
+        },
+        {
+          "key": "parent_sign",
+          "label": "חתימה",
+          "type": "signature"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "moe-parent-questionnaire-alt",
+  "title": "שאלון להורים",
+  "folder": "שאלון להורים",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "id_number",
+          "label": "מס' ת\"ז"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך מילוי",
+          "type": "date"
+        }
+      ],
+      "title": "פרטי בסיס"
+    },
+    {
+      "fields": [
+        {
+          "key": "intro_note",
+          "label": "נא לענות על השאלות בצורה חופשית ומקיפה ככל האפשר.",
+          "type": "static"
+        },
+        {
+          "key": "child_description",
+          "label": "תיאור כללי של הילד/ה בבית ובקהילה",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "independence",
+          "label": "רמת עצמאות (התארגנות, שינה, אכילה, שירותים, לבוש)",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "communication_and_language",
+          "label": "תקשורת ושפה (הבנה, הבעה, שיחות)",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "play_and_hobbies",
+          "label": "משחק, תחביבים ופעילויות אהובות",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "attention_and_regulation",
+          "label": "קשב וויסות רגשי / התנהגותי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "relationships",
+          "label": "מערכת יחסים עם הורים, אחים, חברים ומורים",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "crisis_response",
+          "label": "כיצד הילד/ה מגיב/ה במצבי משבר או תסכול",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "previous_treatments",
+          "label": "טיפולים / אבחונים שנעשו עד היום",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "home_expectations",
+          "label": "מה חשוב לנו כהורים שהצוות ידע וייקח בחשבון",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "השאלון"
+    },
+    {
+      "fields": [
+        {
+          "key": "filled_by",
+          "label": "שם ממלא/ת השאלון"
+        },
+        {
+          "key": "parent_sign",
+          "label": "חתימת ההורה",
+          "type": "signature"
+        }
+      ],
+      "title": "חתימה"
+    }
+  ]
+}

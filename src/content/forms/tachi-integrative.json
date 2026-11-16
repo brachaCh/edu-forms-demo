@@ -1,0 +1,78 @@
+{
+  "id": "tachi-integrative",
+  "title": "תח\"י אינטגרטיבי",
+  "folder": "תח\"י אינטגרטיבי",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "domain",
+          "label": "תחום"
+        },
+        {
+          "key": "ai_workplan_hint",
+          "label": "מלאו תחום, קו בסיס ומטרות על, ואז בקשו מה-AI להציע תוכנית עבודה ודרכי הוראה בטבלה — ותקנו לפי הצורך",
+          "type": "static"
+        },
+        {
+          "key": "baseline",
+          "label": "קו בסיס",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "main_goals",
+          "label": "מטרות על",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "fill_per_domain_note",
+          "label": "יש למלא על כל תחום בנפרד",
+          "type": "static"
+        },
+        {
+          "key": "row_table_tachi-integrative-goals",
+          "label": "יעדים ומעקב",
+          "type": "row-table"
+        },
+        {
+          "key": "recommendations",
+          "label": "המלצות",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "year_changes",
+          "label": "הערות ושינויים משמעותיים במהלך השנה",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "parents_signature",
+          "label": "חתימת הורים",
+          "type": "signature"
+        }
+      ],
+      "layout": "integrative-tachi"
+    }
+  ]
+}

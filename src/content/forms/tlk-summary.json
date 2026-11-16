@@ -1,0 +1,37 @@
+{
+  "id": "tlk-summary",
+  "title": "טופס ריכוז תוכנית לימודים כיתתית",
+  "folder": "טופס ריכוז תוכנית לימודים כיתתית",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_tlk-summary-subjects",
+          "label": "פירוט המקצועות הנלמדים בכיתה",
+          "type": "row-table"
+        }
+      ],
+      "title": "תוכנית לימודים כיתתית — פירוט המקצועות"
+    }
+  ]
+}

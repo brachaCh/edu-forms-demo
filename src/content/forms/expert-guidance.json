@@ -1,0 +1,35 @@
+{
+  "id": "expert-guidance",
+  "title": "הדרכת מומחית תחום",
+  "folder": "הדרכת מומחית תחום",
+  "categoryFolder": "אינטגרציה טיפולית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "meeting_date",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "row_table_expert-guidance",
+          "label": "הדרכת מומחית תחום",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

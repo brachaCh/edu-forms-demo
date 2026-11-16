@@ -1,0 +1,96 @@
+{
+  "id": "personal-basket-card",
+  "title": "כרטיס תלמיד סל אישי",
+  "folder": "כרטיס תלמיד סל אישי",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "personal_basket_tachi_auto_note",
+          "label": "מסמך זה מתמלא אוטומטית מתוך התח״י לאחר שכל אנשי הצוות ממלאים אותם",
+          "type": "static"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת הכיתה"
+        },
+        {
+          "key": "characterization",
+          "label": "אפיון"
+        },
+        {
+          "key": "domain_specialist",
+          "label": "מומחית תחום"
+        },
+        {
+          "key": "basket_scope_heading",
+          "label": "היקף סל אישי",
+          "type": "static"
+        },
+        {
+          "key": "basket_hours_teaching",
+          "label": "הוראה"
+        },
+        {
+          "key": "basket_hours_aide",
+          "label": "סיוע"
+        },
+        {
+          "key": "basket_hours_therapy",
+          "label": "טיפול"
+        },
+        {
+          "key": "accompanying_teacher",
+          "label": "מורה מלווה"
+        },
+        {
+          "key": "aide_name",
+          "label": "סייעת"
+        },
+        {
+          "key": "last_eligibility_committee_year",
+          "label": "שנת ועדת זכאות ואפיון אחרונה"
+        }
+      ],
+      "title": "מידע כללי"
+    },
+    {
+      "fields": [
+        {
+          "key": "background",
+          "label": "רקע",
+          "type": "textarea",
+          "rows": 6
+        }
+      ],
+      "title": "רקע"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_personal-basket-goals",
+          "label": "תחומים ומטרות",
+          "type": "row-table"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה"
+        }
+      ]
+    }
+  ]
+}

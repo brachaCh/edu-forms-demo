@@ -1,0 +1,142 @@
+{
+  "id": "waiver-appeal-committee",
+  "title": "ויתור סודיות לוועדת השגה",
+  "folder": "ויתור סודיות לוועדת השגה",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_header",
+          "label": "מדינת ישראל — משרד החינוך — המינהל הפדגוגי — אגף א׳ חינוך מיוחד",
+          "type": "static"
+        },
+        {
+          "key": "form_heading",
+          "label": "ויתור על סודיות להעברת מידע לוועדת השגה",
+          "type": "static"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "institution_name",
+          "label": "שם המסגרת החינוכית"
+        },
+        {
+          "key": "institution_code",
+          "label": "סמל המוסד"
+        },
+        {
+          "key": "district",
+          "label": "המחוז"
+        },
+        {
+          "key": "waiver_section_heading",
+          "label": "ויתור סודיות",
+          "type": "static"
+        },
+        {
+          "key": "parent_guardian_name",
+          "label": "אנו, הורי התלמיד/ה/האפוטרופוס",
+          "required": true
+        },
+        {
+          "key": "parent_guardian_id",
+          "label": "תעודת זהות",
+          "required": true
+        },
+        {
+          "key": "consent_intro",
+          "label": "מאשרים למנהל/ת המסגרת החינוכית שבה לומד/ת בננו/בתנו למסור ליו״ר ועדת ההשגה את המידע שהועבר על ידנו למוסד החינוכי:",
+          "type": "static"
+        },
+        {
+          "key": "consent_disability_docs",
+          "label": "מסמכים קבילים על אבחנת המוגבלות של בננו/בתנו",
+          "type": "checkbox"
+        },
+        {
+          "key": "consent_committee_docs",
+          "label": "מסמכים שהעברנו למוסד החינוך לצורך דיון בוועדה",
+          "type": "checkbox"
+        },
+        {
+          "key": "committee_docs_detail",
+          "label": "פירוט מסמכים לוועדה / לדיון",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "consent_edu_treatment_info",
+          "label": "כל מידע חינוכי ו/או טיפולי העומד לרשות המוסד החינוכי ביחס לתפקודו של בננו/בתנו במסגרת החינוכית",
+          "type": "checkbox"
+        },
+        {
+          "key": "consent_final",
+          "label": "אנו מאשרים כי המידע יועבר ליו״ר ועדת ההשגה ולחבריה לצורך דיון בבקשה לבחון את זכאות בננו/בתנו לקבל שירותי חינוך מיוחדים.",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "parent1_name",
+          "label": "שם ההורה/האפוטרופוס"
+        },
+        {
+          "key": "parent1_id",
+          "label": "ת״ז"
+        },
+        {
+          "key": "parent1_signature",
+          "label": "חתימה",
+          "type": "signature"
+        }
+      ],
+      "title": "הורה / אפוטרופוס 1"
+    },
+    {
+      "fields": [
+        {
+          "key": "parent2_name",
+          "label": "שם ההורה/האפוטרופוס"
+        },
+        {
+          "key": "parent2_id",
+          "label": "ת״ז"
+        },
+        {
+          "key": "parent2_signature",
+          "label": "חתימה",
+          "type": "signature"
+        }
+      ],
+      "title": "הורה / אפוטרופוס 2"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "filled_at",
+      "institution_name",
+      "institution_code",
+      "district",
+      "parent_guardian_name",
+      "parent_guardian_id",
+      "consent_disability_docs",
+      "consent_committee_docs",
+      "committee_docs_detail",
+      "consent_edu_treatment_info",
+      "consent_final",
+      "parent1_name",
+      "parent1_id",
+      "parent1_signature",
+      "parent2_name",
+      "parent2_id",
+      "parent2_signature"
+    ]
+  }
+}

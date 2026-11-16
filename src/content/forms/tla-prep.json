@@ -1,0 +1,89 @@
+{
+  "id": "tla-prep",
+  "title": "דף הכנה לתל\"א (היעזרי במחוון)",
+  "folder": "דף הכנה לתל\"א",
+  "categoryFolder": "תל\"א",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "meeting_date",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "environmental_data",
+          "label": "נתונים סביבתיים",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "מיקום במשפחה, מצב משפחתי, רמת מודעות של ההורים לקשיים, התמודדות עם מורכבויות משפחתיות, מחלות/מוגבלויות במשפחה, מצב סוציו־אקונומי, תרבותי ונגישות סביבתית"
+        },
+        {
+          "key": "disability_background",
+          "label": "רקע מוגבלות",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "הגדרת מוגבלות לאחר אבחון, מגבלות רפואיות ופיזיות, מוגבלויות נוספות, טיפולים תרופתיים, וגורמים משמעותיים לכתיבת התוכנית. אבחון — מדדים מדויקים"
+        },
+        {
+          "key": "student_profile",
+          "label": "התלמיד",
+          "type": "static"
+        },
+        {
+          "key": "strengths",
+          "label": "מוקדי כוח",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "מוקדים שעשויים לסייע בבניית תוכנית: תפקודים אקדמיים (קריאה, כתיבה, חשבון), מנגנוני בסיס (שמיעתי/חזותי, זיכרון, חשיבה, שפה, מרחבי־מוטורי), תפקודים רגשיים־חברתיים, ותלמידאות"
+        },
+        {
+          "key": "areas_to_strengthen",
+          "label": "מוקדים לחיזוק",
+          "type": "textarea",
+          "rows": 4,
+          "hint": "בדומה למוקדי כוח — כולל התייחסות לתחום הלימודי במדדים כמותיים"
+        },
+        {
+          "key": "strengths_hint",
+          "label": "במוקדי כוח לחיזוק יש להתייחס גם לתחום הלימודי במדדים כמותיים",
+          "type": "static"
+        }
+      ],
+      "title": "פרופיל תלמיד בראייה הוליסטית — מחוון",
+      "layout": "holistic-profile"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_tachi-treatments",
+          "label": "טיפולים",
+          "type": "row-table"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        }
+      ],
+      "title": "טיפולים שניתנו במשך השנים"
+    }
+  ]
+}

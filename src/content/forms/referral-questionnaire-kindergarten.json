@@ -1,0 +1,566 @@
+{
+  "id": "referral-questionnaire-kindergarten",
+  "title": "שאלון הפנייה לוועדת זכאות ואפיון (גן)",
+  "folder": "שאלון הפנייה לוועדת אפיון וזכאות",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "referral_source",
+          "label": "הגורם המפנה",
+          "required": true
+        },
+        {
+          "key": "referral_date",
+          "label": "תאריך ההפניה",
+          "type": "date",
+          "required": true
+        }
+      ],
+      "title": "פרטי הפנייה"
+    },
+    {
+      "fields": [
+        {
+          "key": "first_name",
+          "label": "השם הפרטי",
+          "required": true
+        },
+        {
+          "key": "last_name",
+          "label": "שם המשפחה",
+          "required": true
+        },
+        {
+          "key": "id_number",
+          "label": "מס' תעודת הזהות",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך הלידה",
+          "type": "date",
+          "shared": true,
+          "studentKey": "birth_date"
+        },
+        {
+          "key": "gender",
+          "label": "המין",
+          "type": "select",
+          "shared": true,
+          "studentKey": "gender",
+          "options": [
+            {
+              "value": "male",
+              "label": "זכר"
+            },
+            {
+              "value": "female",
+              "label": "נקבה"
+            }
+          ]
+        },
+        {
+          "key": "siblings_count",
+          "label": "מס' הילדים במשפחה"
+        },
+        {
+          "key": "birth_order",
+          "label": "מקומו של התלמיד במשפחה"
+        },
+        {
+          "key": "birth_country",
+          "label": "ארץ לידה"
+        },
+        {
+          "key": "aliyah_date",
+          "label": "תאריך עלייה",
+          "type": "date"
+        },
+        {
+          "key": "home_languages",
+          "label": "השפות המדוברות בבית"
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "father_name",
+          "label": "שם הורה 1",
+          "shared": true,
+          "studentKey": "father_name"
+        },
+        {
+          "key": "parent1_phone",
+          "label": "טלפון הורה 1"
+        },
+        {
+          "key": "mother_name",
+          "label": "שם הורה 2",
+          "shared": true,
+          "studentKey": "mother_name"
+        },
+        {
+          "key": "parent2_phone",
+          "label": "טלפון הורה 2"
+        },
+        {
+          "key": "family_status",
+          "label": "המצב המשפחתי",
+          "type": "select",
+          "options": [
+            {
+              "value": "married",
+              "label": "נשואים"
+            },
+            {
+              "value": "divorced",
+              "label": "גרושים"
+            },
+            {
+              "value": "widowed",
+              "label": "אלמן/ה"
+            },
+            {
+              "value": "single",
+              "label": "רווק/ה"
+            },
+            {
+              "value": "other",
+              "label": "אחר"
+            }
+          ]
+        },
+        {
+          "key": "home_address",
+          "label": "הכתובת הפרטית",
+          "shared": true,
+          "studentKey": "home_address"
+        },
+        {
+          "key": "phone",
+          "label": "מס' הטלפון (ראשי)",
+          "shared": true,
+          "studentKey": "phone"
+        },
+        {
+          "key": "email",
+          "label": "הדוא\"ל",
+          "shared": true,
+          "studentKey": "email"
+        },
+        {
+          "key": "guardian_name",
+          "label": "שם האפוטרופוס"
+        }
+      ],
+      "title": "פרטי ההורים"
+    },
+    {
+      "fields": [
+        {
+          "key": "framework_type",
+          "label": "סוג המסגרת",
+          "type": "select",
+          "options": [
+            {
+              "value": "daycare",
+              "label": "מעון"
+            },
+            {
+              "value": "pre_k",
+              "label": "גן טרום חובה"
+            },
+            {
+              "value": "multi_age",
+              "label": "גן רב-גילי"
+            },
+            {
+              "value": "kindergarten",
+              "label": "גן חובה"
+            },
+            {
+              "value": "special_ed",
+              "label": "גן לחינוך מיוחד"
+            },
+            {
+              "value": "regular",
+              "label": "גן רגיל"
+            },
+            {
+              "value": "other",
+              "label": "אחר"
+            }
+          ]
+        },
+        {
+          "key": "framework_other",
+          "label": "פירוט מסגרת אחרת"
+        },
+        {
+          "key": "sector",
+          "label": "מגזר",
+          "type": "select",
+          "options": [
+            {
+              "value": "mamlachti",
+              "label": "ממלכתי"
+            },
+            {
+              "value": "mamlachti_dati",
+              "label": "ממלכתי-דתי"
+            },
+            {
+              "value": "mukar",
+              "label": "מוכר שאינו רשמי"
+            }
+          ]
+        },
+        {
+          "key": "class_name",
+          "label": "שם הגן",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "institution_code",
+          "label": "סמל מוסד"
+        },
+        {
+          "key": "kindergarten_address",
+          "label": "כתובת הגן"
+        },
+        {
+          "key": "kindergarten_phone",
+          "label": "מס' הטלפון בגן"
+        },
+        {
+          "key": "kindergarten_manager",
+          "label": "שם מנהל/ת הגן (ממלא/ת השאלון)",
+          "required": true
+        },
+        {
+          "key": "filler_contact",
+          "label": "פרטי התקשרות עם ממלא השאלון (דוא\"ל/טלפון)"
+        },
+        {
+          "key": "years_in_kindergarten",
+          "label": "התלמיד מבקר בגן זה",
+          "type": "select",
+          "options": [
+            {
+              "value": "1",
+              "label": "שנה ראשונה"
+            },
+            {
+              "value": "2",
+              "label": "שנה שנייה"
+            },
+            {
+              "value": "3",
+              "label": "שנה שלישית"
+            }
+          ]
+        },
+        {
+          "key": "acquaintance_duration",
+          "label": "משך זמן ההיכרות של הגננת עם התלמיד"
+        },
+        {
+          "key": "previous_framework",
+          "label": "סוג המסגרת החינוכית הקודמת"
+        },
+        {
+          "key": "previous_framework_years",
+          "label": "מספר השנים במסגרת הקודמת"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך מילוי השאלון",
+          "type": "date"
+        }
+      ],
+      "title": "מסגרת הגן"
+    },
+    {
+      "fields": [
+        {
+          "key": "had_prior_discussion",
+          "label": "האם התקיים בעבר דיון מתוקף חוק?",
+          "type": "select",
+          "options": [
+            {
+              "value": "yes",
+              "label": "כן"
+            },
+            {
+              "value": "no",
+              "label": "לא"
+            }
+          ]
+        },
+        {
+          "key": "prior_integration_committee",
+          "label": "ועדת שילוב",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_multidisciplinary",
+          "label": "דיון בצוות רב מקצועי",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_placement_committee",
+          "label": "ועדת השמה",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_eligibility_committee",
+          "label": "ועדת זכאות ואפיון",
+          "type": "checkbox"
+        },
+        {
+          "key": "prior_discussion_date_1",
+          "label": "תאריך דיון 1",
+          "type": "date"
+        },
+        {
+          "key": "prior_decision_1",
+          "label": "החלטה 1"
+        },
+        {
+          "key": "prior_discussion_date_2",
+          "label": "תאריך דיון 2",
+          "type": "date"
+        },
+        {
+          "key": "prior_decision_2",
+          "label": "החלטה 2"
+        }
+      ],
+      "title": "דיונים קודמים"
+    },
+    {
+      "fields": [
+        {
+          "key": "referral_reason",
+          "label": "סיבת ההפניה — הקשיים העיקריים בתחומי התפקוד",
+          "type": "textarea",
+          "required": true,
+          "rows": 5
+        }
+      ],
+      "title": "סיבת ההפניה"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_kindergarten-treatments",
+          "label": "טיפולים – הגורם המטפל",
+          "type": "row-table"
+        }
+      ],
+      "title": "תמיכות שקיבל התלמיד"
+    },
+    {
+      "fields": [
+        {
+          "key": "student_description",
+          "label": "תארי בקצרה את התלמיד (הופעה, תפקוד, תחומי עניין וכו')",
+          "type": "textarea",
+          "rows": 4
+        }
+      ],
+      "title": "תיאור התלמיד"
+    },
+    {
+      "fields": [
+        {
+          "key": "domain_cognitive",
+          "label": "תחום קוגניטיבי ושפתי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "domain_social",
+          "label": "תחום חברתי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "domain_emotional",
+          "label": "תחום התנהגותי ורגשי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "domain_daily",
+          "label": "עצמאות בחיי היום-יום",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "domain_motor",
+          "label": "תחום מוטורי",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "תחומי תפקוד"
+    },
+    {
+      "fields": [
+        {
+          "key": "assistance_tried",
+          "label": "באילו דרכים ניסית לסייע לתלמיד בתפקודו בגן?",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_recommendations",
+          "label": "סיכום והמלצות",
+          "type": "textarea",
+          "required": true,
+          "rows": 4
+        }
+      ],
+      "title": "סיוע והמלצות"
+    },
+    {
+      "fields": [
+        {
+          "key": "signer_name",
+          "label": "שם הגננת",
+          "required": true
+        },
+        {
+          "key": "signer_signature",
+          "label": "חתימת הגננת",
+          "type": "signature"
+        },
+        {
+          "key": "signer_date",
+          "label": "תאריך מילוי השאלון",
+          "type": "date"
+        },
+        {
+          "key": "supervisor_name",
+          "label": "שם המפקח/ת"
+        },
+        {
+          "key": "supervisor_date",
+          "label": "תאריך חתימת המפקח/ת",
+          "type": "date"
+        },
+        {
+          "key": "parent1_sign_name",
+          "label": "שם הורה 1"
+        },
+        {
+          "key": "parent1_signature",
+          "label": "חתימת הורה 1",
+          "type": "signature"
+        },
+        {
+          "key": "parent1_sign_date",
+          "label": "תאריך חתימת הורה 1",
+          "type": "date"
+        },
+        {
+          "key": "parent2_sign_name",
+          "label": "שם הורה 2"
+        },
+        {
+          "key": "parent2_signature",
+          "label": "חתימת הורה 2",
+          "type": "signature"
+        },
+        {
+          "key": "parent2_sign_date",
+          "label": "תאריך חתימת הורה 2",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_date",
+          "label": "העתק להורים נמסר בתאריך",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_by",
+          "label": "נמסר על ידי"
+        },
+        {
+          "key": "parents_copy_role",
+          "label": "תפקיד"
+        }
+      ],
+      "title": "חתימות"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "referral_source",
+      "referral_date",
+      "first_name",
+      "last_name",
+      "id_number",
+      "birth_date",
+      "siblings_count",
+      "birth_order",
+      "birth_country",
+      "aliyah_date",
+      "home_languages",
+      "father_name",
+      "parent1_phone",
+      "mother_name",
+      "parent2_phone",
+      "family_status",
+      "home_address",
+      "phone",
+      "email",
+      "guardian_name",
+      "framework_other",
+      "class_name",
+      "institution_code",
+      "kindergarten_address",
+      "kindergarten_phone",
+      "kindergarten_manager",
+      "filler_contact",
+      "acquaintance_duration",
+      "previous_framework",
+      "previous_framework_years",
+      "prior_integration_committee",
+      "prior_multidisciplinary",
+      "prior_placement_committee",
+      "prior_eligibility_committee",
+      "prior_discussion_date_1",
+      "prior_decision_1",
+      "prior_discussion_date_2",
+      "prior_decision_2",
+      "referral_reason",
+      "student_description",
+      "domain_cognitive",
+      "domain_social",
+      "domain_emotional",
+      "domain_daily",
+      "domain_motor",
+      "assistance_tried",
+      "summary_recommendations",
+      "signer_name",
+      "signer_signature",
+      "signer_date",
+      "supervisor_name",
+      "supervisor_date",
+      "parent1_signature",
+      "parent2_signature",
+      "parents_copy_date",
+      "parents_copy_by",
+      "parents_copy_role"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "weekly-schedule",
+  "title": "מערכת שעות שבועית",
+  "folder": "מערכת שעות שבועית",
+  "categoryFolder": "מערכות שעות",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "מחנכת"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "hint": "יש לציין את שם המקצוע ואת שם איש הצוות (מורה, סייעת, מרפאה וכו')",
+          "scheduleVariant": "tlk-weekly"
+        },
+        {
+          "key": "notes",
+          "label": "הערות",
+          "type": "textarea",
+          "rows": 3
+        }
+      ]
+    }
+  ]
+}

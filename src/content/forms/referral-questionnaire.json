@@ -1,0 +1,518 @@
+{
+  "id": "referral-questionnaire",
+  "title": "שאלון הפניה לוועדת זכאות ואפיון (בית ספר)",
+  "folder": "לדיון בוועדת אפיון וזכאות",
+  "categoryFolder": "אינפורמציה כללית",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "referral_source",
+          "label": "הגורם המפנה",
+          "required": true
+        },
+        {
+          "key": "referral_date",
+          "label": "תאריך ההפניה",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "referral_reason_type",
+          "label": "סיבת ההפניה",
+          "type": "select",
+          "options": [
+            {
+              "value": "renewal",
+              "label": "חידוש זכאות"
+            },
+            {
+              "value": "framework_change",
+              "label": "שינוי סוג המסגרת החינוכית"
+            },
+            {
+              "value": "other",
+              "label": "אחר"
+            }
+          ]
+        },
+        {
+          "key": "referral_source_detail",
+          "label": "הגורם המפנה (הורים, צוות חינוכי וכיו״ב)"
+        }
+      ],
+      "title": "פרטי הפנייה"
+    },
+    {
+      "fields": [
+        {
+          "key": "first_name",
+          "label": "השם הפרטי",
+          "required": true
+        },
+        {
+          "key": "last_name",
+          "label": "שם המשפחה",
+          "required": true
+        },
+        {
+          "key": "id_number",
+          "label": "מספר תעודת הזהות",
+          "shared": true,
+          "studentKey": "id_number"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך הלידה",
+          "type": "date",
+          "shared": true,
+          "studentKey": "birth_date"
+        },
+        {
+          "key": "gender",
+          "label": "המין",
+          "type": "select",
+          "shared": true,
+          "studentKey": "gender",
+          "options": [
+            {
+              "value": "male",
+              "label": "זכר"
+            },
+            {
+              "value": "female",
+              "label": "נקבה"
+            }
+          ]
+        },
+        {
+          "key": "siblings_count",
+          "label": "מספר הילדים במשפחה"
+        },
+        {
+          "key": "birth_order",
+          "label": "מקומו של הילד במשפחה"
+        },
+        {
+          "key": "birth_country",
+          "label": "ארץ לידה"
+        },
+        {
+          "key": "aliyah_date",
+          "label": "תאריך עלייה",
+          "type": "date"
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "father_name",
+          "label": "שם הורה 1",
+          "shared": true,
+          "studentKey": "father_name"
+        },
+        {
+          "key": "parent1_phone",
+          "label": "טלפון הורה 1"
+        },
+        {
+          "key": "mother_name",
+          "label": "שם הורה 2",
+          "shared": true,
+          "studentKey": "mother_name"
+        },
+        {
+          "key": "parent2_phone",
+          "label": "טלפון הורה 2"
+        },
+        {
+          "key": "family_status",
+          "label": "המצב המשפחתי"
+        },
+        {
+          "key": "home_address",
+          "label": "הכתובת הפרטית",
+          "shared": true,
+          "studentKey": "home_address"
+        },
+        {
+          "key": "phone",
+          "label": "מס' הטלפון",
+          "shared": true,
+          "studentKey": "phone"
+        },
+        {
+          "key": "email",
+          "label": "דוא\"ל",
+          "shared": true,
+          "studentKey": "email"
+        }
+      ],
+      "title": "פרטי ההורים"
+    },
+    {
+      "fields": [
+        {
+          "key": "school_name",
+          "label": "שם המוסד שבו התלמיד לומד",
+          "required": true
+        },
+        {
+          "key": "institution_code",
+          "label": "סמל המוסד"
+        },
+        {
+          "key": "institution_type",
+          "label": "סוג המוסד",
+          "type": "select",
+          "options": [
+            {
+              "value": "regular",
+              "label": "רגיל"
+            },
+            {
+              "value": "special",
+              "label": "מיוחד"
+            }
+          ]
+        },
+        {
+          "key": "disability_class_type",
+          "label": "סוג המוגבלות של הכיתה"
+        },
+        {
+          "key": "class_name",
+          "label": "דרגת הכיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "homeroom_teacher",
+          "label": "שם המחנך (ממלא השאלון)",
+          "required": true
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך מילוי השאלון",
+          "type": "date"
+        },
+        {
+          "key": "time_in_framework",
+          "label": "משך הזמן שהתלמיד לומד במסגרת הנוכחית"
+        },
+        {
+          "key": "acquaintance_duration",
+          "label": "משך זמן ההיכרות של המחנך/ת את התלמיד"
+        },
+        {
+          "key": "weekly_hours_homeroom",
+          "label": "מספר השעות השבועיות שהמחנך/ת מלמד/ת בכיתה"
+        }
+      ],
+      "title": "המסגרת החינוכית"
+    },
+    {
+      "fields": [
+        {
+          "key": "had_prior_discussion",
+          "label": "האם התקיים בעבר דיון בעניינו של התלמיד?",
+          "type": "select",
+          "options": [
+            {
+              "value": "yes",
+              "label": "כן"
+            },
+            {
+              "value": "no",
+              "label": "לא"
+            }
+          ]
+        },
+        {
+          "key": "prior_discussion_date_1",
+          "label": "תאריך דיון 1",
+          "type": "date"
+        },
+        {
+          "key": "prior_discussion_date_2",
+          "label": "תאריך דיון 2",
+          "type": "date"
+        },
+        {
+          "key": "prior_discussion_details",
+          "label": "אם כן — פרט",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "דיונים קודמים"
+    },
+    {
+      "fields": [
+        {
+          "key": "treated_by_professionals",
+          "label": "האם התלמיד מטופל על־ידי גורמים מקצועיים אחרים?",
+          "type": "select",
+          "options": [
+            {
+              "value": "yes",
+              "label": "כן"
+            },
+            {
+              "value": "no",
+              "label": "לא"
+            }
+          ]
+        },
+        {
+          "key": "professionals_details",
+          "label": "פרט",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "support_types_received",
+          "label": "סוגי התמיכה שקיבל התלמיד בבית הספר ומחוצה לו והשפעתם",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "טיפולים ותמיכות"
+    },
+    {
+      "fields": [
+        {
+          "key": "student_description",
+          "label": "תיאור כללי — מצב לימודי, חברתי ורגשי (כולל מצב בהגעה למסגרת)",
+          "type": "textarea",
+          "required": true,
+          "rows": 4
+        },
+        {
+          "key": "abilities_skills",
+          "label": "יכולות וכישורים בתחומים שונים (ספורט, אמנות, טכנולוגיה, שירה, אחר)",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "motivation_level",
+          "label": "רמת המוטיבציה בתחום הלימודי ובתחום החברתי",
+          "type": "textarea",
+          "rows": 2
+        }
+      ],
+      "title": "תיאור התלמיד"
+    },
+    {
+      "fields": [
+        {
+          "key": "academic_skills",
+          "label": "תפקוד במיומנויות לימוד (קריאה, הבעה, כתיבה, מתמטיקה)",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "effective_learning_style",
+          "label": "צורת הלימוד היעילה ביותר עבורו",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "domain_social",
+          "label": "תפקוד בתחום החברתי",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "leisure_culture",
+          "label": "תרבות הפנאי אחר הצהריים",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "domain_behavioral_emotional",
+          "label": "תפקוד בתחום ההתנהגותי–רגשי",
+          "type": "textarea",
+          "rows": 3
+        }
+      ],
+      "title": "תחומי תפקוד"
+    },
+    {
+      "fields": [
+        {
+          "key": "family_school_contact",
+          "label": "תדירות הקשר, אופי הקשר ויוזם הקשר",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "intervention_change",
+          "label": "האם חל שינוי עקב פעולות התערבות? תאר",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_recommendations",
+          "label": "הערות כלליות / סיכום והמלצות",
+          "type": "textarea",
+          "required": true,
+          "rows": 4
+        }
+      ],
+      "title": "קשר משפחה ובית הספר"
+    },
+    {
+      "fields": [
+        {
+          "key": "principal_name",
+          "label": "שם מנהל/ת בית־הספר"
+        },
+        {
+          "key": "principal_signature",
+          "label": "חתימת מנהל/ת בית־הספר",
+          "type": "signature"
+        },
+        {
+          "key": "principal_date",
+          "label": "תאריך חתימת המנהל/ת",
+          "type": "date"
+        },
+        {
+          "key": "homeroom_sign_name",
+          "label": "שם המחנך/ת",
+          "required": true
+        },
+        {
+          "key": "homeroom_signature",
+          "label": "חתימת המחנך/ת",
+          "type": "signature"
+        },
+        {
+          "key": "signer_date",
+          "label": "תאריך חתימת המחנך/ת",
+          "type": "date"
+        },
+        {
+          "key": "supervisor_name",
+          "label": "שם המפקח/ת"
+        },
+        {
+          "key": "supervisor_signature",
+          "label": "חתימת המפקח/ת",
+          "type": "signature"
+        },
+        {
+          "key": "supervisor_date",
+          "label": "תאריך חתימת המפקח/ת",
+          "type": "date"
+        },
+        {
+          "key": "parent1_sign_name",
+          "label": "שם הורה 1"
+        },
+        {
+          "key": "parent1_signature",
+          "label": "חתימת הורה 1",
+          "type": "signature"
+        },
+        {
+          "key": "parent1_sign_date",
+          "label": "תאריך חתימת הורה 1",
+          "type": "date"
+        },
+        {
+          "key": "parent2_sign_name",
+          "label": "שם הורה 2"
+        },
+        {
+          "key": "parent2_signature",
+          "label": "חתימת הורה 2",
+          "type": "signature"
+        },
+        {
+          "key": "parent2_sign_date",
+          "label": "תאריך חתימת הורה 2",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_date",
+          "label": "העתק השאלון נמסר להורים בתאריך",
+          "type": "date"
+        },
+        {
+          "key": "parents_copy_by",
+          "label": "נמסר ע״י"
+        }
+      ],
+      "title": "חתימות"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "referral_source",
+      "referral_date",
+      "referral_reason_type",
+      "referral_source_detail",
+      "first_name",
+      "last_name",
+      "id_number",
+      "birth_date",
+      "siblings_count",
+      "birth_order",
+      "birth_country",
+      "aliyah_date",
+      "father_name",
+      "parent1_phone",
+      "mother_name",
+      "parent2_phone",
+      "family_status",
+      "home_address",
+      "phone",
+      "email",
+      "school_name",
+      "institution_code",
+      "institution_type",
+      "disability_class_type",
+      "class_name",
+      "homeroom_teacher",
+      "filled_at",
+      "time_in_framework",
+      "acquaintance_duration",
+      "weekly_hours_homeroom",
+      "had_prior_discussion",
+      "prior_discussion_date_1",
+      "prior_discussion_date_2",
+      "prior_discussion_details",
+      "treated_by_professionals",
+      "professionals_details",
+      "support_types_received",
+      "student_description",
+      "abilities_skills",
+      "motivation_level",
+      "academic_skills",
+      "effective_learning_style",
+      "domain_social",
+      "leisure_culture",
+      "domain_behavioral_emotional",
+      "family_school_contact",
+      "intervention_change",
+      "summary_recommendations",
+      "principal_name",
+      "principal_signature",
+      "principal_date",
+      "homeroom_sign_name",
+      "homeroom_signature",
+      "signer_date",
+      "supervisor_name",
+      "supervisor_signature",
+      "supervisor_date",
+      "parent1_signature",
+      "parent2_signature",
+      "parents_copy_date",
+      "parents_copy_by"
+    ]
+  }
+}

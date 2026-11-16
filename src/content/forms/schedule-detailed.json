@@ -1,0 +1,41 @@
+{
+  "id": "schedule-detailed",
+  "title": "מערכת שעות",
+  "folder": "מערכת שעות (מפורטת)",
+  "categoryFolder": "תיעוד תהליך למידה",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "schedule_instructions",
+          "label": "מערכת השעות האישית נבנית על בסיס מערכת השעות הכיתתית תוך התחשבות בצרכים וביכולות של התלמיד/ה. 1. יש לשבץ את מערכת השעות הכיתתית. 2. יש לציין האם התלמיד/ה נמצא/ת בכיתה. 3. בעמודה \"אחר\" יש לציין אם סייעת מלווה את התלמיד/ה או לציין טיפולים אחרים שהתלמיד/ה מקבל/ת.",
+          "type": "static"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "scheduleVariant": "detailed"
+        }
+      ]
+    }
+  ]
+}

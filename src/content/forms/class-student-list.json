@@ -1,0 +1,43 @@
+{
+  "id": "class-student-list",
+  "title": "רשימת תלמידים",
+  "folder": "רשימת תלמידים",
+  "categoryFolder": "תל\"כ",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "excel_import_note",
+          "label": "מומלץ: להעלות רשימת תלמידים מאקסל (כפתור «ייבוא מאקסל» בתפריט הכיתה) — הרשימה תתעדכן אוטומטית עם כל הפרטים.",
+          "type": "static"
+        },
+        {
+          "key": "auto_sync_note",
+          "label": "אם מוסיפים שמות ידנית — נפתח אוטומטית «תיק תלמיד כיתה» לכל תלמיד חדש. אפשר להשלים כאן גם אפיון ותיאור תפקוד.",
+          "type": "static"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_class-students",
+          "label": "רשימת תלמידים",
+          "type": "row-table"
+        }
+      ],
+      "title": "רשימת התלמידים"
+    }
+  ]
+}

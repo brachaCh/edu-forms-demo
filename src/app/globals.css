@@ -1,0 +1,706 @@
+@import "tailwindcss";
+
+/* =====================================================
+   פרוטוקל — פלטת מותג רשמית (חובה לכל האתר)
+   Dark Blue #2F3B67 · Teal #10B7C6 · Purple #6B2DBD · Orange #FF7A20
+   BG #F8FAFD · Border #E4EAF3
+   Status: Success #27AE60 · Warning #F2C94C · Error #EB5757 · Info #2D9CDB
+   ===================================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+
+  /* ---- צבעי מותג בסיס (מדריך פרוטוקל) ---- */
+  --color-ink: #2f3b67;
+  --color-teal: #10b7c6;
+  --color-purple: #6b2dbd;
+  --color-info: #2d9cdb;
+  --color-success: #27ae60;
+  --color-warning: #f2c94c;
+
+  /* תאימות לשמות ישנים — טקסט = כחול כהה מהמדריך */
+  --color-pink: #2f3b67;
+  --color-cyan: #f8fafd;
+  --color-cyan-dark: #e4eaf3;
+  --color-cyan-card: #ffffff;
+  --color-blue: #2f3b67;
+  --color-blue-deep: #242c4f;
+  --color-amber: #ff7a20;
+  --color-amber-deep: #e66a14;
+
+  /* סולם brand = כחול כהה #2F3B67 (ניווט / טקסט) */
+  --color-brand-50: #f8fafd;
+  --color-brand-100: #eef1f7;
+  --color-brand-200: #e4eaf3;
+  --color-brand-300: #c5cde0;
+  --color-brand-400: #6b7aad;
+  --color-brand-500: #4a5785;
+  --color-brand-600: #2f3b67;
+  --color-brand-700: #242c4f;
+  --color-brand-800: #1c223e;
+  --color-brand-900: #151a30;
+
+  --color-blue-50: #f8fafd;
+  --color-blue-100: #eef1f7;
+  --color-blue-200: #e4eaf3;
+  --color-blue-300: #c5cde0;
+  --color-blue-400: #6b7aad;
+  --color-blue-500: #4a5785;
+  --color-blue-600: #2f3b67;
+  --color-blue-700: #242c4f;
+  --color-blue-800: #1c223e;
+  --color-blue-900: #151a30;
+
+  --color-amber-50: #fff4eb;
+  --color-amber-100: #ffe4cc;
+  --color-amber-200: #ffc999;
+  --color-amber-300: #ffad66;
+  --color-amber-400: #ff9440;
+  --color-amber-500: #ff7a20;
+  --color-amber-600: #e66a14;
+  --color-amber-700: #c45a10;
+  --color-amber-800: #9a470d;
+  --color-amber-900: #7a380a;
+  --color-amber-950: #4a2106;
+
+  --color-orange-50: #fff4eb;
+  --color-orange-100: #ffe4cc;
+  --color-orange-200: #ffc999;
+  --color-orange-300: #ffad66;
+  --color-orange-400: #ff9440;
+  --color-orange-500: #ff7a20;
+  --color-orange-600: #e66a14;
+  --color-orange-700: #c45a10;
+  --color-orange-800: #9a470d;
+  --color-orange-900: #7a380a;
+
+  /* סגול מותג — הדגשות / כפתורי מותג */
+  --color-pink-50: #f5eefb;
+  --color-pink-100: #e8d9f7;
+  --color-pink-200: #d0b3ef;
+  --color-pink-300: #b07ce3;
+  --color-pink-400: #8f4ad0;
+  --color-pink-500: #6b2dbd;
+  --color-pink-600: #58249c;
+  --color-pink-700: #461c7c;
+  --color-pink-800: #35155e;
+  --color-pink-900: #251040;
+
+  --color-rose-50: #f5eefb;
+  --color-rose-100: #e8d9f7;
+  --color-rose-200: #d0b3ef;
+  --color-rose-300: #b07ce3;
+  --color-rose-400: #8f4ad0;
+  --color-rose-500: #6b2dbd;
+  --color-rose-600: #58249c;
+  --color-rose-700: #461c7c;
+
+  --color-cyan-50: #e8fafc;
+  --color-cyan-100: #c5f2f6;
+  --color-cyan-200: #8ce4ec;
+  --color-cyan-300: #4dd0dc;
+  --color-cyan-400: #22c2d0;
+  --color-cyan-500: #10b7c6;
+  --color-cyan-600: #0d96a3;
+  --color-cyan-700: #0a747e;
+  --color-cyan-800: #085860;
+  --color-cyan-900: #064248;
+
+  --color-sky-50: #eaf6fc;
+  --color-sky-100: #cceaf8;
+  --color-sky-200: #99d5f1;
+  --color-sky-300: #66c0e9;
+  --color-sky-400: #3aabe0;
+  --color-sky-500: #2d9cdb;
+  --color-sky-600: #247db0;
+  --color-sky-700: #1b5e84;
+
+  --color-green-50: #e9f7ef;
+  --color-green-100: #c8ecd6;
+  --color-green-200: #91d9ad;
+  --color-green-300: #5ac684;
+  --color-green-400: #3ab86c;
+  --color-green-500: #27ae60;
+  --color-green-600: #1f8b4d;
+  --color-green-700: #17683a;
+
+  /* שגיאה — אדום מהמדריך */
+  --color-red-50: #fdecec;
+  --color-red-100: #f9cfcf;
+  --color-red-200: #f39f9f;
+  --color-red-300: #ed7070;
+  --color-red-400: #e85f5f;
+  --color-red-500: #eb5757;
+  --color-red-600: #c94040;
+  --color-red-700: #a63333;
+
+  --color-yellow-50: #fef9e7;
+  --color-yellow-100: #fcf0c2;
+  --color-yellow-200: #f8e185;
+  --color-yellow-300: #f5d458;
+  --color-yellow-400: #f3cc4f;
+  --color-yellow-500: #f2c94c;
+  --color-yellow-600: #d4ae3a;
+  --color-yellow-700: #a88728;
+
+  --color-slate-50: #f8fafd;
+  --color-slate-100: #eef1f7;
+  --color-slate-200: #e4eaf3;
+  --color-slate-300: #c5cde0;
+  --color-slate-400: #8b95b0;
+  --color-slate-500: #5a6585;
+  --color-slate-600: #2f3b67;
+  --color-slate-700: #242c4f;
+  --color-slate-800: #1c223e;
+  --color-slate-900: #151a30;
+
+  --font-sans: var(--font-rubik);
+  --font-display: var(--font-secular);
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+:root {
+  --background: #f8fafd;
+  --foreground: #2f3b67;
+
+  --card: #ffffff;
+  --card-foreground: #2f3b67;
+
+  --primary: #2f3b67;
+  --primary-foreground: #ffffff;
+
+  --secondary: #10b7c6;
+  --secondary-foreground: #ffffff;
+
+  --muted: #e4eaf3;
+  --muted-foreground: #5a6585;
+
+  --destructive: #eb5757;
+  --border: #e4eaf3;
+  --input: #e4eaf3;
+  --ring: #6b2dbd;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scroll-visible {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #6b2dbd #e4eaf3;
+}
+
+.scroll-visible::-webkit-scrollbar {
+  width: 11px;
+}
+
+.scroll-visible::-webkit-scrollbar-track {
+  margin-block: 0.5rem;
+  background: #e4eaf3;
+  border-radius: 999px;
+}
+
+.scroll-visible::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b7c6, #6b2dbd);
+  border-radius: 999px;
+  border: 2px solid #e4eaf3;
+}
+
+.scroll-visible::-webkit-scrollbar-thumb:hover {
+  background: #6b2dbd;
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-sans), "Rubik", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(60rem 32rem at 85% -5%, rgba(16, 183, 198, 0.1), transparent 60%),
+    radial-gradient(45rem 26rem at 0% 100%, rgba(107, 45, 189, 0.08), transparent 55%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-synthesis: none;
+  letter-spacing: 0.01em;
+}
+
+.bg-brand-gradient {
+  background: transparent;
+}
+
+.action-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+  padding: 1.25rem 1.25rem;
+  text-align: center;
+  color: var(--foreground);
+  box-shadow: 0 24px 48px -28px rgba(47, 59, 103, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.action-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #2f3b67, #6b2dbd 45%, #ff7a20);
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  border-color: #6b2dbd;
+  box-shadow: 0 32px 64px -28px rgba(107, 45, 189, 0.28);
+}
+
+.action-card-outline {
+  background: #ffffff;
+}
+
+.action-card-outline::before {
+  background: linear-gradient(90deg, #10b7c6, #6b2dbd 55%, #ff7a20);
+}
+
+.menu-box {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+  padding: 1rem;
+  box-shadow: 0 18px 40px -30px rgba(47, 59, 103, 0.28);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  color: var(--foreground);
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateX(-4px);
+  background: #f8fafd;
+  border-color: #10b7c6;
+  box-shadow: 0 10px 24px -18px rgba(16, 183, 198, 0.45);
+}
+
+.menu-item + .menu-item {
+  margin-top: 0.75rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes soft-blink {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px -10px rgba(47, 59, 103, 0.55);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 122, 32, 0.3), 0 10px 24px -10px rgba(47, 59, 103, 0.55);
+    opacity: 0.9;
+  }
+}
+
+.animate-blink {
+  animation: soft-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes logo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.logo-mark {
+  transform-origin: center;
+}
+
+/* אנימציית לוגו — ספרייט עם החלפת פריים מלאה (בלי שכבות אחד על השני) */
+.logo-sprite-viewport {
+  width: 100%;
+  max-width: min(100%, 40rem);
+  aspect-ratio: 720 / 212;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* דף כניסה — הלוגו דומיננטי במסך הראשון */
+.logo-sprite-viewport--landing {
+  width: min(96vw, 40rem);
+  max-width: min(96vw, 40rem);
+}
+
+.logo-sprite-viewport--landing .logo-sprite-viewport {
+  width: auto;
+  max-width: 100%;
+  max-height: min(28dvh, 18rem);
+  height: auto;
+  aspect-ratio: 720 / 212;
+  min-height: 0;
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .logo-sprite-viewport--landing .logo-sprite-viewport {
+    max-height: min(30dvh, 20rem);
+  }
+}
+
+@media (min-height: 800px) {
+  .logo-sprite-viewport--landing .logo-sprite-viewport {
+    max-height: min(32dvh, 22rem);
+  }
+}
+
+@media (min-height: 960px) {
+  .logo-sprite-viewport--landing .logo-sprite-viewport {
+    max-height: min(34dvh, 24rem);
+  }
+}
+
+.logo-sprite-strip {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  background: transparent;
+  animation: logo-sprite-scroll 5s steps(75) infinite;
+  will-change: transform;
+}
+
+.logo-animated-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+
+@keyframes logo-sprite-scroll {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-logo-enter {
+  animation: logo-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-logo-breathe {
+  animation: logo-breathe 3.2s ease-in-out 0.7s infinite;
+}
+
+.tutorials-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #2f3b67;
+  padding: 1rem 2rem 1rem 2.75rem;
+  color: #ffffff;
+  box-shadow:
+    0 22px 44px -18px rgba(47, 59, 103, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.tutorials-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #6b2dbd;
+  box-shadow:
+    0 30px 56px -18px rgba(107, 45, 189, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.tutorials-button:active {
+  transform: scale(0.98);
+}
+
+.tutorials-button-play {
+  position: relative;
+  display: flex;
+  height: 3.25rem;
+  width: 3.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #ff7a20;
+  color: #ffffff;
+  box-shadow: 0 8px 18px -6px rgba(255, 122, 32, 0.7);
+}
+
+.tutorials-button-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 122, 32, 0.8);
+  animation: play-ring 2s ease-out infinite;
+}
+
+@keyframes play-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.tutorials-button-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: shine-sweep 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shine-sweep {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  85%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tutorials-button-shine,
+  .tutorials-button-play::after,
+  .animate-blink,
+  .animate-logo-enter,
+  .animate-logo-breathe,
+  .logo-sprite-strip {
+    animation: none;
+  }
+
+  .logo-sprite-strip {
+    /* מציג את הפריים האחרון בלבד */
+    transform: translateY(calc(-100% * 74 / 75));
+  }
+}
+
+@media print {
+  [data-matoah-chrome],
+  .fab,
+  .fab.fab-bug-report {
+    display: none !important;
+  }
+}
+
+.fab {
+  position: fixed;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.1rem;
+  box-shadow: 0 14px 32px -12px rgba(47, 59, 103, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -12px rgba(47, 59, 103, 0.55);
+}
+
+.fab:active {
+  transform: scale(0.97);
+}
+
+.fab.fab-bug-report {
+  inset-inline-end: 1rem;
+  bottom: 5.5rem;
+  background: #eb5757;
+  color: #fff;
+}
+
+.fab.fab-bug-report--embedded {
+  position: static;
+  inset: auto;
+  width: 100%;
+  min-width: 11.5rem;
+  bottom: auto;
+}
+
+@media (max-width: 639.98px) {
+  .fab {
+    gap: 0.375rem;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .fab.fab-bug-report {
+    inset-inline-end: 0.75rem;
+    bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .fab.fab-bug-report--embedded {
+    padding: 0.75rem 1.1rem;
+  }
+
+  .fab-problem-report {
+    left: 0.75rem !important;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0.6rem 0.85rem !important;
+  }
+}
+
+.fab-problem-report {
+  position: fixed;
+  z-index: 45;
+  left: 1rem;
+  bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.1rem;
+  background: #FF6B4A;
+  color: #fff;
+  box-shadow: 0 14px 32px -12px rgba(255, 107, 74, 0.5);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.875rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab-problem-report:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -12px rgba(255, 107, 74, 0.6);
+}
+
+.fab-problem-report:active {
+  transform: scale(0.97);
+}
+
+@media print {
+  .fab-problem-report {
+    display: none !important;
+  }
+}
+
+.legal-document-body {
+  color: #2f3b67;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.legal-document-body p {
+  margin: 0 0 0.9rem;
+}
+
+.legal-document-body ol,
+.legal-document-body ul {
+  margin: 0 0 1rem;
+  padding-inline-start: 1.25rem;
+}
+
+.legal-document-body li {
+  margin: 0 0 0.75rem;
+}
+
+.legal-document-body strong {
+  color: #2f3b67;
+  font-weight: 700;
+}
+
+.legal-document-body a {
+  color: #10b7c6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

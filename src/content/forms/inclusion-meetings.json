@@ -1,0 +1,24 @@
+{
+  "id": "inclusion-meetings",
+  "title": "תיעוד ישיבות שילוב",
+  "folder": "תיעוד ישיבות שילוב",
+  "categoryFolder": "שילוב",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם מלא",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "row_table_staff-meetings",
+          "label": "ישיבות שילוב",
+          "type": "row-table"
+        }
+      ]
+    }
+  ]
+}

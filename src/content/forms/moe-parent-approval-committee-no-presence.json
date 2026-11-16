@@ -1,0 +1,260 @@
+{
+  "id": "moe-parent-approval-committee-no-presence",
+  "title": "אישור הורים לוועדת אפיון וזכאות ללא נוכחות הורים",
+  "folder": "אישור הורים לוועדת אפיון וזכאות ללא נוכחות הורים",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "סיכום דיון במסגרת החינוכית והסכמת ההורים לקיום ועדת זכאות ואפיון בנוכחות חברי הוועדה בלבד",
+          "type": "static"
+        },
+        {
+          "key": "purpose_note",
+          "label": "דיון זה יתקיים במקרים שבהם התלמיד מופנה לוועדה לצורך חידוש זכאותו, כאשר ההורים מודעים לאפיון המוגבלות ומבקשים את המשך הלימודים באותו סוג מסגרת ועם אותו היקף של הסל האישי.",
+          "type": "static"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "district",
+          "label": "מחוז"
+        }
+      ],
+      "title": "כותרת"
+    },
+    {
+      "fields": [
+        {
+          "key": "first_name",
+          "label": "שם פרטי"
+        },
+        {
+          "key": "last_name",
+          "label": "שם משפחה"
+        },
+        {
+          "key": "id_number",
+          "label": "מס' תעודת זהות"
+        },
+        {
+          "key": "birth_date",
+          "label": "תאריך הלידה",
+          "type": "date"
+        },
+        {
+          "key": "gender",
+          "label": "מין",
+          "type": "select",
+          "options": [
+            {
+              "value": "male",
+              "label": "זכר"
+            },
+            {
+              "value": "female",
+              "label": "נקבה"
+            }
+          ]
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "marital_status",
+          "label": "המצב המשפחתי"
+        },
+        {
+          "key": "home_address",
+          "label": "הכתובת הפרטית"
+        },
+        {
+          "key": "parent1_name",
+          "label": "שם הורה 1"
+        },
+        {
+          "key": "parent1_phone",
+          "label": "טלפון הורה 1"
+        },
+        {
+          "key": "parent2_name",
+          "label": "שם הורה 2"
+        },
+        {
+          "key": "parent2_phone",
+          "label": "טלפון הורה 2"
+        },
+        {
+          "key": "guardian_name",
+          "label": "שם האפוטרופוס (אם רלוונטי)"
+        }
+      ],
+      "title": "פרטי ההורים"
+    },
+    {
+      "fields": [
+        {
+          "key": "school_name",
+          "label": "שם המוסד שבו התלמיד לומד"
+        },
+        {
+          "key": "school_code",
+          "label": "סמל המוסד"
+        },
+        {
+          "key": "school_type",
+          "label": "סוג המוסד",
+          "type": "select",
+          "options": [
+            {
+              "value": "regular",
+              "label": "חינוך רגיל"
+            },
+            {
+              "value": "special",
+              "label": "חינוך מיוחד"
+            }
+          ]
+        },
+        {
+          "key": "class_type",
+          "label": "סוג הגן / הכיתה",
+          "type": "select",
+          "options": [
+            {
+              "value": "regular",
+              "label": "גן / כיתה רגיל/ה"
+            },
+            {
+              "value": "special_class",
+              "label": "כיתת חנ\"מ"
+            },
+            {
+              "value": "special_kindergarten",
+              "label": "גן לחינוך מיוחד"
+            },
+            {
+              "value": "special_school",
+              "label": "כיתה בבית ספר לחינוך מיוחד"
+            }
+          ]
+        },
+        {
+          "key": "class_characterization",
+          "label": "אפיון הכיתה"
+        },
+        {
+          "key": "class_level",
+          "label": "דרגת הגן / הכיתה"
+        }
+      ],
+      "title": "המוסד החינוכי"
+    },
+    {
+      "fields": [
+        {
+          "key": "row_table_committee-attendees",
+          "label": "הנוכחים בדיון",
+          "type": "row-table"
+        },
+        {
+          "key": "discussion_summary",
+          "label": "מהלך הדיון וההחלטה",
+          "type": "textarea",
+          "rows": 6
+        },
+        {
+          "key": "principal_sign",
+          "label": "חתימת מנהל המוסד החינוכי",
+          "type": "signature"
+        }
+      ],
+      "title": "נוכחים בדיון והחלטה"
+    },
+    {
+      "fields": [
+        {
+          "key": "consent_intro",
+          "label": "אנו, הורי התלמיד/ה, מאשרים קיום דיון בוועדת זכאות ואפיון ללא נוכחותנו, מעודכנים באפיון המוגבלות של בננו/בתנו ומבקשים את המשך לימודיו/ה באותו סוג מסגרת ועם אותו היקף של הסל האישי.",
+          "type": "static"
+        },
+        {
+          "key": "consent_awareness",
+          "label": "אנו מודעים שהוועדה תקיים את הדיון בנוכחות חברי הוועדה בלבד, ללא נוכחות הצוות החינוכי וההורים, ונוכל להתחרט לפני כינוס הוועדה ולבקש שהדיון יתקיים בהשתתפותנו.",
+          "type": "static"
+        },
+        {
+          "key": "framework_choice",
+          "label": "סוג המסגרת לחינוך מיוחד שבחרנו",
+          "type": "select",
+          "options": [
+            {
+              "value": "special_school",
+              "label": "בית ספר לחינוך מיוחד"
+            },
+            {
+              "value": "special_class",
+              "label": "כיתת חינוך מיוחד בבית ספר לחינוך רגיל"
+            }
+          ]
+        },
+        {
+          "key": "parent1_sign_name",
+          "label": "שם הורה / אפוטרופוס 1"
+        },
+        {
+          "key": "parent1_sign",
+          "label": "חתימת הורה 1",
+          "type": "signature"
+        },
+        {
+          "key": "parent2_sign_name",
+          "label": "שם הורה / אפוטרופוס 2"
+        },
+        {
+          "key": "parent2_sign",
+          "label": "חתימת הורה 2",
+          "type": "signature"
+        }
+      ],
+      "title": "הסכמת ההורים"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "filled_at",
+      "school_year",
+      "district",
+      "first_name",
+      "last_name",
+      "id_number",
+      "birth_date",
+      "marital_status",
+      "home_address",
+      "parent1_name",
+      "parent1_phone",
+      "parent2_name",
+      "parent2_phone",
+      "guardian_name",
+      "school_name",
+      "school_code",
+      "class_characterization",
+      "class_level",
+      "discussion_summary",
+      "principal_sign",
+      "parent1_sign",
+      "parent2_sign"
+    ]
+  }
+}

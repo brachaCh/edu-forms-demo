@@ -1,0 +1,147 @@
+{
+  "id": "moe-psychologist-code-change",
+  "title": "המלצת פסיכולוג לשינוי קוד אפיון",
+  "folder": "המלצת פסיכולוג לשינוי קוד אפיון",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "moe_intro",
+          "label": "המלצת הפסיכולוג על שינוי של אפיון המוגבלות בוועדת זכאות ואפיון",
+          "type": "static"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "purpose_note",
+          "label": "מסמך זה יהיה בשימוש במקרים של תלמידים מחדשי זכאות שבהם אפשר, על פי שיקול דעת הפסיכולוג, לשנות את אפיון המוגבלות מעיכוב התפתחותי, תפקודי או שפתי, לאפיון מוגבלות של לקות למידה ללא עדכון של המסמך הקביל הקיים.",
+          "type": "static"
+        }
+      ],
+      "title": "כותרת"
+    },
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "id_number",
+          "label": "מס' ת\"ז"
+        },
+        {
+          "key": "school_name",
+          "label": "שם בית הספר"
+        },
+        {
+          "key": "class_level",
+          "label": "דרגת הכיתה"
+        },
+        {
+          "key": "committee_date",
+          "label": "תאריך הדיון בוועדה",
+          "type": "date"
+        }
+      ],
+      "title": "פרטי התלמיד/ה"
+    },
+    {
+      "fields": [
+        {
+          "key": "current_characterization",
+          "label": "אפיון המוגבלות של התלמיד",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "info_sources_intro",
+          "label": "קביעת אפיון המוגבלות תתבסס על מקורות המידע:",
+          "type": "static"
+        },
+        {
+          "key": "source_multidisciplinary",
+          "label": "מידע שעלה בדיון בצוות הרב-מקצועי במסגרת החינוכית",
+          "type": "checkbox"
+        },
+        {
+          "key": "source_referral_questionnaire",
+          "label": "שאלון ההפניה לוועדה הכולל מאפיינים של לקות למידה",
+          "type": "checkbox"
+        },
+        {
+          "key": "source_official_document",
+          "label": "מידע מהמסמך הקביל",
+          "type": "checkbox"
+        },
+        {
+          "key": "source_other",
+          "label": "מידע ממקורות נוספים (תצפית, ישיבות צוות, מפגש עם ההורים וכו')",
+          "type": "checkbox"
+        },
+        {
+          "key": "reasoning",
+          "label": "הנימוקים להחלטה",
+          "type": "textarea",
+          "rows": 6
+        }
+      ],
+      "title": "אפיון המוגבלות"
+    },
+    {
+      "fields": [
+        {
+          "key": "psychologist_name",
+          "label": "שם פסיכולוג בית הספר"
+        },
+        {
+          "key": "psychologist_status",
+          "label": "סטטוס הפסיכולוג"
+        },
+        {
+          "key": "psychologist_sign",
+          "label": "חתימת הפסיכולוג",
+          "type": "signature"
+        },
+        {
+          "key": "supervisor_name",
+          "label": "שם המדריך / מנהל השפ\"ח"
+        },
+        {
+          "key": "supervisor_sign",
+          "label": "חתימת המדריך",
+          "type": "signature"
+        }
+      ],
+      "title": "חתימות"
+    }
+  ],
+  "simplesign": {
+    "lockedKeys": [
+      "filled_at",
+      "full_name",
+      "id_number",
+      "school_name",
+      "class_level",
+      "committee_date",
+      "current_characterization",
+      "source_multidisciplinary",
+      "source_referral_questionnaire",
+      "source_official_document",
+      "source_other",
+      "reasoning",
+      "psychologist_name",
+      "psychologist_status",
+      "psychologist_sign",
+      "supervisor_name",
+      "supervisor_sign"
+    ]
+  }
+}

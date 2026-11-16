@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מיפוי שדות מתוה → SimpleSign</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fff;
+      --ink: #1c1915;
+      --muted: #5c574e;
+      --line: #e4dfd5;
+      --accent: #1f4e79;
+      --accent-soft: #e8f0f7;
+      --code-bg: #f0ece4;
+      --warn: #8a4b12;
+      --warn-bg: #f8efe4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Assistant", "Heebo", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+    header {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px 28px 22px;
+      margin-bottom: 20px;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; color: var(--accent); }
+    h2 { margin: 0 0 6px; font-size: 22px; color: var(--accent); }
+    h3 { margin: 28px 0 10px; font-size: 16px; }
+    p { margin: 0 0 10px; color: var(--muted); }
+    .meta { font-size: 13px; color: var(--muted); }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--bg);
+      padding: 10px 0;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 14px;
+    }
+    nav a:hover { background: var(--accent-soft); }
+    .box {
+      background: var(--accent-soft);
+      border: 1px solid #c9d8e6;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 14px 0 0;
+      color: var(--ink);
+      font-size: 14.5px;
+    }
+    .box strong { color: var(--accent); }
+    .note {
+      background: var(--warn-bg);
+      border: 1px solid #ead7c0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 0 0 14px;
+      color: var(--warn);
+      font-size: 14px;
+    }
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+    .file { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: right;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f0ea;
+      font-weight: 650;
+      position: sticky;
+      top: 48px;
+    }
+    tr:nth-child(even) td { background: #faf8f4; }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      direction: ltr;
+      unicode-bidi: isolate;
+      white-space: nowrap;
+    }
+    .type {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 12.5px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+    .t-text { background: #ececec; color: #333; }
+    .t-phone { background: #e4f3ea; color: #1d6b3a; }
+    .t-date { background: #e8f0f7; color: #1f4e79; }
+    .t-check { background: #f3e8f7; color: #6b2d86; }
+    .t-staff { background: #fff3d6; color: #8a5a00; }
+    .t-parent { background: #fde8e4; color: #9b2c16; }
+    .t-none { background: #eee; color: #777; }
+    .t-email { background: #e4eef8; color: #1a4a73; }
+    footer { color: var(--muted); font-size: 13px; padding: 8px 4px; }
+    @media print {
+      body { background: #fff; }
+      nav, .copy-hint { display: none; }
+      header, section { border: none; padding: 0; margin: 0 0 24px; }
+      th { position: static; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>מיפוי שדות מתוה → SimpleSign</h1>
+      <p>מדריך לסימון שדות בתבניות. לכל שדה: השם במתוה, המפתח שחייבים לכתוב ב-SimpleSign, מה מופיע ב-PDF, ואיזה סוג לבחור מהרשימה.</p>
+      <div class="box">
+        <strong>כלל זהב:</strong> ב-key / label של כל שדה ב-SimpleSign כותבים <strong>בדיוק</strong> את המפתח (עמודה שנייה), באנגלית, בלי רווחים מיותרים.<br>
+        «חתימה שלי (בעל העסק)» = חתימת צוות בחשבון בית הספר. <strong>לא</strong> חתימת הורים.<br>
+        לחתימת הורים: קודם «הוספת חותם נוסף», ואז ממקמים את שדה החתימה שלו. אותו הורה בשני מקומות = «עוד מקום לאותה חתימה».<br>
+        בחירה בין אפשרויות (מין, סוג מסגרת, מגזר, כן/לא): תיבת סימון נפרדת לכל אפשרות, עם המפתח <code>שם_שדה_ערך</code>. רק הנבחרת נשלחת כ-V. שאלון הפניה לגן כולל שדה אימייל (<code>email</code>).
+      </div>
+    </header>
+
+    <nav>
+      <a href="#approval">1. אישור הורים ללא נוכחות</a>
+      <a href="#exhaust">2. מיצוי אפשרויות</a>
+      <a href="#inclusion">3. הכלה (מתוה בלבד)</a>
+      <a href="#appendix8">4. נספח 8</a>
+      <a href="#psych">5. המלצת פסיכולוג לשינוי קוד אפיון</a>
+      <a href="#referral-kg">6. שאלון הפניה (גן)</a>
+      <a href="#legend">מקרא סוגים</a>
+    </nav>
+
+    <section id="approval">
+      <h2>1. אישור הורים לוועדת השמה ללא נוכחות הורים</h2>
+      <div class="file">תבנית: parent-approval-without-attendance.docx</div>
+      <div class="note">בפסקת ההסכמה יש גם ריק ל«הורי התלמיד/ה». אין במתוה שדה שם-מלא — אפשר לשים first_name ו-last_name, או id_number פעם שנייה עם אותו מפתח. טבלת הנוכחים: 4 שורות (0–3) × 2 עמודות (תפקיד, שם) — לא בלוק אחד. בחירות כמו מין / סוג מוסד / סוג כיתה / סוג מסגרת: תיבת סימון לכל אפשרות; רק הנבחרת נשלחת.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>תאריך</td><td><code>filled_at</code></td><td>תאריך:</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שנה"ל</td><td><code>school_year</code></td><td>שנה"ל:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מחוז</td><td><code>district</code></td><td>מחוז:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם פרטי</td><td><code>first_name</code></td><td>השם הפרטי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם משפחה</td><td><code>last_name</code></td><td>שם המשפחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' תעודת זהות</td><td><code>id_number</code></td><td>מס' תעודת הזהות + שוב בפסקת ההסכמה (מס' ת"ז)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך הלידה</td><td><code>birth_date</code></td><td>תאריך הלידה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>מין — זכר</td><td><code>gender_male</code></td><td>☐ זכר</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מין — נקבה</td><td><code>gender_female</code></td><td>☐ נקבה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>המצב המשפחתי</td><td><code>marital_status</code></td><td>המצב המשפחתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הכתובת הפרטית</td><td><code>home_address</code></td><td>הכתובת הפרטית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם הורה 1</td><td><code>parent1_name</code></td><td>שם ההורה: (שורה ראשונה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>טלפון הורה 1</td><td><code>parent1_phone</code></td><td>מס' הטלפון (ליד הורה 1)</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>שם הורה 2</td><td><code>parent2_name</code></td><td>שם ההורה: (שורה שנייה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>טלפון הורה 2</td><td><code>parent2_phone</code></td><td>מס' הטלפון (ליד הורה 2)</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>שם האפוטרופוס (אם רלוונטי)</td><td><code>guardian_name</code></td><td>שם האפוטרופוס:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם המוסד שבו התלמיד לומד</td><td><code>school_name</code></td><td>שם המוסד שבו התלמיד לומד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סמל המוסד</td><td><code>school_code</code></td><td>סמל המוסד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג המוסד — חינוך רגיל</td><td><code>school_type_regular</code></td><td>☐ חינוך רגיל</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המוסד — חינוך מיוחד</td><td><code>school_type_special</code></td><td>☐ חינוך מיוחד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג הגן / הכיתה — גן/כיתה רגיל/ה</td><td><code>class_type_regular</code></td><td>☐ גן/כיתה רגיל/ה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג הגן / הכיתה — כיתת חנ"מ</td><td><code>class_type_special_class</code></td><td>☐ כיתת חנ"מ</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג הגן / הכיתה — גן לחינוך מיוחד</td><td><code>class_type_special_kindergarten</code></td><td>☐ גן לחינוך מיוחד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג הגן / הכיתה — כיתה בבית ספר לחינוך מיוחד</td><td><code>class_type_special_school</code></td><td>☐ כיתה בבית ספר לחינוך מיוחד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אפיון הכיתה</td><td><code>class_characterization</code></td><td>אפיון הכיתה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>דרגת הגן / הכיתה</td><td><code>class_level</code></td><td>דרגת הגן/הכיתה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 0 תפקיד</td><td><code>tbl_committee-attendees_r0_role</code></td><td>טבלת הנוכחים, שורה 1, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 0 שם</td><td><code>tbl_committee-attendees_r0_name</code></td><td>טבלת הנוכחים, שורה 1, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 1 תפקיד</td><td><code>tbl_committee-attendees_r1_role</code></td><td>טבלת הנוכחים, שורה 2, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 1 שם</td><td><code>tbl_committee-attendees_r1_name</code></td><td>טבלת הנוכחים, שורה 2, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 2 תפקיד</td><td><code>tbl_committee-attendees_r2_role</code></td><td>טבלת הנוכחים, שורה 3, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 2 שם</td><td><code>tbl_committee-attendees_r2_name</code></td><td>טבלת הנוכחים, שורה 3, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 3 תפקיד</td><td><code>tbl_committee-attendees_r3_role</code></td><td>טבלת הנוכחים, שורה 4, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 3 שם</td><td><code>tbl_committee-attendees_r3_name</code></td><td>טבלת הנוכחים, שורה 4, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מהלך הדיון וההחלטה</td><td><code>discussion_summary</code></td><td>מהלך הדיון וההחלטה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת מנהל המוסד החינוכי</td><td><code>principal_sign</code></td><td>חתימת מנהל המוסד החינוכי</td><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td></tr>
+          <tr><td>סוג המסגרת — בית ספר לחינוך מיוחד</td><td><code>framework_choice_special_school</code></td><td>☐ בית ספר לחינוך מיוחד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — כיתת חינוך מיוחד בבית ספר לחינוך רגיל</td><td><code>framework_choice_special_class</code></td><td>☐ כיתת חינוך מיוחד בבית ספר לחינוך רגיל</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>שם הורה / אפוטרופוס 1</td><td><code>parent1_sign_name</code></td><td>שם ההורה/האפוטרופוס (שמאל, מעל חתימה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הורה 1</td><td><code>parent1_sign</code></td><td>חתימה (הורה 1)</td><td><span class="type t-parent">חתימת חותם הורה</span></td></tr>
+          <tr><td>שם הורה / אפוטרופוס 2</td><td><code>parent2_sign_name</code></td><td>שם ההורה/האפוטרופוס (ימין, מעל חתימה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הורה 2</td><td><code>parent2_sign</code></td><td>חתימה (הורה 2)</td><td><span class="type t-parent">חתימת חותם הורה</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="exhaust">
+      <h2>2. מיצוי אפשרויות</h2>
+      <div class="file">תבנית: mitzuy-efsharuyot.docx</div>
+      <div class="note">לכל שורת תמיכה ב-PDF יש עמודות «פרטני/קבוצתי» ו«משך ההתערבות». עמודת «סוג» קיימת רק בשורות: שעות מסל שילוב והכלה, שעות פרטניות, תקציב שקלי, ואחר — לא בשורות אל"ה, יועץ/ת והתערבות פסיכולוגית. פרטני/קבוצתי נשלח כטקסט («פרטני» או «קבוצתי»). אין בטופס זה חתימת הורים. «נכתבה תכנית אישית» = שתי תיבות סימון (כן / לא); רק הנבחרת נשלחת.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>שם בי"ס</td><td><code>school_name</code></td><td>שם בי"ס :</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סמל מוסד</td><td><code>school_code</code></td><td>סמל מוסד:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם המחנך/ת</td><td><code>homeroom_teacher</code></td><td>שם המחנכ/ת:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם מלא</td><td><code>full_name</code></td><td>אין שדה אחד — ב-PDF יש שם פרטי + שם משפחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם פרטי</td><td><code>first_name</code></td><td>שם פרטי:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם משפחה</td><td><code>last_name</code></td><td>שם משפחה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>ת.ז</td><td><code>id_number</code></td><td>ת.ז :</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>דרגת כיתה בשנה הנוכחית</td><td><code>current_class_level</code></td><td>דרגת כתה בשנה הנוכחית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נכתבה תכנית אישית — כן</td><td><code>has_personal_plan_yes</code></td><td>☐ כן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>נכתבה תכנית אישית — לא</td><td><code>has_personal_plan_no</code></td><td>☐ לא</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>התאמות שניתנו לתלמיד במהלך הלמידה עם הכיתה</td><td><code>accommodations</code></td><td>ניתנו התאמות לתלמיד במהלך הלמידה עם הכתה … פרט:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חודשי הפעלה בשנה הנוכחית</td><td><code>intervention_current_year_months</code></td><td>הופעלה במשך ___ חודשים בשנת הלימודים הנוכחית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חודשי הפעלה בשנה קודמת</td><td><code>intervention_previous_year_months</code></td><td>ובמשך ___ חודשים בשנה הלימודים הקודמת</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שעות מסל שילוב והכלה: טיפול / הוראה</td><td><code>support_integration_hours</code></td><td>שעות מסל שילוב והכלה: טיפול/ הוראה (עמודה ראשונה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג — שעות מסל שילוב והכלה</td><td><code>support_integration_hours_kind</code></td><td>סוג (אותה שורה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — שעות מסל שילוב והכלה</td><td><code>support_integration_hours_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — שעות מסל שילוב והכלה</td><td><code>support_integration_hours_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שעות פרטניות בתחום רגשי / הוראה / חברתי</td><td><code>support_individual_hours</code></td><td>שעות פרטניות בתחום רגשי הוראה/ חברתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג — שעות פרטניות</td><td><code>support_individual_hours_kind</code></td><td>סוג (אותה שורה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — שעות פרטניות</td><td><code>support_individual_hours_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — שעות פרטניות</td><td><code>support_individual_hours_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שעות אל"ה (על יסודי)</td><td><code>support_ale_hours</code></td><td>שעות אל"ה (על יסודי)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — שעות אל"ה</td><td><code>support_ale_hours_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — שעות אל"ה</td><td><code>support_ale_hours_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שיחות יועץ/ת</td><td><code>support_counselor</code></td><td>שיחות יועץ/ת</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — שיחות יועץ/ת</td><td><code>support_counselor_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — שיחות יועץ/ת</td><td><code>support_counselor_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התערבות פסיכולוגית</td><td><code>support_psychological</code></td><td>התערבות פסיכולוגית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — התערבות פסיכולוגית</td><td><code>support_psychological_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — התערבות פסיכולוגית</td><td><code>support_psychological_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מענה מהתקציב השקלי (רגשי / לימודי / חברתי)</td><td><code>support_shekel_budget</code></td><td>מענה מהתקציב השקלי בתחום רגשי/ לימודי/ חברתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג — תקציב שקלי</td><td><code>support_shekel_budget_kind</code></td><td>סוג (אותה שורה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — תקציב שקלי</td><td><code>support_shekel_budget_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — תקציב שקלי</td><td><code>support_shekel_budget_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אחר (תומכי הוראה, מרחבי הכלה, תכניות וכדומה)</td><td><code>support_other</code></td><td>אחר (תומכי הוראה, מרחבי הכלה, תכניות וכדומה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג — אחר</td><td><code>support_other_kind</code></td><td>סוג (אותה שורה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטני/קבוצתי — אחר</td><td><code>support_other_setting</code></td><td>פרטני/קבוצתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>משך — אחר</td><td><code>support_other_duration</code></td><td>משך ההתערבות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עמדת ההורים</td><td><code>parents_position</code></td><td>עמדת ההורים:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עמדת המנהל/ת</td><td><code>principal_position</code></td><td>עמדת המנהל/ת:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>המלצת / החלטת המפקח/ת</td><td><code>inspector_recommendation</code></td><td>המלצת/ החלטת המפקח/ת:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם המנהל/ת</td><td><code>principal_name</code></td><td>שם וחתימת המנהל/ת: (חלק השם)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת המנהל/ת</td><td><code>principal_sign</code></td><td>שם וחתימת המנהל/ת: (חלק החתימה)</td><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td></tr>
+          <tr><td>שם המפקח/ת הכולל/ת</td><td><code>inspector_name</code></td><td>שם וחתימת המפקח/ת הכולל/ת: (חלק השם)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת המפקח/ת</td><td><code>inspector_sign</code></td><td>שם וחתימת המפקח/ת הכולל/ת: (חלק החתימה)</td><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td></tr>
+          <tr><td>תאריך</td><td><code>filled_at</code></td><td>תאריך:</td><td><span class="type t-date">תאריך</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="inclusion">
+      <h2>3. הכלה — חתימה במתוה בלבד</h2>
+      <div class="file">טופס במתוה: moe-inclusion-plan · לא נשלח ל-SimpleSign</div>
+      <div class="note">טופס ההכלה נחתם במתוה: מחנך/ת ומנהל/ת חותמים בטופס או מקבלים קישור מייל+OTP. אין כפתור SimpleSign ואין צורך לסמן תבנית. הטבלה למטה היא מיפוי שדות של הטופס בלבד.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>שם התלמיד/ה</td><td><code>full_name</code></td><td>שם התלמיד (עמוד 1) / שם התלמיד/ה (עמוד תיעוד)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><code>class_seat_physical</code></td><td>בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><code>class_seat_physical_date</code></td><td>תאריך — בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><code>class_seat_physical_notes</code></td><td>הערות — בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><code>class_seat_social</code></td><td>בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><code>class_seat_social_date</code></td><td>תאריך — בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><code>class_seat_social_notes</code></td><td>הערות — בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><code>class_attention_support</code></td><td>סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><code>class_attention_support_date</code></td><td>תאריך — סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><code>class_attention_support_notes</code></td><td>הערות — סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הורים</td><td><code>ref_parents</code></td><td>הורים</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הורים</td><td><code>ref_parents_date</code></td><td>תאריך — הורים</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הורים</td><td><code>ref_parents_notes</code></td><td>הערות — הורים</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>יועצת</td><td><code>ref_counselor</code></td><td>יועצת</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — יועצת</td><td><code>ref_counselor_date</code></td><td>תאריך — יועצת</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — יועצת</td><td><code>ref_counselor_notes</code></td><td>הערות — יועצת</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פסיכולוגית</td><td><code>ref_psychologist</code></td><td>פסיכולוגית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — פסיכולוגית</td><td><code>ref_psychologist_date</code></td><td>תאריך — פסיכולוגית</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — פסיכולוגית</td><td><code>ref_psychologist_notes</code></td><td>הערות — פסיכולוגית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>קלינאית תקשורת</td><td><code>ref_speech</code></td><td>קלינאית תקשורת</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — קלינאית תקשורת</td><td><code>ref_speech_date</code></td><td>תאריך — קלינאית תקשורת</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — קלינאית תקשורת</td><td><code>ref_speech_notes</code></td><td>הערות — קלינאית תקשורת</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מרפאה בעיסוק</td><td><code>ref_occupational</code></td><td>מרפאה בעיסוק</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מרפאה בעיסוק</td><td><code>ref_occupational_date</code></td><td>תאריך — מרפאה בעיסוק</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מרפאה בעיסוק</td><td><code>ref_occupational_notes</code></td><td>הערות — מרפאה בעיסוק</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חונכות</td><td><code>ref_mentoring</code></td><td>חונכות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — חונכות</td><td><code>ref_mentoring_date</code></td><td>תאריך — חונכות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — חונכות</td><td><code>ref_mentoring_notes</code></td><td>הערות — חונכות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אבחון דידקטי</td><td><code>ref_didactic</code></td><td>אבחון דידקטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — אבחון דידקטי</td><td><code>ref_didactic_date</code></td><td>תאריך — אבחון דידקטי</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — אבחון דידקטי</td><td><code>ref_didactic_notes</code></td><td>הערות — אבחון דידקטי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מטפלת רגשית</td><td><code>ref_emotional</code></td><td>מטפלת רגשית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מטפלת רגשית</td><td><code>ref_emotional_date</code></td><td>תאריך — מטפלת רגשית</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מטפלת רגשית</td><td><code>ref_emotional_notes</code></td><td>הערות — מטפלת רגשית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>גורמי רווחה וגורמים בקהילה</td><td><code>ref_welfare</code></td><td>גורמי רווחה וגורמים בקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — גורמי רווחה וגורמים בקהילה</td><td><code>ref_welfare_date</code></td><td>תאריך — גורמי רווחה וגורמים בקהילה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — גורמי רווחה וגורמים בקהילה</td><td><code>ref_welfare_notes</code></td><td>הערות — גורמי רווחה וגורמים בקהילה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שעות תמיכה במימון הרשות המקומית</td><td><code>ref_municipality_hours</code></td><td>שעות תמיכה במימון הרשות המקומית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — שעות תמיכה במימון הרשות המקומית</td><td><code>ref_municipality_hours_date</code></td><td>תאריך — שעות תמיכה במימון הרשות המקומית</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — שעות תמיכה במימון הרשות המקומית</td><td><code>ref_municipality_hours_notes</code></td><td>הערות — שעות תמיכה במימון הרשות המקומית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תוכניות כמו הגנה לילדים בסיכון</td><td><code>ref_risk_programs</code></td><td>תוכניות כמו הגנה לילדים בסיכון</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תוכניות כמו הגנה לילדים בסיכון</td><td><code>ref_risk_programs_date</code></td><td>תאריך — תוכניות כמו הגנה לילדים בסיכון</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תוכניות כמו הגנה לילדים בסיכון</td><td><code>ref_risk_programs_notes</code></td><td>הערות — תוכניות כמו הגנה לילדים בסיכון</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><code>hw_parent_contact</code></td><td>שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><code>hw_parent_contact_date</code></td><td>תאריך — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><code>hw_parent_contact_notes</code></td><td>הערות — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מעקב אחר רישום המטלות שניתנו ביומן</td><td><code>hw_diary_followup</code></td><td>מעקב אחר רישום המטלות שניתנו ביומן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מעקב אחר רישום המטלות שניתנו ביומן</td><td><code>hw_diary_followup_date</code></td><td>תאריך — מעקב אחר רישום המטלות שניתנו ביומן</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מעקב אחר רישום המטלות שניתנו ביומן</td><td><code>hw_diary_followup_notes</code></td><td>הערות — מעקב אחר רישום המטלות שניתנו ביומן</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><code>hw_adapt_homework</code></td><td>התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><code>hw_adapt_homework_date</code></td><td>תאריך — התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><code>hw_adapt_homework_notes</code></td><td>הערות — התאמת שיעורי הבית ליכולותיו של התלמיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><code>hw_dictation</code></td><td>מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><code>hw_dictation_date</code></td><td>תאריך — מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><code>hw_dictation_notes</code></td><td>הערות — מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><code>hw_reduce_demands</code></td><td>הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><code>hw_reduce_demands_date</code></td><td>תאריך — הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><code>hw_reduce_demands_notes</code></td><td>הערות — הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><code>hw_adapt_worksheets</code></td><td>התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><code>hw_adapt_worksheets_date</code></td><td>תאריך — התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><code>hw_adapt_worksheets_notes</code></td><td>הערות — התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תווך והדרכה בביצוע דפי עבודה</td><td><code>hw_mediate_worksheets</code></td><td>תווך והדרכה בביצוע דפי עבודה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תווך והדרכה בביצוע דפי עבודה</td><td><code>hw_mediate_worksheets_date</code></td><td>תאריך — תווך והדרכה בביצוע דפי עבודה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תווך והדרכה בביצוע דפי עבודה</td><td><code>hw_mediate_worksheets_notes</code></td><td>הערות — תווך והדרכה בביצוע דפי עבודה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><code>hw_board_copy</code></td><td>עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><code>hw_board_copy_date</code></td><td>תאריך — עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><code>hw_board_copy_notes</code></td><td>הערות — עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><code>learn_parent_prep</code></td><td>שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><code>learn_parent_prep_date</code></td><td>תאריך — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><code>learn_parent_prep_notes</code></td><td>הערות — שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מתן הוראות ברורות</td><td><code>learn_clear_instructions</code></td><td>מתן הוראות ברורות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מתן הוראות ברורות</td><td><code>learn_clear_instructions_date</code></td><td>תאריך — מתן הוראות ברורות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מתן הוראות ברורות</td><td><code>learn_clear_instructions_notes</code></td><td>הערות — מתן הוראות ברורות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הסבר או חזרה על ההוראות</td><td><code>learn_repeat_instructions</code></td><td>הסבר או חזרה על ההוראות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הסבר או חזרה על ההוראות</td><td><code>learn_repeat_instructions_date</code></td><td>תאריך — הסבר או חזרה על ההוראות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הסבר או חזרה על ההוראות</td><td><code>learn_repeat_instructions_notes</code></td><td>הערות — הסבר או חזרה על ההוראות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מיקוד תשומת לב התלמיד בהוראות</td><td><code>learn_focus_instructions</code></td><td>מיקוד תשומת לב התלמיד בהוראות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מיקוד תשומת לב התלמיד בהוראות</td><td><code>learn_focus_instructions_date</code></td><td>תאריך — מיקוד תשומת לב התלמיד בהוראות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מיקוד תשומת לב התלמיד בהוראות</td><td><code>learn_focus_instructions_notes</code></td><td>הערות — מיקוד תשומת לב התלמיד בהוראות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הצגת יחידות השיעור בכתב או בעל פה</td><td><code>learn_present_units</code></td><td>הצגת יחידות השיעור בכתב או בעל פה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הצגת יחידות השיעור בכתב או בעל פה</td><td><code>learn_present_units_date</code></td><td>תאריך — הצגת יחידות השיעור בכתב או בעל פה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הצגת יחידות השיעור בכתב או בעל פה</td><td><code>learn_present_units_notes</code></td><td>הערות — הצגת יחידות השיעור בכתב או בעל פה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><code>learn_mediate_lesson</code></td><td>תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><code>learn_mediate_lesson_date</code></td><td>תאריך — תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><code>learn_mediate_lesson_notes</code></td><td>הערות — תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><code>learn_keywords_board</code></td><td>כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><code>learn_keywords_board_date</code></td><td>תאריך — כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><code>learn_keywords_board_notes</code></td><td>הערות — כתיבת מילות המפתח או משפטי המפתח על הלוח</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><code>learn_explain_concepts</code></td><td>הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><code>learn_explain_concepts_date</code></td><td>תאריך — הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><code>learn_explain_concepts_notes</code></td><td>הערות — הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><code>learn_adapt_questions</code></td><td>התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><code>learn_adapt_questions_date</code></td><td>תאריך — התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><code>learn_adapt_questions_notes</code></td><td>הערות — התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מסירת עותק של המבחן כהכנה למבחן</td><td><code>test_prep_copy</code></td><td>מסירת עותק של המבחן כהכנה למבחן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מסירת עותק של המבחן כהכנה למבחן</td><td><code>test_prep_copy_date</code></td><td>תאריך — מסירת עותק של המבחן כהכנה למבחן</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מסירת עותק של המבחן כהכנה למבחן</td><td><code>test_prep_copy_notes</code></td><td>הערות — מסירת עותק של המבחן כהכנה למבחן</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הפחתת חומר</td><td><code>test_reduce_material</code></td><td>הפחתת חומר</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הפחתת חומר</td><td><code>test_reduce_material_date</code></td><td>תאריך — הפחתת חומר</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הפחתת חומר</td><td><code>test_reduce_material_notes</code></td><td>הערות — הפחתת חומר</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הפחתת משימות</td><td><code>test_reduce_tasks</code></td><td>הפחתת משימות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הפחתת משימות</td><td><code>test_reduce_tasks_date</code></td><td>תאריך — הפחתת משימות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הפחתת משימות</td><td><code>test_reduce_tasks_notes</code></td><td>הערות — הפחתת משימות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הקראת שאלון המבחן</td><td><code>test_read_aloud</code></td><td>הקראת שאלון המבחן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הקראת שאלון המבחן</td><td><code>test_read_aloud_date</code></td><td>תאריך — הקראת שאלון המבחן</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הקראת שאלון המבחן</td><td><code>test_read_aloud_notes</code></td><td>הערות — הקראת שאלון המבחן</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>ניסוח שונה של שאלות</td><td><code>test_rephrase</code></td><td>ניסוח שונה של שאלות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — ניסוח שונה של שאלות</td><td><code>test_rephrase_date</code></td><td>תאריך — ניסוח שונה של שאלות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — ניסוח שונה של שאלות</td><td><code>test_rephrase_notes</code></td><td>הערות — ניסוח שונה של שאלות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בחינה בעל פה</td><td><code>test_oral</code></td><td>בחינה בעל פה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — בחינה בעל פה</td><td><code>test_oral_date</code></td><td>תאריך — בחינה בעל פה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — בחינה בעל פה</td><td><code>test_oral_notes</code></td><td>הערות — בחינה בעל פה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הכתבת התשובות</td><td><code>test_dictate</code></td><td>הכתבת התשובות</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הכתבת התשובות</td><td><code>test_dictate_date</code></td><td>תאריך — הכתבת התשובות</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הכתבת התשובות</td><td><code>test_dictate_notes</code></td><td>הערות — הכתבת התשובות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תוספת זמן</td><td><code>test_extra_time</code></td><td>תוספת זמן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תוספת זמן</td><td><code>test_extra_time_date</code></td><td>תאריך — תוספת זמן</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תוספת זמן</td><td><code>test_extra_time_notes</code></td><td>הערות — תוספת זמן</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><code>beh_behavior_plan</code></td><td>תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><code>beh_behavior_plan_date</code></td><td>תאריך — תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><code>beh_behavior_plan_notes</code></td><td>הערות — תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מניעת עימותים ועקיפת מוקדי חיכוך</td><td><code>beh_avoid_conflict</code></td><td>מניעת עימותים ועקיפת מוקדי חיכוך</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מניעת עימותים ועקיפת מוקדי חיכוך</td><td><code>beh_avoid_conflict_date</code></td><td>תאריך — מניעת עימותים ועקיפת מוקדי חיכוך</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מניעת עימותים ועקיפת מוקדי חיכוך</td><td><code>beh_avoid_conflict_notes</code></td><td>הערות — מניעת עימותים ועקיפת מוקדי חיכוך</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><code>beh_consult</code></td><td>היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><code>beh_consult_date</code></td><td>תאריך — היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><code>beh_consult_notes</code></td><td>הערות — היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><code>beh_refer_parents</code></td><td>הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><code>beh_refer_parents_date</code></td><td>תאריך — הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><code>beh_refer_parents_notes</code></td><td>הערות — הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><code>emo_verbal_praise</code></td><td>חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><code>emo_verbal_praise_date</code></td><td>תאריך — חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><code>emo_verbal_praise_notes</code></td><td>הערות — חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><code>emo_personal_talks</code></td><td>יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><code>emo_personal_talks_date</code></td><td>תאריך — יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><code>emo_personal_talks_notes</code></td><td>הערות — יצירת קשר אישי ושיחות פרטניות עם התלמיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><code>emo_social_status</code></td><td>תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><code>emo_social_status_date</code></td><td>תאריך — תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><code>emo_social_status_notes</code></td><td>הערות — תשומת לב למעמד החברתי והתערבות במידת הצורך</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><code>emo_encourage_effort</code></td><td>עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><code>emo_encourage_effort_date</code></td><td>תאריך — עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><code>emo_encourage_effort_notes</code></td><td>הערות — עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><code>emo_avoid_pressure</code></td><td>הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><code>emo_avoid_pressure_date</code></td><td>תאריך — הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><code>emo_avoid_pressure_notes</code></td><td>הערות — הימנעות מלחץ המופנה ישירות לתלמיד המתקשה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><code>emo_success_roles</code></td><td>מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><code>emo_success_roles_date</code></td><td>תאריך — מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><code>emo_success_roles_notes</code></td><td>הערות — מתן תפקידים שיסייעו לילד לחוות הצלחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שילוב בקבוצת חברים</td><td><code>emo_peer_group</code></td><td>שילוב בקבוצת חברים</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — שילוב בקבוצת חברים</td><td><code>emo_peer_group_date</code></td><td>תאריך — שילוב בקבוצת חברים</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — שילוב בקבוצת חברים</td><td><code>emo_peer_group_notes</code></td><td>הערות — שילוב בקבוצת חברים</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><code>emo_recess_mediate</code></td><td>תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><code>emo_recess_mediate_date</code></td><td>תאריך — תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><code>emo_recess_mediate_notes</code></td><td>הערות — תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><code>alt_content_over_spelling</code></td><td>בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><code>alt_content_over_spelling_date</code></td><td>תאריך — בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><code>alt_content_over_spelling_notes</code></td><td>הערות — בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><code>alt_descriptive_grade</code></td><td>מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך — מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><code>alt_descriptive_grade_date</code></td><td>תאריך — מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>הערות — מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><code>alt_descriptive_grade_notes</code></td><td>הערות — מתן הערכה המתארת את ההישג — במקום ציון נמוך</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>כתה</td><td><code>class_name</code></td><td>כתה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם המחנכ/ת</td><td><code>homeroom_teacher</code></td><td>שם המחנכ/ת:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שנת הלימודים</td><td><code>school_year</code></td><td>שנת הלימודים:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>יעדי ההכלה</td><td><code>inclusion_goals</code></td><td>יעדי ההכלה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>במסגרת הכיתה</td><td><code>summary_classroom</code></td><td>סיכום הפעולות — במסגרת הכיתה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>במילוי חובות בית ספריות</td><td><code>summary_school_duties</code></td><td>סיכום הפעולות — במילוי חובות בית ספריות:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בתמיכה לימודית</td><td><code>summary_learning</code></td><td>סיכום הפעולות — בתמיכה לימודית:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בקשיי התנהגות</td><td><code>summary_behavior</code></td><td>סיכום הפעולות — בקשיי התנהגות:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פניה לגורמים נוספים מחוץ לבית הספר</td><td><code>summary_external</code></td><td>סיכום הפעולות — פניה לגורמים נוספים מחוץ לבית הספר:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הערכת המחנכ/ת בעקבות תוכנית ההכלה</td><td><code>teacher_evaluation</code></td><td>הערכת המחנכ/ת בעקבות תוכנית ההכלה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת המחנכ/ת</td><td><code>teacher_sign</code></td><td>חתימת המחנכ/ת</td><td>חתימה במתוה</td></tr>
+          <tr><td>חתימת המנהל/ת</td><td><code>principal_sign</code></td><td>חתימת המנהל/ת</td><td>חתימה במתוה</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="appendix8">
+      <h2>4. נספח 8 — המלצת פסיכולוג המסגרת החינוכית</h2>
+      <div class="file">תבנית: appendix-8.docx · טופס במתוה: moe-psychologist-recommendation</div>
+      <div class="note">אין בטופס זה חתימת הורים. פסיכולוג ומדריך/מנהל שפ"ח הם שני חותמים — «הוספת חותם נוסף» לכל אחד. אפיון המוגבלות: שלוש תיבות סימון, רק הנבחרת נשלחת. טבלת הנוכחים ב-PDF: 4 שורות × שם + תפקיד. בכותרת ה-PDF יש «תאריך» נפרד מ«תאריך קיום הדיון» — במתוה יש רק meeting_date (אפשר לשים אותו גם בכותרת).</div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>תאריך קיום הדיון</td><td><code>meeting_date</code></td><td>תאריך קיום הדיון: (+ אפשר גם «תאריך:» בכותרת)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שם התלמיד/ה</td><td><code>full_name</code></td><td>שם התלמיד/ה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' ת"ז</td><td><code>id_number</code></td><td>מס' ת"ז:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>בי"ס / הגן</td><td><code>school_or_kindergarten</code></td><td>ביה"ס/הגן:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>כיתה / דרגת גן</td><td><code>class_or_gan_level</code></td><td>כיתה/ דרגת גן:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 0 שם</td><td><code>tbl_meeting-attendees_r0_name</code></td><td>טבלת הנוכחים, שורה 1, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 0 תפקיד</td><td><code>tbl_meeting-attendees_r0_role</code></td><td>טבלת הנוכחים, שורה 1, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 1 שם</td><td><code>tbl_meeting-attendees_r1_name</code></td><td>טבלת הנוכחים, שורה 2, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 1 תפקיד</td><td><code>tbl_meeting-attendees_r1_role</code></td><td>טבלת הנוכחים, שורה 2, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 2 שם</td><td><code>tbl_meeting-attendees_r2_name</code></td><td>טבלת הנוכחים, שורה 3, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 2 תפקיד</td><td><code>tbl_meeting-attendees_r2_role</code></td><td>טבלת הנוכחים, שורה 3, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 3 שם</td><td><code>tbl_meeting-attendees_r3_name</code></td><td>טבלת הנוכחים, שורה 4, עמודה השם</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>נוכחים — שורה 3 תפקיד</td><td><code>tbl_meeting-attendees_r3_role</code></td><td>טבלת הנוכחים, שורה 4, עמודה התפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התלמיד/ה זקוק/ה למענים המותאמים לתלמיד עם</td><td><code>student_needs</code></td><td>מסתמן ש ________</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אפיון — לקות למידה (58)</td><td><code>characterization_type_learning_disability_58</code></td><td>☐ לקות למידה (58) — ניתן לציין מגיל 5</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אפיון — הפרעות התנהגותיות ורגשיות (55)</td><td><code>characterization_type_behavioral_emotional_55</code></td><td>☐ הפרעות התנהגותיות ורגשיות (55)</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אפיון — עיכוב התפתחותי (62)</td><td><code>characterization_type_developmental_delay_62</code></td><td>☐ עיכוב התפתחותי (62) — ניתן לציין עד גיל 9</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>שם הפסיכולוג/ית</td><td><code>psychologist_name</code></td><td>שם הפסיכולוג/ית:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סטטוס הפסיכולוג/ית</td><td><code>psychologist_status</code></td><td>סטטוס הפסיכולוג/ית:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הפסיכולוג/ית</td><td><code>psychologist_sign</code></td><td>חתימה: (ליד שם הפסיכולוג)</td><td><span class="type t-staff">חתימה של חותם נוסף</span></td></tr>
+          <tr><td>שם המדריך/ה או מנהל/ת השפ"ח</td><td><code>supervisor_name</code></td><td>שם המדריך/ה או מנהל/ת השפ"ח:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת המדריך/ה</td><td><code>supervisor_sign</code></td><td>חתימה: (ליד שם המדריך)</td><td><span class="type t-staff">חתימה של חותם נוסף</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="psych">
+      <h2>5. המלצת פסיכולוג לשינוי קוד אפיון</h2>
+      <div class="file">תבנית: psychologist-recommendation.docx</div>
+      <div class="note">ארבעת מקורות המידע הם תיבות סימון במתוה — יישלחו כ-V. אין בטופס זה חתימת הורים, רק פסיכולוג ומדריך/מנהל שפ"ח.</div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>תאריך</td><td><code>filled_at</code></td><td>תאריך:</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שם התלמיד</td><td><code>full_name</code></td><td>שם התלמיד:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' ת"ז</td><td><code>id_number</code></td><td>מס' ת"ז:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם בית הספר</td><td><code>school_name</code></td><td>שם בית הספר:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>דרגת הכיתה</td><td><code>class_level</code></td><td>דרגת הכיתה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך הדיון בוועדה</td><td><code>committee_date</code></td><td>תאריך הדיון בוועדה:</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>אפיון המוגבלות של התלמיד</td><td><code>current_characterization</code></td><td>אפיון המוגבלות של התלמיד ______ הוא לקות למידה…</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מידע שעלה בדיון בצוות הרב-מקצועי במסגרת החינוכית</td><td><code>source_multidisciplinary</code></td><td>מידע שעלה בדיון בצוות הרב-מקצועי במסגרת החינוכית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>שאלון ההפניה לוועדה הכולל מאפיינים של לקות למידה</td><td><code>source_referral_questionnaire</code></td><td>שאלון ההפניה לוועדה הכולל מאפיינים של לקות למידה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מידע מהמסמך הקביל</td><td><code>source_official_document</code></td><td>מידע מהמסמך הקביל</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מידע ממקורות נוספים</td><td><code>source_other</code></td><td>מידע ממקורות נוספים (תצפית, ישיבות צוות, מפגש עם ההורים וכו')</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>הנימוקים להחלטה</td><td><code>reasoning</code></td><td>הנימוקים להחלטה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם פסיכולוג בית הספר</td><td><code>psychologist_name</code></td><td>שם פסיכולוג בית הספר:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סטטוס הפסיכולוג</td><td><code>psychologist_status</code></td><td>סטטוס הפסיכולוג:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הפסיכולוג</td><td><code>psychologist_sign</code></td><td>חתימה:</td><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td></tr>
+          <tr><td>שם המדריך / מנהל השפ"ח</td><td><code>supervisor_name</code></td><td>שם המדריך/מנהל השפ"ח:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת המדריך</td><td><code>supervisor_sign</code></td><td>חתימה: (ליד שם המדריך)</td><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="referral-kg">
+      <h2>6. שאלון הפניה לוועדת זכאות ואפיון (גן)</h2>
+      <div class="file">תבנית: sheelon-hafnaya-eligibility.docx · טופס במתוה: referral-questionnaire-kindergarten</div>
+      <div class="note">
+        בחירות בלעדיות (מין, סוג מסגרת, מגזר, שנות ביקור בגן, כן/לא לדיון קודם): תיבת סימון לכל אפשרות, מפתח <code>שם_שדה_ערך</code>, רק הנבחרת נשלחת כ-V.<br>
+        תמיכות וסוגי דיון קודם הם סימון עצמאי — אפשר כמה V במקביל.<br>
+        טבלת הטיפולים: שדה נפרד לכל תא. ארבע עמודות המיקום הן תיבות סימון; תדירות ותקופה הן טקסט. סדר השורות ב-PDF: פסיכולוג → גורם רפואי → עובד סוציאלי → פיזיותרפיסט → מרפא בעיסוק → קלינאית תקשורת → גננת שילוב → אחר.<br>
+        חתימות לשליחה (3 חותמים): גננת slot 1 (<code>signer_signature</code>), הורה 1 slot 2 (<code>parent1_signature</code>), הורה 2 slot 3 (<code>parent2_signature</code>). משתנה env: <code>SIMPLESIGN_DOC_REFERRAL_KG</code>. קודם «הוספת חותם נוסף» לכל אחד. ב-PDF המקורי אין קווי חתימת הורים — מוסיפים אותם לתבנית SimpleSign.<br>
+        <code>filled_at</code> = תאריך מילוי באזור מסגרת הגן. <code>signer_date</code> = התאריך ליד שם הגננת בסוף. אם רוצים אותו ערך בשני מקומות: אותו מפתח פעמיים, או «עוד מקום לאותה חתימה» רק לחתימה.
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>שם השדה במתוה</th>
+            <th>מפתח ל-SimpleSign</th>
+            <th>השדה ב-PDF</th>
+            <th>סוג ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>הגורם המפנה</td><td><code>referral_source</code></td><td>הגורם המפנה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך ההפניה</td><td><code>referral_date</code></td><td>תאריך ההפניה:</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>השם הפרטי</td><td><code>first_name</code></td><td>השם הפרטי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם המשפחה</td><td><code>last_name</code></td><td>שם המשפחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' תעודת הזהות</td><td><code>id_number</code></td><td>מס' תעודת הזהות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך הלידה</td><td><code>birth_date</code></td><td>תאריך הלידה</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>מין — זכר</td><td><code>gender_male</code></td><td>☐ זכר</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מין — נקבה</td><td><code>gender_female</code></td><td>☐ נקבה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מס' הילדים במשפחה</td><td><code>siblings_count</code></td><td>מס' הילדים במשפחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מקומו של התלמיד במשפחה</td><td><code>birth_order</code></td><td>מקומו של התלמיד במשפחה</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>ארץ לידה</td><td><code>birth_country</code></td><td>ארץ לידה:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך עלייה</td><td><code>aliyah_date</code></td><td>תאריך עלייה:</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>השפות המדוברות בבית</td><td><code>home_languages</code></td><td>השפות המדוברות בבית :</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם הורה 1</td><td><code>father_name</code></td><td>שם הורה (שורה ראשונה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>טלפון הורה 1</td><td><code>parent1_phone</code></td><td>מס' הטלפון (ליד הורה 1)</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>שם הורה 2</td><td><code>mother_name</code></td><td>שם הורה (שורה שנייה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>טלפון הורה 2</td><td><code>parent2_phone</code></td><td>מס' הטלפון (ליד הורה 2)</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>המצב המשפחתי</td><td><code>family_status</code></td><td>המצב המשפחתי (ב-PDF שדה טקסט; נשלח התווית העברית)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>הכתובת הפרטית</td><td><code>home_address</code></td><td>הכתובת הפרטית</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' הטלפון (ראשי)</td><td><code>phone</code></td><td>מס' הטלפון</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>הדוא"ל</td><td><code>email</code></td><td>הדוא"ל</td><td><span class="type t-email">אימייל</span></td></tr>
+          <tr><td>שם האפוטרופוס</td><td><code>guardian_name</code></td><td>שם האפוטרופוס</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג המסגרת — מעון</td><td><code>framework_type_daycare</code></td><td>☐ מעון</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — גן טרום חובה</td><td><code>framework_type_pre_k</code></td><td>☐ גן טרום חובה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — גן רב-גילי</td><td><code>framework_type_multi_age</code></td><td>☐ גן רב-גילי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — גן חובה</td><td><code>framework_type_kindergarten</code></td><td>☐ גן חובה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — גן לחינוך מיוחד</td><td><code>framework_type_special_ed</code></td><td>☐ גן לחינוך מיוחד</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — גן רגיל</td><td><code>framework_type_regular</code></td><td>☐ גן רגיל</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>סוג המסגרת — אחר</td><td><code>framework_type_other</code></td><td>☐ אחר</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פירוט מסגרת אחרת</td><td><code>framework_other</code></td><td>אחר ________</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מגזר — ממלכתי</td><td><code>sector_mamlachti</code></td><td>☐ ממלכתי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מגזר — ממלכתי-דתי</td><td><code>sector_mamlachti_dati</code></td><td>☐ ממלכתי-דתי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מגזר — מוכר שאינו רשמי</td><td><code>sector_mukar</code></td><td>☐ מוכר שאינו רשמי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>שם הגן</td><td><code>class_name</code></td><td>שם הגן:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סמל מוסד</td><td><code>institution_code</code></td><td>סמל מוסד:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>כתובת הגן</td><td><code>kindergarten_address</code></td><td>כתובת הגן :</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מס' הטלפון בגן</td><td><code>kindergarten_phone</code></td><td>מס' הטלפון בגן:</td><td><span class="type t-phone">טלפון</span></td></tr>
+          <tr><td>שם מנהל/ת הגן (ממלא/ת השאלון)</td><td><code>kindergarten_manager</code></td><td>שם מנהל הגן (ממלאת השאלון):</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פרטי התקשרות עם ממלא השאלון</td><td><code>filler_contact</code></td><td>פרטי התקשרות עם ממלא השאלון (דוא"ל/טלפון)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>התלמיד מבקר בגן זה — שנה ראשונה</td><td><code>years_in_kindergarten_1</code></td><td>☐ שנה ראשונה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>התלמיד מבקר בגן זה — שנה שנייה</td><td><code>years_in_kindergarten_2</code></td><td>☐ שנה שנייה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>התלמיד מבקר בגן זה — שנה שלישית</td><td><code>years_in_kindergarten_3</code></td><td>☐ שנה שלישית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>משך זמן ההיכרות של הגננת עם התלמיד</td><td><code>acquaintance_duration</code></td><td>משך זמן ההיכרות של הגננת הנוכחית עם התלמיד:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סוג המסגרת החינוכית הקודמת</td><td><code>previous_framework</code></td><td>סוג המסגרת החינוכית הקודמת שבה למד התלמיד:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מספר השנים במסגרת הקודמת</td><td><code>previous_framework_years</code></td><td>מספר השנים:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך מילוי השאלון (באזור הגן)</td><td><code>filled_at</code></td><td>תאריך מילוי השאלון: (באזור מסגרת הגן)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>האם התקיים בעבר דיון מתוקף חוק? — כן</td><td><code>had_prior_discussion_yes</code></td><td>אין ☐ כן/לא ב-PDF; אם מסמנים סוג דיון זה «כן»</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>האם התקיים בעבר דיון מתוקף חוק? — לא</td><td><code>had_prior_discussion_no</code></td><td>אין ☐ לא ב-PDF — אופציונלי בתבנית</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>ועדת שילוב</td><td><code>prior_integration_committee</code></td><td>☐ ועדת שילוב</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>דיון בצוות רב מקצועי</td><td><code>prior_multidisciplinary</code></td><td>☐ דיון בצוות רב מקצועי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>ועדת השמה</td><td><code>prior_placement_committee</code></td><td>☐ ועדת השמה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>ועדת זכאות ואפיון</td><td><code>prior_eligibility_committee</code></td><td>☐ ועדת זכאות ואפיון</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>תאריך דיון 1</td><td><code>prior_discussion_date_1</code></td><td>תאריך הדיון : (שורה ראשונה)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>החלטה 1</td><td><code>prior_decision_1</code></td><td>החלטה: (שורה ראשונה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך דיון 2</td><td><code>prior_discussion_date_2</code></td><td>תאריך הדיון : (שורה שנייה)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>החלטה 2</td><td><code>prior_decision_2</code></td><td>החלטה: (שורה שנייה)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סיבת ההפניה — הקשיים העיקריים</td><td><code>referral_reason</code></td><td>סיבת ההפניה (תארי את הקשיים העיקריים…)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פסיכולוג — הגן</td><td><code>support_psychologist_gan</code></td><td>☐ פסיכולוג / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פסיכולוג — הקהילה</td><td><code>support_psychologist_community</code></td><td>☐ פסיכולוג / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פסיכולוג — קופ"ח</td><td><code>support_psychologist_kupat_holim</code></td><td>☐ פסיכולוג / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פסיכולוג — פרטי</td><td><code>support_psychologist_private</code></td><td>☐ פסיכולוג / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פסיכולוג — תדירות הטיפול</td><td><code>support_psychologist_frequency</code></td><td>פסיכולוג / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פסיכולוג — תקופת הטיפול</td><td><code>support_psychologist_duration</code></td><td>פסיכולוג / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>גורם רפואי — הגן</td><td><code>support_medical_gan</code></td><td>☐ גורם רפואי / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גורם רפואי — הקהילה</td><td><code>support_medical_community</code></td><td>☐ גורם רפואי / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גורם רפואי — קופ"ח</td><td><code>support_medical_kupat_holim</code></td><td>☐ גורם רפואי / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גורם רפואי — פרטי</td><td><code>support_medical_private</code></td><td>☐ גורם רפואי / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גורם רפואי — תדירות הטיפול</td><td><code>support_medical_frequency</code></td><td>גורם רפואי / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>גורם רפואי — תקופת הטיפול</td><td><code>support_medical_duration</code></td><td>גורם רפואי / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עובד סוציאלי — הגן</td><td><code>support_social_worker_gan</code></td><td>☐ עובד סוציאלי / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>עובד סוציאלי — הקהילה</td><td><code>support_social_worker_community</code></td><td>☐ עובד סוציאלי / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>עובד סוציאלי — קופ"ח</td><td><code>support_social_worker_kupat_holim</code></td><td>☐ עובד סוציאלי / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>עובד סוציאלי — פרטי</td><td><code>support_social_worker_private</code></td><td>☐ עובד סוציאלי / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>עובד סוציאלי — תדירות הטיפול</td><td><code>support_social_worker_frequency</code></td><td>עובד סוציאלי / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עובד סוציאלי — תקופת הטיפול</td><td><code>support_social_worker_duration</code></td><td>עובד סוציאלי / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פיזיותרפיסט — הגן</td><td><code>support_physiotherapist_gan</code></td><td>☐ פיזיותרפיסט / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פיזיותרפיסט — הקהילה</td><td><code>support_physiotherapist_community</code></td><td>☐ פיזיותרפיסט / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פיזיותרפיסט — קופ"ח</td><td><code>support_physiotherapist_kupat_holim</code></td><td>☐ פיזיותרפיסט / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פיזיותרפיסט — פרטי</td><td><code>support_physiotherapist_private</code></td><td>☐ פיזיותרפיסט / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>פיזיותרפיסט — תדירות הטיפול</td><td><code>support_physiotherapist_frequency</code></td><td>פיזיותרפיסט / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>פיזיותרפיסט — תקופת הטיפול</td><td><code>support_physiotherapist_duration</code></td><td>פיזיותרפיסט / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מרפא בעיסוק — הגן</td><td><code>support_occupational_gan</code></td><td>☐ מרפאה בעיסוק / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מרפא בעיסוק — הקהילה</td><td><code>support_occupational_community</code></td><td>☐ מרפאה בעיסוק / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מרפא בעיסוק — קופ"ח</td><td><code>support_occupational_kupat_holim</code></td><td>☐ מרפאה בעיסוק / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מרפא בעיסוק — פרטי</td><td><code>support_occupational_private</code></td><td>☐ מרפאה בעיסוק / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>מרפא בעיסוק — תדירות הטיפול</td><td><code>support_occupational_frequency</code></td><td>מרפאה בעיסוק / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>מרפא בעיסוק — תקופת הטיפול</td><td><code>support_occupational_duration</code></td><td>מרפאה בעיסוק / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>קלינאית תקשורת — הגן</td><td><code>support_speech_gan</code></td><td>☐ קלינאית תקשורת / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>קלינאית תקשורת — הקהילה</td><td><code>support_speech_community</code></td><td>☐ קלינאית תקשורת / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>קלינאית תקשורת — קופ"ח</td><td><code>support_speech_kupat_holim</code></td><td>☐ קלינאית תקשורת / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>קלינאית תקשורת — פרטי</td><td><code>support_speech_private</code></td><td>☐ קלינאית תקשורת / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>קלינאית תקשורת — תדירות הטיפול</td><td><code>support_speech_frequency</code></td><td>קלינאית תקשורת / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>קלינאית תקשורת — תקופת הטיפול</td><td><code>support_speech_duration</code></td><td>קלינאית תקשורת / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>גננת שילוב — הגן</td><td><code>support_integration_teacher_gan</code></td><td>☐ גננת שילוב / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גננת שילוב — הקהילה</td><td><code>support_integration_teacher_community</code></td><td>☐ גננת שילוב / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גננת שילוב — קופ"ח</td><td><code>support_integration_teacher_kupat_holim</code></td><td>☐ גננת שילוב / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גננת שילוב — פרטי</td><td><code>support_integration_teacher_private</code></td><td>☐ גננת שילוב / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>גננת שילוב — תדירות הטיפול</td><td><code>support_integration_teacher_frequency</code></td><td>גננת שילוב / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>גננת שילוב — תקופת הטיפול</td><td><code>support_integration_teacher_duration</code></td><td>גננת שילוב / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אחר — פירוט</td><td><code>support_other</code></td><td>אחר: ________</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אחר — הגן</td><td><code>support_other_gan</code></td><td>☐ אחר / הגן</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אחר — הקהילה</td><td><code>support_other_community</code></td><td>☐ אחר / הקהילה</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אחר — קופ"ח</td><td><code>support_other_kupat_holim</code></td><td>☐ אחר / קופ"ח</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אחר — פרטי</td><td><code>support_other_private</code></td><td>☐ אחר / פרטי</td><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td></tr>
+          <tr><td>אחר — תדירות הטיפול</td><td><code>support_other_frequency</code></td><td>אחר / תדירות הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>אחר — תקופת הטיפול</td><td><code>support_other_duration</code></td><td>אחר / תקופת הטיפול</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תארי בקצרה את התלמיד</td><td><code>student_description</code></td><td>תארי בקצרה את התלמיד (הופעה חיצונית…)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תחום קוגניטיבי ושפתי</td><td><code>domain_cognitive</code></td><td>תחום קוגניטיבי ושפתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תחום חברתי</td><td><code>domain_social</code></td><td>תחום חברתי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תחום התנהגותי ורגשי</td><td><code>domain_emotional</code></td><td>התחום ההתנהגות והרגשי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>עצמאות בחיי היום-יום</td><td><code>domain_daily</code></td><td>עצמאות בחיי היום-יום</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תחום מוטורי</td><td><code>domain_motor</code></td><td>תחום מוטורי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>באילו דרכים ניסית לסייע לתלמיד</td><td><code>assistance_tried</code></td><td>באילו דרכים ניסית לסייע לתלמיד בתפקודו בגן…</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>סיכום והמלצות</td><td><code>summary_recommendations</code></td><td>סיכום והמלצות</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>שם הגננת</td><td><code>signer_name</code></td><td>שם הגננת וחתימה: (חלק השם)</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הגננת</td><td><code>signer_signature</code></td><td>שם הגננת וחתימה: (חלק החתימה)</td><td><span class="type t-staff">חתימה של חותם נוסף</span></td></tr>
+          <tr><td>תאריך מילוי ליד הגננת</td><td><code>signer_date</code></td><td>תאריך מילוי השאלון: (ליד שם הגננת)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שם המפקח/ת</td><td><code>supervisor_name</code></td><td>שם המפקח/ת:</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תאריך חתימת המפקח/ת</td><td><code>supervisor_date</code></td><td>תאריך: (ליד שם המפקח/ת)</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שם הורה 1 (בחתימה)</td><td><code>parent1_sign_name</code></td><td>אין ב-PDF המקורי — להוסיף מעל חתימת הורה 1</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הורה 1</td><td><code>parent1_signature</code></td><td>אין ב-PDF המקורי — להוסיף חותם הורה</td><td><span class="type t-parent">חתימת חותם הורה</span></td></tr>
+          <tr><td>תאריך חתימת הורה 1</td><td><code>parent1_sign_date</code></td><td>אין ב-PDF המקורי — ליד חתימת הורה 1</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>שם הורה 2 (בחתימה)</td><td><code>parent2_sign_name</code></td><td>אין ב-PDF המקורי — להוסיף מעל חתימת הורה 2</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>חתימת הורה 2</td><td><code>parent2_signature</code></td><td>אין ב-PDF המקורי — להוסיף חותם הורה</td><td><span class="type t-parent">חתימת חותם הורה</span></td></tr>
+          <tr><td>תאריך חתימת הורה 2</td><td><code>parent2_sign_date</code></td><td>אין ב-PDF המקורי — ליד חתימת הורה 2</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>העתק להורים נמסר בתאריך</td><td><code>parents_copy_date</code></td><td>העתק להורים נמסר בתאריך</td><td><span class="type t-date">תאריך</span></td></tr>
+          <tr><td>נמסר על ידי</td><td><code>parents_copy_by</code></td><td>על ידי</td><td><span class="type t-text">טקסט</span></td></tr>
+          <tr><td>תפקיד</td><td><code>parents_copy_role</code></td><td>תפקיד</td><td><span class="type t-text">טקסט</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3>שדות ב-PDF בלי מקבילה במתוה</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>שדה ב-PDF</th>
+            <th>מה לעשות ב-SimpleSign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>חתימת המפקחת</td><td>אין <code>supervisor_signature</code> במתוה. אם צריך חתימה: «הוספת חותם נוסף» עם מפתח חדש, או להשאיר ידני. לא יישלח אוטומטית.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="legend">
+      <h2>מקרא הסוגים מהרשימה ב-SimpleSign</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>בחירה ברשימה</th>
+            <th>מתי לבחור</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="type t-text">טקסט</span></td><td>שמות, כתובות, סמל מוסד, פסקאות, מצב משפחתי כשדה חופשי</td></tr>
+          <tr><td><span class="type t-email">אימייל</span></td><td>רק בשאלון הפניה לגן: <code>email</code></td></tr>
+          <tr><td><span class="type t-phone">טלפון</span></td><td>טלפון הורה 1 / הורה 2, טלפון ראשי, טלפון הגן</td></tr>
+          <tr><td><span class="type t-date">תאריך</span></td><td>filled_at, birth_date, referral_date, signer_date, תאריכי דיון וחתימות</td></tr>
+          <tr><td><span class="type t-check">תיבת סימון (הסכמה / הצהרה)</span></td><td>בחירה בלעדית (מין, סוג מסגרת, מגזר, שנות ביקור, כן/לא) — מסמנים תווית לכל אפשרות, ורק הנבחרת נשלחת. גם סימון עצמאי: סוגי דיון קודם ותמיכות בשאלון הגן.</td></tr>
+          <tr><td><span class="type t-staff">חתימה שלי (בעל העסק)</span></td><td>חתימת צוות שנעשית בחשבון בית הספר ב-SimpleSign</td></tr>
+          <tr><td><span class="type t-staff">עוד מקום לאותה חתימה</span></td><td>רק אם אותו חותם חותם בשני מקומות באותו מסמך</td></tr>
+          <tr><td><span class="type t-parent">חתימת חותם הורה</span></td><td>לא פריט ברשימה עצמה: קודם «הוספת חותם נוסף», ואז ממקמים את החתימה שלו (<code>parent1_signature</code> / <code>parent2_signature</code> / <code>parent1_sign</code> / <code>parent2_sign</code> / <code>parent_sign</code>)</td></tr>
+          <tr><td><span class="type t-staff">חתימה של חותם נוסף</span></td><td>גם לא פריט ברשימה: «הוספת חותם נוסף» לצוות (גננת <code>signer_signature</code>, פסיכולוג, מדריך, מנהל, מפקח) ואז ממקמים את שדה החתימה עם המפתח ממתוה</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      מערכת מתוה · מדריך סימון שדות SimpleSign · אפשר לפתוח בדפדפן או להדפיס ל-PDF
+    </footer>
+  </div>
+</body>
+</html>

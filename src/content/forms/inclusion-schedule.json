@@ -1,0 +1,29 @@
+{
+  "id": "inclusion-schedule",
+  "title": "מערכת שילוב",
+  "folder": "מערכת שילוב",
+  "categoryFolder": "מערכות שעות",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "required": true,
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "school_year",
+          "label": "שנה\"ל"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "scheduleVariant": "tlk-inclusion"
+        }
+      ]
+    }
+  ]
+}

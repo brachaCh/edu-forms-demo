@@ -1,0 +1,48 @@
+{
+  "id": "inclusion-plan",
+  "title": "תוכנית שילוב אישית",
+  "folder": "תוכנית שילוב אישית",
+  "categoryFolder": "שילוב",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כיתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "inclusion_goals",
+          "label": "מטרות שילוב",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "inclusion_framework",
+          "label": "מסגרת השילוב",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "notes",
+          "label": "הערות",
+          "type": "textarea",
+          "rows": 3
+        }
+      ]
+    }
+  ]
+}

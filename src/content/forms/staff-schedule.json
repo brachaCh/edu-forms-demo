@@ -1,0 +1,31 @@
+{
+  "id": "staff-schedule",
+  "title": "מערכת שעות",
+  "folder": "מערכת שעות",
+  "categoryFolder": "מערכת שעות צוות",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם איש/אשת הצוות",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "filled_at",
+          "label": "תאריך",
+          "type": "date"
+        },
+        {
+          "key": "schedule_grid",
+          "label": "מערכת שעות",
+          "type": "schedule-grid",
+          "hint": "בכל תא: שם/שמות התלמידים והמקצוע. ניתן לרשום כמה שמות מופרדים בפסיק או בשורה חדשה. בשמירה יסונכרן למערכות האישיות של כל התלמידים.",
+          "scheduleVariant": "staff-weekly"
+        }
+      ]
+    }
+  ]
+}

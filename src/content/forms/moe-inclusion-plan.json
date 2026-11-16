@@ -1,0 +1,458 @@
+{
+  "id": "moe-inclusion-plan",
+  "title": "הכלה — תכנית הכלה והשתלבות",
+  "folder": "הכלה",
+  "categoryFolder": "מסמכים נוספים",
+  "sections": [
+    {
+      "title": "כותרת",
+      "fields": [
+        {
+          "key": "moe_header",
+          "label": "מערך הפיקוח וההנחיה חינוך מיוחד — תוכנית ההכלה",
+          "type": "static"
+        },
+        {
+          "key": "form_instructions",
+          "label": "סמנו ✓ ליד פעולות שנקטתם בהן וציינו תאריכים",
+          "type": "static"
+        },
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "required": true,
+          "shared": true,
+          "studentKey": "full_name"
+        }
+      ]
+    },
+    {
+      "title": "במסגרת הכיתה",
+      "fields": [
+        {
+          "key": "class_seat_physical",
+          "label": "בחירת מקום ישיבה המותאם לתלמיד — מבחינה פיזית (קרוב לשולחן המורה, במרחק מהחלון או מהדלת המהווים גורם מסיח ועוד)",
+          "type": "checkbox"
+        },
+        { "key": "class_seat_physical_date", "label": "תאריך", "type": "date" },
+        { "key": "class_seat_physical_notes", "label": "הערות" },
+        {
+          "key": "class_seat_social",
+          "label": "בחירת מקום ישיבה המותאם לתלמיד — מבחינה חברתית (ליד תלמיד שיוכל לסייע)",
+          "type": "checkbox"
+        },
+        { "key": "class_seat_social_date", "label": "תאריך", "type": "date" },
+        { "key": "class_seat_social_notes", "label": "הערות" },
+        {
+          "key": "class_attention_support",
+          "label": "סיוע בעמידה בדרישות כמו: מיקוד במהלך השיעור לתלמיד המתקשה בשימור קשב",
+          "type": "checkbox"
+        },
+        { "key": "class_attention_support_date", "label": "תאריך", "type": "date" },
+        { "key": "class_attention_support_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "סביבה תומכת — פניה או הפניה ל",
+      "fields": [
+        { "key": "ref_parents", "label": "הורים", "type": "checkbox" },
+        { "key": "ref_parents_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_parents_notes", "label": "הערות" },
+        { "key": "ref_counselor", "label": "יועצת", "type": "checkbox" },
+        { "key": "ref_counselor_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_counselor_notes", "label": "הערות" },
+        { "key": "ref_psychologist", "label": "פסיכולוגית", "type": "checkbox" },
+        { "key": "ref_psychologist_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_psychologist_notes", "label": "הערות" },
+        { "key": "ref_speech", "label": "קלינאית תקשורת", "type": "checkbox" },
+        { "key": "ref_speech_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_speech_notes", "label": "הערות" },
+        { "key": "ref_occupational", "label": "מרפאה בעיסוק", "type": "checkbox" },
+        { "key": "ref_occupational_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_occupational_notes", "label": "הערות" },
+        { "key": "ref_mentoring", "label": "חונכות", "type": "checkbox" },
+        { "key": "ref_mentoring_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_mentoring_notes", "label": "הערות" },
+        { "key": "ref_didactic", "label": "אבחון דידקטי", "type": "checkbox" },
+        { "key": "ref_didactic_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_didactic_notes", "label": "הערות" },
+        { "key": "ref_emotional", "label": "מטפלת רגשית", "type": "checkbox" },
+        { "key": "ref_emotional_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_emotional_notes", "label": "הערות" },
+        {
+          "key": "ref_welfare",
+          "label": "גורמי רווחה וגורמים בקהילה",
+          "type": "checkbox"
+        },
+        { "key": "ref_welfare_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_welfare_notes", "label": "הערות" },
+        {
+          "key": "ref_municipality_hours",
+          "label": "שעות תמיכה במימון הרשות המקומית",
+          "type": "checkbox"
+        },
+        { "key": "ref_municipality_hours_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_municipality_hours_notes", "label": "הערות" },
+        {
+          "key": "ref_risk_programs",
+          "label": "תוכניות כמו הגנה לילדים בסיכון",
+          "type": "checkbox"
+        },
+        { "key": "ref_risk_programs_date", "label": "תאריך", "type": "date" },
+        { "key": "ref_risk_programs_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "מילוי חובות בית ספריות",
+      "fields": [
+        {
+          "key": "hw_parent_contact",
+          "label": "שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שנלמד",
+          "type": "checkbox"
+        },
+        { "key": "hw_parent_contact_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_parent_contact_notes", "label": "הערות" },
+        {
+          "key": "hw_diary_followup",
+          "label": "מעקב אחר רישום המטלות שניתנו ביומן",
+          "type": "checkbox"
+        },
+        { "key": "hw_diary_followup_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_diary_followup_notes", "label": "הערות" },
+        {
+          "key": "hw_adapt_homework",
+          "label": "התאמת שיעורי הבית ליכולותיו של התלמיד",
+          "type": "checkbox"
+        },
+        { "key": "hw_adapt_homework_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_adapt_homework_notes", "label": "הערות" },
+        {
+          "key": "hw_dictation",
+          "label": "מתן אפשרות לתלמיד להקריא את התשובות בשיעורי בית למבוגר שיכתוב מפיו",
+          "type": "checkbox"
+        },
+        { "key": "hw_dictation_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_dictation_notes", "label": "הערות" },
+        {
+          "key": "hw_reduce_demands",
+          "label": "הפחתת הדרישות — לצד עמידה על ביצוע המשימות המופחתות שניתנו",
+          "type": "checkbox"
+        },
+        { "key": "hw_reduce_demands_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_reduce_demands_notes", "label": "הערות" },
+        {
+          "key": "hw_adapt_worksheets",
+          "label": "התאמת דפי העבודה בהיבט הצורני והתוכני לתלמיד",
+          "type": "checkbox"
+        },
+        { "key": "hw_adapt_worksheets_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_adapt_worksheets_notes", "label": "הערות" },
+        {
+          "key": "hw_mediate_worksheets",
+          "label": "תווך והדרכה בביצוע דפי עבודה",
+          "type": "checkbox"
+        },
+        { "key": "hw_mediate_worksheets_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_mediate_worksheets_notes", "label": "הערות" },
+        {
+          "key": "hw_board_copy",
+          "label": "עזרה בהעתקה מהלוח, בכתיבת חלק מהטקסט, צילום החומר וכד'",
+          "type": "checkbox"
+        },
+        { "key": "hw_board_copy_date", "label": "תאריך", "type": "date" },
+        { "key": "hw_board_copy_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "תמיכה לימודית",
+      "fields": [
+        {
+          "key": "learn_parent_prep",
+          "label": "שמירה על קשר שוטף עם ההורים או מורת עזר אחר הצהרים כדי לעדכן בחומר שיילמד ולאפשר הטרמתו",
+          "type": "checkbox"
+        },
+        { "key": "learn_parent_prep_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_parent_prep_notes", "label": "הערות" },
+        {
+          "key": "learn_clear_instructions",
+          "label": "מתן הוראות ברורות",
+          "type": "checkbox"
+        },
+        { "key": "learn_clear_instructions_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_clear_instructions_notes", "label": "הערות" },
+        {
+          "key": "learn_repeat_instructions",
+          "label": "הסבר או חזרה על ההוראות",
+          "type": "checkbox"
+        },
+        { "key": "learn_repeat_instructions_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_repeat_instructions_notes", "label": "הערות" },
+        {
+          "key": "learn_focus_instructions",
+          "label": "מיקוד תשומת לב התלמיד בהוראות",
+          "type": "checkbox"
+        },
+        { "key": "learn_focus_instructions_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_focus_instructions_notes", "label": "הערות" },
+        {
+          "key": "learn_present_units",
+          "label": "הצגת יחידות השיעור בכתב או בעל פה",
+          "type": "checkbox"
+        },
+        { "key": "learn_present_units_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_present_units_notes", "label": "הערות" },
+        {
+          "key": "learn_mediate_lesson",
+          "label": "תיווך, הבהרה, הדגמה וסיכומי ביניים בזמן השיעור",
+          "type": "checkbox"
+        },
+        { "key": "learn_mediate_lesson_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_mediate_lesson_notes", "label": "הערות" },
+        {
+          "key": "learn_keywords_board",
+          "label": "כתיבת מילות המפתח או משפטי המפתח על הלוח",
+          "type": "checkbox"
+        },
+        { "key": "learn_keywords_board_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_keywords_board_notes", "label": "הערות" },
+        {
+          "key": "learn_explain_concepts",
+          "label": "הסבר המושגים ומילות המפתח החשובים להבנת הנושא הנלמד",
+          "type": "checkbox"
+        },
+        { "key": "learn_explain_concepts_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_explain_concepts_notes", "label": "הערות" },
+        {
+          "key": "learn_adapt_questions",
+          "label": "התאמת סוג השאלה לתלמיד (שאלות ברמה מילולית, שאלות הדורשות זיהוי ברמת ידע ועוד)",
+          "type": "checkbox"
+        },
+        { "key": "learn_adapt_questions_date", "label": "תאריך", "type": "date" },
+        { "key": "learn_adapt_questions_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "התאמות במבחנים",
+      "fields": [
+        {
+          "key": "test_prep_copy",
+          "label": "מסירת עותק של המבחן כהכנה למבחן",
+          "type": "checkbox"
+        },
+        { "key": "test_prep_copy_date", "label": "תאריך", "type": "date" },
+        { "key": "test_prep_copy_notes", "label": "הערות" },
+        { "key": "test_reduce_material", "label": "הפחתת חומר", "type": "checkbox" },
+        { "key": "test_reduce_material_date", "label": "תאריך", "type": "date" },
+        { "key": "test_reduce_material_notes", "label": "הערות" },
+        { "key": "test_reduce_tasks", "label": "הפחתת משימות", "type": "checkbox" },
+        { "key": "test_reduce_tasks_date", "label": "תאריך", "type": "date" },
+        { "key": "test_reduce_tasks_notes", "label": "הערות" },
+        { "key": "test_read_aloud", "label": "הקראת שאלון המבחן", "type": "checkbox" },
+        { "key": "test_read_aloud_date", "label": "תאריך", "type": "date" },
+        { "key": "test_read_aloud_notes", "label": "הערות" },
+        { "key": "test_rephrase", "label": "ניסוח שונה של שאלות", "type": "checkbox" },
+        { "key": "test_rephrase_date", "label": "תאריך", "type": "date" },
+        { "key": "test_rephrase_notes", "label": "הערות" },
+        { "key": "test_oral", "label": "בחינה בעל פה", "type": "checkbox" },
+        { "key": "test_oral_date", "label": "תאריך", "type": "date" },
+        { "key": "test_oral_notes", "label": "הערות" },
+        { "key": "test_dictate", "label": "הכתבת התשובות", "type": "checkbox" },
+        { "key": "test_dictate_date", "label": "תאריך", "type": "date" },
+        { "key": "test_dictate_notes", "label": "הערות" },
+        { "key": "test_extra_time", "label": "תוספת זמן", "type": "checkbox" },
+        { "key": "test_extra_time_date", "label": "תאריך", "type": "date" },
+        { "key": "test_extra_time_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "טיפול בקשיי התנהגות",
+      "fields": [
+        {
+          "key": "beh_behavior_plan",
+          "label": "תוכנית עיצוב התנהגות: מתן חיזוקים על התנהגות חיובית, שימוש מופחת אך מושכל ומתוכנן בענישה",
+          "type": "checkbox"
+        },
+        { "key": "beh_behavior_plan_date", "label": "תאריך", "type": "date" },
+        { "key": "beh_behavior_plan_notes", "label": "הערות" },
+        {
+          "key": "beh_avoid_conflict",
+          "label": "מניעת עימותים ועקיפת מוקדי חיכוך",
+          "type": "checkbox"
+        },
+        { "key": "beh_avoid_conflict_date", "label": "תאריך", "type": "date" },
+        { "key": "beh_avoid_conflict_notes", "label": "הערות" },
+        {
+          "key": "beh_consult",
+          "label": "היוועצות עם גורמים נוספים, כמו: יועצת בית הספר, הפסיכולוג ועוד",
+          "type": "checkbox"
+        },
+        { "key": "beh_consult_date", "label": "תאריך", "type": "date" },
+        { "key": "beh_consult_notes", "label": "הערות" },
+        {
+          "key": "beh_refer_parents",
+          "label": "הפניית ההורים לגורמים טיפוליים מחוץ לבית הספר: הערכת קשב, טיפול רגשי ושיתוף פעולה עמם במילוי שאלונים, דוחות וכו'",
+          "type": "checkbox"
+        },
+        { "key": "beh_refer_parents_date", "label": "תאריך", "type": "date" },
+        { "key": "beh_refer_parents_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "תמיכה רגשית וחברתית",
+      "fields": [
+        {
+          "key": "emo_verbal_praise",
+          "label": "חיזוק מילולי: עידוד ומחמאות באופן אישי ולפני כלל הכיתה",
+          "type": "checkbox"
+        },
+        { "key": "emo_verbal_praise_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_verbal_praise_notes", "label": "הערות" },
+        {
+          "key": "emo_personal_talks",
+          "label": "יצירת קשר אישי ושיחות פרטניות עם התלמיד",
+          "type": "checkbox"
+        },
+        { "key": "emo_personal_talks_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_personal_talks_notes", "label": "הערות" },
+        {
+          "key": "emo_social_status",
+          "label": "תשומת לב למעמד החברתי והתערבות במידת הצורך",
+          "type": "checkbox"
+        },
+        { "key": "emo_social_status_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_social_status_notes", "label": "הערות" },
+        {
+          "key": "emo_encourage_effort",
+          "label": "עידוד התלמיד על כל ניסיון להתמודדות עם הנדרש ולא רק על הצלחה",
+          "type": "checkbox"
+        },
+        { "key": "emo_encourage_effort_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_encourage_effort_notes", "label": "הערות" },
+        {
+          "key": "emo_avoid_pressure",
+          "label": "הימנעות מלחץ המופנה ישירות לתלמיד המתקשה",
+          "type": "checkbox"
+        },
+        { "key": "emo_avoid_pressure_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_avoid_pressure_notes", "label": "הערות" },
+        {
+          "key": "emo_success_roles",
+          "label": "מתן תפקידים שיסייעו לילד לחוות הצלחה",
+          "type": "checkbox"
+        },
+        { "key": "emo_success_roles_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_success_roles_notes", "label": "הערות" },
+        { "key": "emo_peer_group", "label": "שילוב בקבוצת חברים", "type": "checkbox" },
+        { "key": "emo_peer_group_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_peer_group_notes", "label": "הערות" },
+        {
+          "key": "emo_recess_mediate",
+          "label": "תיווך חברתי לפני ההפסקות, במהלך ההפסקות ולאחריהן",
+          "type": "checkbox"
+        },
+        { "key": "emo_recess_mediate_date", "label": "תאריך", "type": "date" },
+        { "key": "emo_recess_mediate_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "הערכה חלופית",
+      "fields": [
+        {
+          "key": "alt_content_over_spelling",
+          "label": "בהערכת עבודות ומבחנים — התייחסות מעדיפה לתוכן ולא לשגיאות כתיב או לקשיי ניסוח",
+          "type": "checkbox"
+        },
+        { "key": "alt_content_over_spelling_date", "label": "תאריך", "type": "date" },
+        { "key": "alt_content_over_spelling_notes", "label": "הערות" },
+        {
+          "key": "alt_descriptive_grade",
+          "label": "מתן הערכה המתארת את ההישג — במקום ציון נמוך",
+          "type": "checkbox"
+        },
+        { "key": "alt_descriptive_grade_date", "label": "תאריך", "type": "date" },
+        { "key": "alt_descriptive_grade_notes", "label": "הערות" }
+      ]
+    },
+    {
+      "title": "תיעוד תוכנית ההכלה",
+      "fields": [
+        {
+          "key": "full_name",
+          "label": "שם התלמיד/ה",
+          "shared": true,
+          "studentKey": "full_name"
+        },
+        {
+          "key": "class_name",
+          "label": "כתה",
+          "shared": true,
+          "studentKey": "class_name"
+        },
+        { "key": "homeroom_teacher", "label": "שם המחנכ/ת" },
+        { "key": "school_year", "label": "שנת הלימודים" },
+        {
+          "key": "inclusion_goals",
+          "label": "יעדי ההכלה",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_intro",
+          "label": "סיכום הפעולות שננקטו כדי לסייע לתלמיד/ה:",
+          "type": "static"
+        },
+        {
+          "key": "summary_classroom",
+          "label": "במסגרת הכיתה",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_school_duties",
+          "label": "במילוי חובות בית ספריות",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_learning",
+          "label": "בתמיכה לימודית",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_behavior",
+          "label": "בקשיי התנהגות",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "summary_external",
+          "label": "פניה לגורמים נוספים מחוץ לבית הספר",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "teacher_evaluation",
+          "label": "הערכת המחנכ/ת בעקבות תוכנית ההכלה",
+          "type": "textarea",
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "title": "חתימות",
+      "fields": [
+        {
+          "key": "teacher_sign",
+          "label": "חתימת המחנכ/ת",
+          "type": "signature"
+        },
+        {
+          "key": "principal_sign",
+          "label": "חתימת המנהל/ת",
+          "type": "signature"
+        }
+      ]
+    }
+  ]
+}

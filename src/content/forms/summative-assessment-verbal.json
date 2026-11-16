@@ -1,0 +1,52 @@
+{
+  "id": "summative-assessment-verbal",
+  "title": "הערכה מסכמת סיכום מילולי",
+  "folder": "הערכה מסכמת סיכום מילולי",
+  "categoryFolder": "תח\"י",
+  "sections": [
+    {
+      "fields": [
+        {
+          "key": "domain",
+          "label": "תחום"
+        },
+        {
+          "key": "topic",
+          "label": "נושא",
+          "type": "textarea",
+          "rows": 2
+        },
+        {
+          "key": "initial_status",
+          "label": "מצב התחלתי",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "goals_and_process",
+          "label": "מטרות ותהליך העבודה",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "current_status",
+          "label": "מצב נוכחי",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "table_recommendations",
+          "label": "המלצות",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "summary",
+          "label": "סיכום",
+          "type": "textarea",
+          "rows": 5
+        }
+      ]
+    }
+  ]
+}
