@@ -32,7 +32,7 @@ export function LegalDocumentPageClient({
         <CardContent className="p-4 sm:p-6 md:p-8">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
             <p className="text-sm text-muted-foreground">
-              נוסח הדגמה. כל הזכויות שמורות לאופיסנס (OfficeSense).
+              נוסח הדגמה. כל הזכויות שמורות ל-Ofisense ול-Business Room.
             </p>
             {route.downloadHref ? (
               <Button asChild variant="outline" size="sm">

@@ -8,7 +8,7 @@ import { isDemoMode } from "./demo-mode";
 export const DEMO_METADATA = {
   title: "מערכת טפסים — הדגמה",
   description:
-    "הדגמה עם נתונים פיקטיביים. כל הזכויות שמורות לאופיסנס (OfficeSense).",
+    "הדגמה עם נתונים פיקטיביים. כל הזכויות שמורות ל-Ofisense ול-Business Room.",
 };
 
 const DEMO_TEXT_PATCH = {
@@ -48,8 +48,8 @@ const DEMO_TEXT_PATCH = {
   },
   common: {
     footer: "מערכת טפסים — הדגמה עם נתונים פיקטיביים",
-    copyright: "כל הזכויות שמורות לאופיסנס",
-    allRightsReserved: "כל הזכויות שמורות לאופיסנס",
+    copyright: "כל הזכויות שמורות ל-Ofisense ול-Business Room",
+    allRightsReserved: "כל הזכויות שמורות ל-Ofisense ול-Business Room",
   },
   studentFields: {
     name: "שם מלא",

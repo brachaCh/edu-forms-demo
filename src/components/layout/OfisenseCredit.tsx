@@ -21,10 +21,9 @@ function isDocumentChromeHidden(pathname: string): boolean {
   );
 }
 
-/** Identical box for both marks so they render at the same size. */
-const LOGO_BOX_CLASS =
-  "inline-flex h-2.5 w-[3.5rem] shrink-0 items-center justify-center";
-const LOGO_IMG_CLASS = "h-full w-full object-contain object-center";
+/** Shared height so both wordmarks sit on one line with the copyright text. */
+const LOGO_BOX_CLASS = "inline-flex h-7 shrink-0 items-center justify-center";
+const LOGO_IMG_CLASS = "h-7 w-auto max-w-[9.5rem] object-contain object-center";
 
 function CreditLogoLink({
   href,
@@ -60,38 +59,47 @@ function CreditLogoLink({
 }
 
 /**
- * Thin developer-credit strip: פותח על ידי Ofisense בשיתוף Business Room.
- * Composed into SiteFooter (not a second footer). Hidden in print via the
- * root layout `print:hidden` wrapper, plus `print:hidden` here, and omitted
- * on public signature / fill / print routes.
+ * Copyright line for Ofisense and Business Room, with both wordmarks.
+ * Composed into SiteFooter. Hidden in print via the root layout
+ * `print:hidden` wrapper, plus `print:hidden` here. On public signature /
+ * fill / print routes the logos are omitted and the names stay as text.
  */
 export function OfisenseCredit() {
   const pathname = usePathname();
-  if (isDocumentChromeHidden(pathname)) {
-    return null;
-  }
+  const year = new Date().getFullYear();
+  const showLogos = !isDocumentChromeHidden(pathname);
 
   return (
     <div
-      className="flex h-6 items-center justify-center gap-1 overflow-hidden border-t border-border/70 bg-white/45 px-1.5 text-[10.5px] leading-none text-muted-foreground backdrop-blur sm:gap-1.5 sm:px-2 print:hidden"
-      aria-label="פותח על ידי Ofisense בשיתוף Business Room"
+      className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-border/70 bg-white/45 px-3 py-1.5 text-xs leading-none text-muted-foreground backdrop-blur print:hidden"
+      aria-label="כל הזכויות שמורות ל-Ofisense ול-Business Room"
     >
-      <span className="shrink-0">פותח על ידי</span>
-      <CreditLogoLink
-        href={OFISENSE_HREF}
-        src="/ofisense-logo.png"
-        alt="Ofisense"
-        width={945}
-        height={145}
-      />
-      <span className="shrink-0">בשיתוף</span>
-      <CreditLogoLink
-        href={BUSINESSROOM_HREF}
-        src="/businessroom-logo.png"
-        alt="Business Room"
-        width={965}
-        height={250}
-      />
+      <span className="shrink-0 font-medium text-ink/70">
+        © {year} כל הזכויות שמורות ל
+      </span>
+      {showLogos ? (
+        <CreditLogoLink
+          href={OFISENSE_HREF}
+          src="/ofisense-logo.png"
+          alt="Ofisense"
+          width={945}
+          height={145}
+        />
+      ) : (
+        <span className="shrink-0 font-medium text-ink/70">Ofisense</span>
+      )}
+      <span className="shrink-0">ול</span>
+      {showLogos ? (
+        <CreditLogoLink
+          href={BUSINESSROOM_HREF}
+          src="/businessroom-logo.png"
+          alt="Business Room"
+          width={965}
+          height={250}
+        />
+      ) : (
+        <span className="shrink-0 font-medium text-ink/70">Business Room</span>
+      )}
     </div>
   );
 }
